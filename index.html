@@ -1,237 +1,1979 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#24130f">
-<title>Videoclub Carmencita</title>
-<style>
-:root{--bg:#180f0d;--panel:#2a1915;--panel2:#38211a;--cream:#f4dfb4;--muted:#c5a98b;--red:#a6322b;--gold:#e4b75c;--line:#684233}
-*{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at top,#48251b 0,#1d100d 55%,#100908 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
-header{padding:24px 16px 18px;text-align:center;border-bottom:3px double var(--gold);background:linear-gradient(180deg,#391c15,#21110e)}
-.kicker{font:700 11px Arial,sans-serif;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
-h1{font-size:clamp(29px,7vw,46px);line-height:1;margin:10px 0 7px;text-transform:uppercase;letter-spacing:1px;text-shadow:3px 3px #6f241e}
-.subtitle{font-style:italic;color:var(--muted);font-size:14px}
-main{max-width:1000px;margin:auto;padding:16px}
-.notice{border:1px solid var(--gold);background:#2a1915;padding:12px 14px;margin:4px 0 18px;text-align:center;font-size:14px}
-.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-input,select,button{font:15px Arial,sans-serif;border-radius:4px;border:1px solid var(--line);padding:11px;background:#211310;color:var(--cream)}
-input{flex:1;min-width:150px} select{max-width:100%} button{cursor:pointer;background:var(--red);border-color:#d17a55;font-weight:bold} button:hover{filter:brightness(1.15)}
-.section-title{font-size:20px;margin:18px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
-.movie{background:linear-gradient(135deg,#39221a,#211310);border:1px solid #744936;border-radius:6px;padding:10px;box-shadow:0 5px 14px #0008;min-width:0}
-.poster{height:185px;border:4px solid #d5b77a;background:linear-gradient(145deg,#7d2925,#27120f 65%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:10px 6px;position:relative;overflow:hidden}
-.poster:before{content:"";position:absolute;inset:6px;border:1px solid #e5c889;pointer-events:none}
-.poster .year{font:700 10px Arial,sans-serif;letter-spacing:2px;color:#f4dca6;z-index:1}
-.poster .title{font-weight:bold;font-size:19px;line-height:1.05;text-transform:uppercase;text-shadow:2px 2px #170b08;z-index:1}
-.poster .genre{font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;z-index:1}
-.tape{height:23px;margin-top:7px;background:linear-gradient(180deg,#171717,#383838,#111);border-radius:3px;border:1px solid #555;display:flex;align-items:center;justify-content:center;position:relative}
-.tape:before,.tape:after{content:"";width:15px;height:9px;border-radius:50%;background:#b7a98b;border:2px solid #111;position:absolute;top:5px}
-.tape:before{left:9px}.tape:after{right:9px}
-.tape span{font:700 8px Arial,sans-serif;letter-spacing:2px;color:#ddd}
-.movie h3{font-size:17px;margin:10px 0 4px;line-height:1.15}
-.meta{font:12px Arial,sans-serif;color:var(--muted);margin-bottom:10px}
-.actions{display:flex;gap:6px}.actions button{font-size:12px;padding:8px 7px;flex:1}
-.fav{background:#51402b;border-color:#b28b4e}.empty{padding:25px;text-align:center;color:var(--muted);grid-column:1/-1}
-footer{text-align:center;padding:28px 14px 34px;color:#a98a6c;font:11px Arial,sans-serif;letter-spacing:1px}
-.modal{display:none;position:fixed;inset:0;background:#000b;z-index:5;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.dialog{max-width:440px;width:100%;background:#2a1915;border:2px solid var(--gold);padding:20px;border-radius:6px}.dialog h2{margin-top:0}.dialog p{line-height:1.5}.dialog button{width:100%;margin-top:8px}
-.small{font:12px Arial,sans-serif;color:var(--muted)}
-@media(min-width:700px){main{padding:24px}.poster{height:215px}}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#120b10">
 
-.chat-box{border:2px solid var(--gold);background:var(--panel);padding:14px;margin:12px 0 22px;border-radius:6px}
-.chat-welcome{margin-top:0;line-height:1.5}
-.chat-messages{display:flex;flex-direction:column;gap:10px}
-.chat-message{padding:10px 12px;border-radius:5px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
-.chat-user{background:#493025;align-self:flex-end;max-width:90%}
-.chat-bot{background:#f4dfb4;color:#281712;align-self:flex-start;max-width:95%}
-.chat-form{display:flex;gap:8px;margin-top:12px}
-.chat-form input{min-width:0;width:100%}
-.chat-note{font:12px Arial,sans-serif;color:var(--muted);margin-bottom:0}
-@media(max-width:420px){.chat-form{flex-direction:column}.chat-form button{width:100%}}
+  <title>Videoclub Carmencita | Cine de otra época</title>
 
+  <style>
+    /* ===== 1. COLORES Y ESTILO GENERAL ===== */
 
-/* Mejoras visuales VHS de Videoclub Carmencita */
-header {
-  position: relative;
+    :root {
+      --fondo: #120b10;
+      --panel: #21131b;
+      --rojo: #ff304f;
+      --rosa: #ff76a8;
+      --crema: #ffe7c2;
+      --texto: #f8eaf0;
+    }
+
+    * {
+
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--fondo);
+      color: var(--texto);
+      font-family: "Courier New", monospace;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== 2. BARRA SUPERIOR ===== */
+
+    header {
+      padding: 18px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #522432;
+      background: #0c070b;
+    }
+
+    .logo {
+      color: var(--rojo);
+      font-size: 21px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 0 12px #ff304f66;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 13px;
+    }
+
+    nav a:hover {
+      color: var(--rosa);
+    }
+
+    /* ===== 3. PORTADA ===== */
+
+    .hero {
+      min-height: 420px;
+      padding: 75px 7%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, #120b10 10%, #120b10dd 55%, #120b1044),
+        repeating-linear-gradient(
+          0deg,
+          transparent 0px,
+          transparent 3px,
+          #ff304f0a 4px
+        ),
+        radial-gradient(ellipse at 80% 40%, #70203e, #24101e 55%, #120b10);
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .etiqueta {
+      color: var(--rosa);
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 18px 0;
+      color: var(--crema);
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 1;
+      text-shadow: 4px 4px 0 #a91c40;
+    }
+
+    .hero p {
+      max-width: 530px;
+      line-height: 1.8;
+      color: #e4cbd6;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 14px 20px;
+      background: var(--rojo);
+      color: white;
+      font-weight: bold;
+      border: 0;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    .boton:hover {
+      background: #d91d3b;
+      box-shadow: 0 0 18px #ff304f66;
+    }
+
+    /* ===== 4. PROGRAMACIÓN ===== */
+
+    .programacion {
+      padding: 24px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      background: #30131f;
+      border-top: 1px solid #81304b;
+      border-bottom: 1px solid #81304b;
+    }
+
+    .programacion strong {
+      color: var(--rosa);
+    }
+
+    .programacion span {
+      font-size: 13px;
+    }
+
+    /* ===== 5. CATÁLOGO Y BUSCADOR ===== */
+
+    main {
+      padding: 55px 7%;
+    }
+
+    .titulo-seccion {
+      color: var(--crema);
+      font-size: 28px;
+      margin: 0 0 12px;
+    }
+
+    .descripcion {
+      color: #bba6b0;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .buscador {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 32px;
+      padding: 15px;
+      color: white;
+      background: #21131b;
+      border: 1px solid #704052;
+      font-family: inherit;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .buscador:focus {
+      border-color: var(--rosa);
+      box-shadow: 0 0 10px #ff76a833;
+    }
+
+    .peliculas {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit, minmax(190px, 1fr)
+      );
+      gap: 24px;
+    }
+
+    /* ===== 6. TARJETAS DE PELÍCULAS ===== */
+
+    .pelicula {
+      overflow: hidden;
+      background: var(--panel);
+      border: 1px solid #422432;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .pelicula:hover {
+      transform: translateY(-5px);
+      border-color: var(--rojo);
+    }
+
+    .cartel {
+      width: 100%;
+      height: 250px;
+      display: block;
+      object-fit: cover;
+      background: #321321;
+    }
+
+    .cartel-falso {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 20px;
+      text-align: center;
+      background:
+        radial-gradient(circle at center, #872443, #21101c);
+      color: var(--crema);
+      letter-spacing: 2px;
+    }
+
+    .cartel-falso .icono {
+      font-size: 55px;
+      margin-bottom: 18px;
+    }
+
+    .info-pelicula {
+      padding: 18px;
+    }
+
+    .info-pelicula h3 {
+      margin: 0 0 8px;
+      color: var(--rosa);
+      font-size: 17px;
+    }
+
+    .anio {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 4px 8px;
+      color: var(--crema);
+      background: #3b1a2b;
+      font-size: 12px;
+    }
+
+    .info-pelicula p {
+      margin: 0;
+      color: #d0bec8;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    #mensaje {
+      color: var(--rosa);
+      margin-top: 20px;
+    }
+
+    /* ===== 7. TELEGRAM Y PIE DE PÁGINA ===== */
+
+    .telegram {
+      padding: 40px 7%;
+      text-align: center;
+      background: #21131b;
+      border-top: 1px solid #522432;
+    }
+
+    .telegram p {
+      color: #d0bec8;
+      line-height: 1.7;
+    }
+
+    footer {
+      padding: 25px 7%;
+      text-align: center;
+      color: #a9949f;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    /* ===== 8. ADAPTACIÓN A MÓVILES ===== */
+
+    @media (max-width: 600px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .hero {
+        padding: 55px 6%;
+        min-height: 360px;
+      }
+
+      main {
+        padding: 40px 5%;
+      }
+
+      .peliculas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      .cartel {
+        height: 190px;
+      }
+
+      .info-pelicula {
+        padding: 12px;
+      }
+
+      .info-pelicula h3 {
+        font-size: 14px;
+      }
+
+      .info-pelicula p {
+        font-size: 12px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+    }
+  
+
+    /* ===== MEJORAS VISUALES VHS: CARMENCITA ===== */
+
+    body {
+      background-color: var(--fondo);
+      background-image:
+        linear-gradient(90deg, #120b10dd, #120b10a8),
+        url("fondo-videoclub.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      position: relative;
+      box-shadow: 0 4px 20px #0006;
+    }
+
+    .logo {
+      transition: color .2s ease, text-shadow .2s ease;
+    }
+
+    .logo:hover {
+      color: var(--rosa);
+      text-shadow: 0 0 8px #ff76a8aa, 0 0 22px #ff304f77;
+    }
+
+    .boton,
+    button {
+      transition: transform .18s ease, box-shadow .18s ease,
+                  background-color .18s ease;
+    }
+
+    .boton:hover,
+    button:hover {
+      box-shadow: 0 0 15px #ff304f66;
+    }
+
+    .boton:active,
+    button:active {
+      transform: translateY(1px);
+    }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible {
+      outline: 2px solid var(--crema);
+      outline-offset: 4px;
+    }
+
+    .pelicula {
+      border: 1px solid #522432;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: transform .2s ease, border-color .2s ease,
+                  box-shadow .2s ease;
+    }
+
+    .pelicula:hover {
+      transform: translateY(-4px);
+      border-color: var(--rosa);
+      box-shadow: 0 8px 24px #0006, 0 0 12px #ff304f22;
+    }
+
+    .cartel {
+      display: block;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .buscador {
+      max-width: 100%;
+      border-radius: 4px;
+      transition: border-color .2s ease, box-shadow .2s ease;
+    }
+
+    .buscador:focus {
+      border-color: var(--rosa);
+      box-shadow: 0 0 0 3px #ff76a822;
+    }
+
+    #abrir-carmencita {
+      max-width: calc(100vw - 24px);
+      box-shadow: 0 0 18px #ff304f44;
+    }
+
+    #abrir-carmencita:hover {
+      box-shadow: 0 0 24px #ff304f88;
+    }
+
+    #chat-carmencita {
+      max-height: min(480px, calc(100dvh - 100px));
+      display: flex;
+      flex-direction: column;
+    }
+
+    #chat-carmencita[hidden] {
+      display: none !important;
+    }
+
+    #mensajes-carmencita {
+      overscroll-behavior: contain;
+    }
+
+    #pregunta-carmencita {
+      border-radius: 4px;
+      font: inherit;
+    }
+
+    #form-carmencita button {
+      border-radius: 4px;
+    }
+
+    /* Efecto CRT muy sutil, sin tapar ni bloquear los controles. */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 9998;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 3px,
+        #00000008 4px
+      );
+    }
+
+    @media (max-width: 600px) {
+      #carmencita {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      #chat-carmencita {
+        width: min(360px, calc(100vw - 24px));
+      }
+
+      #mensajes-carmencita {
+        max-height: min(260px, 35dvh);
+      }
+
+      .pelicula:hover {
+        transform: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+  </style>
+
+<style id="escaparate-retro-carmencita">
+.hero-retro {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  align-items: center;
+  gap: 35px;
+  min-height: 490px;
   overflow: hidden;
-  box-shadow: 0 5px 18px #0009;
-  border-bottom: 4px double var(--gold);
+  background:
+    radial-gradient(ellipse at 78% 45%, #a52d6244, transparent 45%),
+    linear-gradient(120deg, #160912f5, #351226eF 65%, #160912ee);
+  border-bottom: 1px solid #ff76a855;
 }
-
-header::after {
-  content: "★ ESTRENOS · ALQUILER · VHS ★";
-  display: block;
-  width: fit-content;
-  max-width: 90%;
-  margin: 14px auto 0;
-  padding: 7px 10px;
-  border: 1px dashed var(--gold);
-  color: var(--gold);
-  font: bold 10px Arial, sans-serif;
+.hero-retro .hero-content { position: relative; z-index: 1; }
+.hero-retro h1 {
+  color: #fff0d9;
+  font-size: clamp(36px, 5vw, 66px);
+  line-height: 1.08;
+  letter-spacing: 2px;
+  text-shadow: 0 0 8px #ff76a8, 0 0 25px #ff304f99;
+}
+.hero-retro h1 span {
+  color: #ff76a8;
+  text-shadow: 0 0 8px #ff76a8, 0 0 30px #ff304f99;
+}
+.hero-retro .etiqueta {
+  display: inline-block;
+  padding: 9px 12px;
+  border: 1px solid #ff76a8aa;
+  background: #180b15bb;
+  letter-spacing: 1px;
+}
+.hero-retro .hero-content > p {
+  max-width: 540px;
+  line-height: 1.9;
+  color: #f8eaf0;
+}
+.hero-sello {
+  margin: 22px 0;
+  color: #ffe7c2;
+  font-size: 12px;
   letter-spacing: 2px;
 }
-
-.notice {
-  border: 2px dashed var(--gold);
-  box-shadow: inset 0 0 18px #0005;
-  line-height: 1.7;
-}
-
-.movie {
+.vhs-escenario {
   position: relative;
-  border: 1px solid var(--line);
-  background: linear-gradient(145deg, #382119, #1c100d);
-  box-shadow: 0 5px 12px #0007;
-  padding: 10px;
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 25px 8px;
+  perspective: 850px;
 }
-
-.movie::before {
-  content: "ALQUILER";
+.vhs-cinta {
+  position: relative;
+  width: min(100%, 370px);
+  aspect-ratio: 1.55;
+  padding: 8%;
+  border: 2px solid #777078;
+  border-radius: 15px 15px 22px 22px;
+  background: linear-gradient(145deg, #49434b, #19161d 48%, #35303a);
+  box-shadow: 0 28px 35px #0009, inset 0 3px 5px #ffffff35;
+  transform: rotateY(-17deg) rotateX(7deg) rotateZ(-4deg);
+  transition: transform .35s ease, box-shadow .35s ease;
+}
+.vhs-cinta:hover {
+  transform: rotateY(-5deg) rotateX(0) rotateZ(0) translateY(-7px);
+  box-shadow: 0 35px 45px #000b, 0 0 28px #ff304f44;
+}
+.vhs-etiqueta {
+  height: 42%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  color: #2b1020;
+  background: linear-gradient(110deg, #ff76a8, #ffe7c2 48%, #ff9ebd);
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px #ffffff66;
+}
+.vhs-etiqueta span { font-size: clamp(8px, 1.5vw, 13px); letter-spacing: 3px; }
+.vhs-etiqueta strong { font-size: clamp(15px, 2.5vw, 25px); text-align: center; }
+.vhs-etiqueta small { font-size: clamp(6px, 1vw, 9px); letter-spacing: 1px; }
+.vhs-ventana {
+  height: 29%;
+  width: 76%;
+  margin: 5% auto 0;
+  padding: 4px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid #09090c;
+  border-radius: 8px;
+  background: linear-gradient(#242129, #08080b);
+}
+.vhs-carrete {
+  width: 27%;
+  aspect-ratio: 1;
+  border: 4px dashed #c8b9c7;
+  border-radius: 50%;
+  background: radial-gradient(circle, #111 0 17%, #aaa0ac 19% 28%, #27222b 30% 55%, #c6b8c7 58% 65%, #17141b 68%);
+}
+.vhs-cinta-centro { width: 25%; height: 3px; background: #e6d2dc; box-shadow: 0 0 5px #ff76a8; }
+.vhs-marca {
+  margin-top: 5%;
+  color: #e9dbe6;
+  font-size: clamp(6px, 1vw, 9px);
+  text-align: center;
+  letter-spacing: 2px;
+}
+.vhs-tornillo {
   position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #a69ba8;
+  box-shadow: inset 0 0 0 2px #4b434e;
+}
+.tornillo-1 { top: 5%; left: 4%; }
+.tornillo-2 { top: 5%; right: 4%; }
+.tornillo-3 { bottom: 5%; left: 4%; }
+.tornillo-4 { bottom: 5%; right: 4%; }
+.vhs-reflejo {
+  width: 75%;
+  height: 12px;
+  margin-top: 12px;
+  border-radius: 50%;
+  background: #ff76a855;
+  filter: blur(17px);
+}
+.vhs-pie {
+  margin-top: 25px;
+  color: #ffb3cd;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-align: center;
+}
+@media (max-width: 700px) {
+  .hero-retro { grid-template-columns: 1fr; gap: 8px; padding-top: 45px; }
+  .hero-retro h1 { font-size: clamp(36px, 10vw, 54px); }
+  .vhs-escenario { padding: 10px 8px 30px; }
+  .vhs-cinta { width: min(88%, 340px); }
+  .hero-sello { letter-spacing: 1px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .vhs-cinta { transition: none; }
+}
+</style>
+
+
+
+<style id="vhs-realista-carmencita">
+/* VHS: carcasa ancha, etiqueta superior y grandes bobinas */
+.vhs-coleccion .vhs-cinta {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1.78;
+  height: auto;
+  padding: 5%;
+  overflow: visible;
+  border: 2px solid #817985;
+  border-radius: 9px 9px 14px 14px;
+  background:
+    linear-gradient(155deg, #66616a 0%, #39343e 18%, #201d25 55%, #48414c 100%);
+  box-shadow:
+    inset 0 3px 3px #ffffff35,
+    inset 0 -5px 5px #0009,
+    0 12px 0 #17131a,
+    0 18px 25px #000b;
+  transform: rotateY(-13deg) rotateX(8deg) rotateZ(-4deg);
+}
+.vhs-coleccion .vhs-cinta::before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  right: 4%;
+  top: 3%;
+  height: 5%;
+  border-radius: 3px;
+  background: linear-gradient(#aaa3ae, #3a3540);
+  box-shadow: 0 2px 2px #0008;
+}
+.vhs-coleccion .vhs-cinta::after {
+  content: "";
+  position: absolute;
+  top: 8%;
+  right: -13px;
+  width: 13px;
+  height: 83%;
+  border: 1px solid #756d7b;
+  border-radius: 0 5px 7px 0;
+  background: linear-gradient(90deg, #37313c, #17141a);
+  transform: skewY(5deg);
+  box-shadow: 4px 7px 9px #0008;
+}
+.vhs-coleccion .vhs-etiqueta {
+  position: relative;
   z-index: 1;
-  top: 17px;
-  right: 15px;
-  padding: 4px 6px;
-  color: #fff1d4;
-  background: #922c25;
-  border: 1px solid #e4b75c;
-  font: bold 8px Arial, sans-serif;
+  width: 88%;
+  height: 29%;
+  margin: 1% auto 0;
+  gap: 2px;
+  border: 1px solid #e9c4d3;
+  border-radius: 2px;
+  background: linear-gradient(110deg, #ff8bb8, #ffe9d0 48%, #ff9cbe);
+  box-shadow: inset 0 0 0 2px #ffffff45, 0 2px 3px #0008;
+}
+.vhs-coleccion .vhs-etiqueta span {
+  font-size: clamp(7px, 1.1vw, 10px);
+  letter-spacing: 3px;
+}
+.vhs-coleccion .vhs-etiqueta strong {
+  font-size: clamp(12px, 2vw, 20px);
   letter-spacing: 1px;
-  transform: rotate(4deg);
+}
+.vhs-coleccion .vhs-etiqueta small {
+  font-size: clamp(5px, .8vw, 8px);
+}
+.vhs-coleccion .vhs-ventana {
+  position: relative;
+  z-index: 1;
+  width: 88%;
+  height: 45%;
+  margin: 5% auto 0;
+  padding: 2% 7%;
+  gap: 5%;
+  border: 4px solid #111016;
+  border-radius: 9px;
+  background:
+    linear-gradient(135deg, #37333d, #0a0a0e 55%, #29252e);
+  box-shadow:
+    inset 0 2px 4px #000,
+    0 0 0 1px #77707d,
+    0 3px 4px #0008;
+}
+.vhs-coleccion .vhs-carrete {
+  position: relative;
+  flex: 0 0 36%;
+  width: 36%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 3px solid #d0c8d3;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle,
+      #17141c 0 8%,
+      #e5dce7 9% 13%,
+      #514957 14% 22%,
+      #c7bdce 23% 27%,
+      #29242f 28% 35%,
+      #a79cac 36% 41%,
+      #302a36 42% 49%,
+      #d0c6d4 50% 54%,
+      #28232d 56% 66%,
+      #a49aa9 68% 73%,
+      #17141b 75%);
+  box-shadow:
+    inset 0 0 0 2px #211d26,
+    0 0 5px #000;
+}
+.vhs-coleccion .vhs-cinta-centro {
+  display: none;
+}
+.vhs-coleccion .vhs-marca {
+  position: relative;
+  z-index: 1;
+  margin-top: 3%;
+  font-size: clamp(5px, .8vw, 8px);
+  letter-spacing: 2px;
+  color: #ddd4e0;
+}
+/* Tornillos pequeños, pero visibles en las esquinas */
+.vhs-coleccion .vhs-tornillo {
+  z-index: 2;
+  width: 6px;
+  height: 6px;
+  border: 1px solid #bcb3c1;
+  background: radial-gradient(circle, #17141a 0 30%, #a69eac 35% 65%, #39333f 70%);
+}
+/* Aspectos propios de cada cinta */
+.vhs-coleccion .vhs-izquierda .vhs-etiqueta {
+  background: linear-gradient(110deg, #c7b994, #fff1d1 48%, #a99a78);
+}
+.vhs-coleccion .vhs-derecha .vhs-etiqueta {
+  background: linear-gradient(110deg, #9c1835, #ed4054 48%, #641125);
+}
+.vhs-coleccion .vhs-derecha .vhs-etiqueta strong,
+.vhs-coleccion .vhs-derecha .vhs-etiqueta span,
+.vhs-coleccion .vhs-derecha .vhs-etiqueta small {
+  color: #fff4ee;
+}
+.vhs-coleccion .vhs-principal { top: 25%; }
+.vhs-coleccion .vhs-izquierda { top: 5%; }
+.vhs-coleccion .vhs-derecha { top: 8%; }
+@media (max-width: 700px) {
+  .vhs-coleccion .vhs-cinta::after { right: -8px; width: 8px; }
+  .vhs-coleccion .vhs-etiqueta strong { font-size: clamp(10px, 3vw, 16px); }
+  .vhs-coleccion .vhs-marca { letter-spacing: 1px; }
+}
+</style>
+
+
+
+<style id="fondo-mostrador-visible">
+/* Mostrador real como fondo de la portada */
+.hero-retro {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(18, 8, 16, 0.88) 0%,
+      rgba(30, 10, 23, 0.68) 48%,
+      rgba(18, 8, 16, 0.30) 100%
+    ),
+    url("fondo-videoclub.jpg") !important;
+  background-size: cover !important;
+  background-position: center 55% !important;
+  background-repeat: no-repeat !important;
+  min-height: 520px;
+}
+@media (max-width: 700px) {
+  .hero-retro {
+    background-position: center center !important;
+  }
+}
+</style>
+
+
+<style id="estilo-ambiente-videoclub">
+
+/* La chica y el mostrador son los protagonistas */
+.hero-retro {
+  position: relative;
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(18,8,16,.78),
+      rgba(18,8,16,.40) 58%,
+      rgba(18,8,16,.16)
+    ),
+    url("fondo-videoclub.jpg") !important;
+  background-size: cover !important;
+  background-position: center 55% !important;
+  background-repeat: no-repeat !important;
 }
 
-.poster {
-  border: 3px solid #b28b4e;
-  box-shadow: inset 0 0 25px #0009;
+/* Ocultar las cintas VHS decorativas de la portada */
+.hero-retro .vhs-escenario {
+  display: none !important;
 }
 
-.tape {
-  box-shadow: 0 4px 7px #0008;
+/* Portada más limpia y texto menos brillante */
+.hero-retro h1,
+.hero-retro h1 span {
+  text-shadow: 0 2px 10px rgba(0,0,0,.45);
 }
 
-.section-title {
-  text-shadow: 1px 2px #000;
+.hero-retro .etiqueta {
+  background: rgba(20,10,16,.72);
+  box-shadow: none;
 }
 
-button {
-  transition: filter .15s ease, transform .15s ease;
+.hero-retro .hero-content > p {
+  text-shadow: 0 1px 5px #000;
 }
 
-button:active {
-  transform: scale(.97);
+/* Catálogo integrado en el ambiente del videoclub */
+#catalogo {
+  background: rgba(18,11,16,.88);
 }
 
-footer {
-  border-top: 3px double var(--gold);
-  line-height: 1.8;
+.peliculas {
+  gap: 20px;
+}
+
+.pelicula {
+  background: rgba(33,19,27,.88);
+  border-color: rgba(255,231,194,.16);
+  box-shadow: 0 5px 18px rgba(0,0,0,.18);
+}
+
+.pelicula:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255,118,168,.55);
+}
+
+.cartel {
+  filter: saturate(.88);
+}
+
+.info-pelicula h3 {
+  color: #f1c5d5;
+  text-shadow: none;
+}
+
+.buscador {
+  background: rgba(33,19,27,.88);
+  border-color: rgba(255,231,194,.25);
+  box-shadow: none;
+}
+
+@media (max-width: 700px) {
+  .hero-retro {
+    background-position: 55% center !important;
+    min-height: 480px;
+  }
 }
 
 </style>
+
+
+<style id="catalogo-cinematografico">
+/* Carteles cinematográficos elegantes */
+#catalogo .peliculas {
+  gap: 28px;
+  align-items: stretch;
+}
+
+#catalogo .pelicula {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid #63404b;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #291923, #130d12 80%);
+  box-shadow: 0 8px 22px #0006;
+  transition: transform .3s ease, box-shadow .3s ease,
+              border-color .3s ease;
+}
+
+#catalogo .pelicula:hover {
+  transform: translateY(-6px);
+  border-color: #a87985;
+  box-shadow: 0 16px 32px #0009, 0 0 16px #ff76a81a;
+}
+
+#catalogo .cartel {
+  height: clamp(220px, 25vw, 310px);
+  object-fit: cover;
+  object-position: center;
+  background: #21131b;
+  transition: transform .45s ease, filter .35s ease;
+}
+
+#catalogo .pelicula:hover .cartel {
+  transform: scale(1.025);
+  filter: brightness(1.06);
+}
+
+#catalogo .info-pelicula {
+  position: relative;
+  padding: 18px;
+  background: linear-gradient(180deg, #291923, #170f15);
+  border-top: 1px solid #ffffff0b;
+}
+
+#catalogo .info-pelicula h3 {
+  color: #f1dfd7;
+  font-size: 16px;
+  line-height: 1.45;
+  letter-spacing: .2px;
+  transition: color .2s ease;
+}
+
+#catalogo .pelicula:hover .info-pelicula h3 {
+  color: #ffb6c9;
+}
+
+#catalogo .anio {
+  border: 1px solid #78505b;
+  border-radius: 3px;
+  background: #38232e;
+  color: #ead5ce;
+}
+
+#catalogo .info-pelicula p {
+  color: #c9b9c1;
+}
+
+@media (max-width: 600px) {
+  #catalogo .peliculas {
+    gap: 14px;
+  }
+
+  #catalogo .cartel {
+    height: 200px;
+  }
+
+  #catalogo .info-pelicula {
+    padding: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  #catalogo .cartel,
+  #catalogo .info-pelicula h3 {
+    transition: none;
+  }
+}
+</style>
+
+
+<style id="estanteria-videoclub-antiguo">
+/* Estantería de videoclub clásico */
+#catalogo {
+  background:
+    linear-gradient(#180f12d9, #180f12ed),
+    url("fondo-videoclub.jpg") center / cover fixed;
+}
+
+#catalogo .peliculas {
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 0;
+  padding: 20px 12px 0;
+  background:
+    linear-gradient(180deg, #3b2018, #21130f 12%, #291810 88%, #70452b);
+  border: 8px solid #4b2b1c;
+  border-top: 12px solid #75472c;
+  border-bottom: 18px solid #8b5a36;
+  box-shadow:
+    inset 0 5px 12px #000a,
+    0 12px 24px #0008;
+}
+
+#catalogo .pelicula {
+  min-width: 0;
+  margin: 0 7px 20px;
+  padding: 5px;
+  align-self: stretch;
+  border: 1px solid #7b5942;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #271914, #453023 50%, #21140f);
+  box-shadow: 2px 3px 5px #0009;
+  transform: none;
+}
+
+#catalogo .pelicula:hover {
+  z-index: 2;
+  transform: translateY(-4px) scale(1.015);
+  border-color: #c49a68;
+  box-shadow: 0 8px 15px #000b;
+}
+
+#catalogo .cartel {
+  height: 235px;
+  object-fit: cover;
+  border: 1px solid #17100d;
+  filter: saturate(.88) contrast(1.03);
+}
+
+#catalogo .pelicula:hover .cartel {
+  transform: none;
+  filter: saturate(1) brightness(1.04);
+}
+
+#catalogo .info-pelicula {
+  padding: 11px 8px;
+  background: linear-gradient(#39251b, #211510);
+  border-top: 2px solid #886044;
+}
+
+#catalogo .info-pelicula h3 {
+  color: #f0d7b5;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: 0;
+}
+
+#catalogo .pelicula:hover .info-pelicula h3 {
+  color: #ffe6c4;
+}
+
+#catalogo .anio {
+  padding: 3px 6px;
+  color: #e8cba7;
+  background: #2c1c14;
+  border: 1px solid #745039;
+  border-radius: 0;
+}
+
+#catalogo .info-pelicula p {
+  color: #d0bba5;
+  font-size: 12px;
+}
+
+@media (max-width: 600px) {
+  #catalogo .peliculas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 12px 5px 0;
+    border-width: 5px;
+  }
+
+  #catalogo .pelicula {
+    margin: 0 4px 12px;
+    padding: 4px;
+  }
+
+  #catalogo .cartel {
+    height: 190px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula {
+    transition: none;
+  }
+}
+</style>
+
 </head>
+
 <body>
-<header>
-  <div class="kicker">Desde 1984 · Cine en cinta</div>
-  <h1>Videoclub Carmencita</h1>
-  <div class="subtitle">El aroma de las cintas, la magia de las películas</div>
-</header>
-<main>
-  <div class="notice">📼 <strong>Bienvenido al videoclub.</strong> Rebobina los recuerdos. Encuentra tu próxima película.</div>
-  <div class="controls">
-    <input id="search" type="search" placeholder="Buscar una película..." aria-label="Buscar una película">
-    <select id="genre" aria-label="Filtrar por género"><option value="">Todos los géneros</option></select>
-    <select id="sort" aria-label="Ordenar películas"><option value="title">Ordenar: título</option><option value="year">Ordenar: año</option></select>
-  </div>
-  <div class="section-title">La estantería de Carmencita <span class="small" id="count"></span></div>
-  <section class="grid" id="catalog" aria-live="polite"></section>
-  <div class="section-title">☎ El Encargado del Videoclub</div>
-  <section id="carmencita-chat" class="chat-box" aria-label="Chat de recomendaciones">
-    <p class="chat-welcome">¡Buenas tardes! 📼 Dime qué tipo de película te apetece y buscaré en nuestra estantería.</p>
-    <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
-    <form id="chat-form" class="chat-form">
-      <input id="chat-input" type="text" maxlength="250" placeholder="Ej.: Recomiéndame terror..." aria-label="Tu mensaje" required>
-      <button type="submit">Consultar</button>
-    </form>
-    <p class="chat-note">Asistente automático local · Sin cuentas ni envío de mensajes a Internet.</p>
+
+  <!-- ===== CABECERA ===== -->
+
+  <header>
+    <a class="logo" href="#">📼 CARMENCITA</a>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#catalogo">Películas</a>
+      <a href="#programacion">Programación</a>
+      <a href="#telegram">Telegram</a>
+    </nav>
+  </header>
+
+  <!-- ===== PORTADA ===== -->
+
+  <section class="hero hero-retro" id="inicio">
+    <div class="hero-content">
+      <div class="etiqueta">✦ ABIERTO DESDE LOS AÑOS 80 ✦</div>
+      <h1>VIDEОCLUB<br><span>CARMENCITA</span></h1>
+      <p>
+        Rebobina el tiempo. Apaga las luces.
+        Las mejores historias te esperan en nuestras estanterías.
+        ¡El cine en casa nunca pasa de moda!
+      </p>
+      <div class="hero-sello">◀ REBOBINA · ELIGE · DISFRUTA ▶</div>
+      <a class="boton" href="#catalogo">🎬 EXPLORAR EL CATÁLOGO ▶</a>
+    </div>
+
+    <div class="vhs-escenario vhs-coleccion" aria-label="Colección decorativa de cintas VHS">
+      <div class="vhs-item vhs-principal" aria-hidden="true">
+        <div class="vhs-cinta">
+          <div class="vhs-tornillo tornillo-1"></div>
+          <div class="vhs-tornillo tornillo-2"></div>
+          <div class="vhs-tornillo tornillo-3"></div>
+          <div class="vhs-tornillo tornillo-4"></div>
+          <div class="vhs-etiqueta">
+            <span>VIDEОCLUB</span><strong>CARMENCITA</strong>
+            <small>PELÍCULA ORIGINAL · VHS</small>
+          </div>
+          <div class="vhs-ventana">
+            <div class="vhs-carrete"></div>
+            <div class="vhs-cinta-centro"></div>
+            <div class="vhs-carrete"></div>
+          </div>
+          <div class="vhs-marca">VHS · PAL · HI-FI STEREO</div>
+        </div>
+      </div>
+
+      <div class="vhs-item vhs-secundaria vhs-izquierda" aria-hidden="true">
+        <div class="vhs-cinta">
+          <div class="vhs-tornillo tornillo-1"></div>
+          <div class="vhs-tornillo tornillo-2"></div>
+          <div class="vhs-tornillo tornillo-3"></div>
+          <div class="vhs-tornillo tornillo-4"></div>
+          <div class="vhs-etiqueta">
+            <span>SESIÓN DE NOCHE</span><strong>LOS CLÁSICOS</strong>
+            <small>EDICIÓN DE COLECCIÓN</small>
+          </div>
+          <div class="vhs-ventana">
+            <div class="vhs-carrete"></div>
+            <div class="vhs-cinta-centro"></div>
+            <div class="vhs-carrete"></div>
+          </div>
+          <div class="vhs-marca">SUPER VHS · PAL</div>
+        </div>
+      </div>
+
+      <div class="vhs-item vhs-secundaria vhs-derecha" aria-hidden="true">
+        <div class="vhs-cinta">
+          <div class="vhs-tornillo tornillo-1"></div>
+          <div class="vhs-tornillo tornillo-2"></div>
+          <div class="vhs-tornillo tornillo-3"></div>
+          <div class="vhs-tornillo tornillo-4"></div>
+          <div class="vhs-etiqueta">
+            <span>PROHIBIDO DORMIR</span><strong>NOCHES DE TERROR</strong>
+            <small>SESIÓN ESPECIAL · VHS</small>
+          </div>
+          <div class="vhs-ventana">
+            <div class="vhs-carrete"></div>
+            <div class="vhs-cinta-centro"></div>
+            <div class="vhs-carrete"></div>
+          </div>
+          <div class="vhs-marca">HORROR · HI-FI STEREO</div>
+        </div>
+      </div>
+      <div class="vhs-reflejo"></div>
+      <p class="vhs-pie">★ TRES JOYAS DE LOS 80 ★</p>
+    </div>
   </section>
-  <div class="section-title">Mis favoritas ⭐</div>
-  <section class="grid" id="favorites"></section>
-</main>
-<footer>VIDEoclub CARMENCITA · PROTOTIPO 0.1 · LAS PELÍCULAS DE EJEMPLO SON FICTICIAS</footer>
-<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
- <div class="dialog"><h2 id="modalTitle"></h2><p id="modalBody"></p><button id="closeModal">Volver a la estantería</button></div>
+
+  <!-- ===== PROGRAMACIÓN ===== -->
+
+  <section class="programacion" id="programacion">
+    <span>📺 <strong>EL PELICULÓN</strong></span>
+    <span>Jueves y sábados · 22:00 h</span>
+    <span>🎬 Cine sorpresa y sesiones especiales</span>
+  </section>
+
+  <!-- ===== CATÁLOGO ===== -->
+
+  <main id="catalogo">
+    <h2 class="titulo-seccion">▌ NUESTRO CATÁLOGO</h2>
+
+    <p class="descripcion">
+      Recorre nuestras estanterías y encuentra
+      tu próxima película favorita.
+    </p>
+
+    <input
+      type="search"
+      class="buscador"
+      id="buscador"
+      placeholder="🔎 Buscar una película..."
+      aria-label="Buscar películas por nombre"
+    >
+
+    <div class="peliculas" id="peliculas">
+
+      <!-- Película 1 -->
+      <article class="pelicula" data-titulo="regreso al futuro">
+        <img
+          class="cartel"
+          src="https://image.tmdb.org/t/p/w500/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg"
+          alt="Cartel de Regreso al futuro"
+          loading="lazy"
+        >
+
+        <div class="info-pelicula">
+          <h3>Regreso al futuro</h3>
+          <span class="anio">1985</span>
+          <p>
+            Marty McFly viaja accidentalmente al pasado
+            y debe conseguir que sus padres se enamoren
+            para poder regresar a su época.
+          </p>
+        </div>
+      </article>
+
+      <!-- Película 2 -->
+      <article class="pelicula" data-titulo="cazafantasmas">
+        <img
+          class="cartel"
+          src="https://image.tmdb.org/t/p/w500/7E8nLijS9AwwUEPu2oFYOVKhdFA.jpg"
+          alt="Cartel de Cazafantasmas"
+          loading="lazy"
+        >
+
+        <div class="info-pelicula">
+          <h3>Cazafantasmas</h3>
+          <span class="anio">1984</span>
+          <p>
+            Un grupo de científicos monta un negocio
+            para capturar fantasmas en Nueva York.
+            Una aventura sobrenatural llena de humor.
+          </p>
+        </div>
+      </article>
+
+      <!-- Película 3 -->
+      <article class="pelicula" data-titulo="tiburon">
+        <img
+          class="cartel"
+          src="https://image.tmdb.org/t/p/w500/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg"
+          alt="Cartel de Tiburón"
+          loading="lazy"
+        >
+
+        <div class="info-pelicula">
+          <h3>Tiburón</h3>
+          <span class="anio">1975</span>
+          <p>
+            Un enorme tiburón amenaza una localidad
+            costera. Tres hombres se embarcan en una
+            peligrosa misión para detenerlo.
+          </p>
+        </div>
+      </article>
+
+      <!-- Película 4 -->
+      <article class="pelicula" data-titulo="pesadilla en elm street">
+        <img
+          class="cartel"
+          src="cartel-pesadilla-elm-street.jpg"
+          alt="Cartel de Pesadilla en Elm Street"
+          loading="lazy"
+        >
+
+        <div class="info-pelicula">
+          <h3>Pesadilla en Elm Street</h3>
+          <span class="anio">1984</span>
+          <p>
+            Un grupo de jóvenes descubre que un
+            aterrador asesino puede perseguirlos
+            incluso mientras duermen.
+          </p>
+        </div>
+      </article>
+
+      <!-- Película 5 -->
+      <article class="pelicula" data-titulo="los goonies">
+        <img
+          class="cartel"
+          src="https://image.tmdb.org/t/p/w500/eBU7gCjTCj9n2LTxvCSIXXOvHkD.jpg"
+          alt="Cartel de Los Goonies"
+          loading="lazy"
+        >
+
+        <div class="info-pelicula">
+          <h3>Los Goonies</h3>
+          <span class="anio">1985</span>
+          <p>
+            Un grupo de amigos encuentra un mapa del
+            tesoro y emprende una aventura llena
+            de trampas, secretos y sorpresas.
+          </p>
+        </div>
+      </article>
+
+      <!-- Película 6 -->
+      <article class="pelicula" data-titulo="gremlins">
+        <img
+          class="cartel"
+          src="cartel-gremlins.jpg"
+          alt="Cartel de Gremlins"
+          loading="lazy"
+        >
+
+        <div class="info-pelicula">
+          <h3>Gremlins</h3>
+          <span class="anio">1984</span>
+          <p>
+            Un pequeño y adorable ser viene acompañado
+            de unas reglas muy importantes.
+            Romperlas desata el caos en el pueblo.
+          </p>
+        </div>
+      </article>
+
+    </div>
+
+    <p id="mensaje" aria-live="polite"></p>
+  </main>
+
+  <!-- ===== TELEGRAM ===== -->
+
+  <section class="telegram" id="telegram">
+    <h2 class="titulo-seccion">📡 NUESTRO RINCÓN EN TELEGRAM</h2>
+
+    <p>
+      El videoclub también vive en nuestra comunidad.
+      Acompáñanos para compartir nuestra pasión por el cine.
+    </p>
+
+    <!-- Sustituye la URL por la invitación real del grupo -->
+    <a
+      class="boton"
+      href="https://t.me/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      ENTRAR EN TELEGRAM ↗
+    </a>
+  </section>
+
+  <!-- ===== PIE DE PÁGINA ===== -->
+
+  <footer>
+    <p>📼 VIDE0CLUB CARMENCITA · CINE CON SABOR A VHS</p>
+    <p>Una ventana a otra época. Rebobina y disfruta.</p>
+  </footer>
+
+  <!-- ===== JAVASCRIPT: BUSCADOR ===== -->
+
+  <script>
+    const buscador = document.getElementById("buscador");
+    const peliculas = document.querySelectorAll(".pelicula");
+    const mensaje = document.getElementById("mensaje");
+
+    buscador.addEventListener("input", function () {
+      const texto = buscador.value
+        .trim()
+        .toLocaleLowerCase("es");
+
+      let visibles = 0;
+
+      peliculas.forEach(function (pelicula) {
+        const titulo = pelicula.dataset.titulo;
+        const coincide = titulo.includes(texto);
+
+        pelicula.hidden = !coincide;
+
+        if (coincide) {
+          visibles++;
+        }
+      });
+
+      if (visibles === 0) {
+        mensaje.textContent =
+          "No encontramos esa película en nuestras estanterías.";
+      } else {
+        mensaje.textContent =
+          texto === ""
+            ? ""
+            : "Películas encontradas: " + visibles;
+      }
+    });
+
+    // Si un cartel no se carga, mostramos un cartel alternativo.
+    document.querySelectorAll(".cartel").forEach(function (imagen) {
+      imagen.addEventListener("error", function () {
+        const cartel = document.createElement("div");
+        cartel.className = "cartel cartel-falso";
+        cartel.style.height = "250px";
+
+        const icono = document.createElement("span");
+        icono.className = "icono";
+        icono.textContent = "📼";
+
+        const titulo = document.createElement("strong");
+        titulo.textContent = imagen.alt.replace("Cartel de ", "");
+
+        cartel.append(icono, titulo);
+        imagen.replaceWith(cartel);
+      }, { once: true });
+    });
+  </script>
+
+
+<!-- CARMENCITA: CHAT DEL VIDEOCLUB -->
+<style>
+#carmencita {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 9999;
+  font-family: "Courier New", monospace;
+}
+#abrir-carmencita {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  color: #ffe7c2;
+  background: #321321;
+  border: 1px solid #ff76a8;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  box-shadow: 0 0 18px #ff304f55;
+}
+#abrir-carmencita .avatar {
+  font-size: 32px;
+}
+#abrir-carmencita small {
+  display: block;
+  margin-top: 4px;
+  color: #ff91b5;
+}
+#chat-carmencita {
+  width: min(340px, calc(100vw - 36px));
+  margin-bottom: 10px;
+  background: #170d14;
+  color: #ffe7c2;
+  border: 1px solid #ff76a8;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px #000a;
+}
+#cabecera-carmencita {
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+  background: #4b172b;
+}
+#cabecera-carmencita button {
+  background: transparent;
+  color: white;
+  border: 0;
+  cursor: pointer;
+}
+#mensajes-carmencita {
+  padding: 12px;
+  max-height: 240px;
+  overflow-y: auto;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.msg-carmencita, .msg-usuario {
+  padding: 10px;
+  border-radius: 8px;
+}
+.msg-carmencita { background: #321927; }
+.msg-usuario { background: #70213d; }
+#form-carmencita {
+  display: flex;
+  gap: 6px;
+  padding: 10px;
+  border-top: 1px solid #522432;
+}
+#pregunta-carmencita {
+  width: 0;
+  min-width: 0;
+  flex: 1;
+  padding: 10px;
+  color: white;
+  background: #291823;
+  border: 1px solid #704052;
+}
+#form-carmencita button {
+  padding: 10px;
+  color: white;
+  background: #ff304f;
+  border: 0;
+  cursor: pointer;
+}
+#carmencita [hidden] { display: none !important; }
+</style>
+
+<div id="carmencita">
+  <section id="chat-carmencita" hidden>
+    <div id="cabecera-carmencita">
+      <strong>❤️ Carmencita, tu amiga del videoclub</strong>
+      <button id="cerrar-carmencita" type="button">✕</button>
+    </div>
+    <div id="mensajes-carmencita" aria-live="polite">
+      <p class="msg-carmencita">
+        ¡Buenas noches, cariño! Soy Carmencita.
+        ¿Buscamos una película para esta noche? 📼
+      </p>
+    </div>
+    <form id="form-carmencita">
+      <input id="pregunta-carmencita"
+        placeholder="Pregúntame por una película..."
+        aria-label="Pregunta para Carmencita" required>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+  <button id="abrir-carmencita" type="button"
+    aria-expanded="false" aria-controls="chat-carmencita">
+    <span class="avatar">👩🏻‍🦰</span>
+    <span><strong>Carmencita</strong>
+      <small>Tu amiga del videoclub · Abrir chat</small>
+    </span>
+    <span>💬</span>
+  </button>
 </div>
+
 <script>
-const movies = [
- {id:1,title:"La noche eterna",year:1984,genre:"Terror",director:"Elena Robles",description:"Una pequeña ciudad descubre que, después de medianoche, las sombras parecen recordar cosas que nadie ha vivido."},
- {id:2,title:"Órbita perdida",year:1986,genre:"Ciencia ficción",director:"Marcos Vidal",description:"Una tripulación recibe una transmisión desde una estación espacial que oficialmente nunca existió."},
- {id:3,title:"El último detective",year:1982,genre:"Policíaca",director:"Rafael Montes",description:"Un detective a punto de jubilarse acepta un caso que le obliga a regresar a las calles de su juventud."},
- {id:4,title:"Verano de neón",year:1988,genre:"Drama",director:"Clara Soler",description:"En el último verano de una década, tres amigos intentan salvar el cine de barrio donde crecieron."},
- {id:5,title:"La casa del reloj",year:1985,genre:"Misterio",director:"Inés Valdés",description:"Una llave antigua abre una habitación que no aparece en los planos de una casa familiar."},
- {id:6,title:"Carretera al amanecer",year:1987,genre:"Aventura",director:"Tomás Leiva",description:"Dos desconocidos cruzan el país siguiendo un mapa encontrado dentro de una cinta VHS."}
-];
-const $ = id => document.getElementById(id);
-let favorites = JSON.parse(localStorage.getItem("carmencita-favorites") || "[]");
-function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
-function renderCard(m){const fav=favorites.includes(m.id);return `<article class="movie"><div class="poster"><div class="year">CARMENCITA · ${m.year}</div><div class="title">${escapeHtml(m.title)}</div><div class="genre">${escapeHtml(m.genre)}</div></div><div class="tape"><span>VHS · HI-FI</span></div><h3>${escapeHtml(m.title)}</h3><div class="meta">${m.year} · ${escapeHtml(m.genre)}</div><div class="actions"><button onclick="details(${m.id})">Ver ficha</button><button class="fav" onclick="toggleFav(${m.id})">${fav?"★ Guardada":"☆ Favorita"}</button></div></article>`}
-function visibleMovies(){const q=$("search").value.trim().toLowerCase(),g=$("genre").value,s=$("sort").value;return movies.filter(m=>(m.title+" "+m.year+" "+m.genre+" "+m.director).toLowerCase().includes(q)&&(!g||m.genre===g)).sort((a,b)=>s==="year"?a.year-b.year:a.title.localeCompare(b.title,"es"))}
-function render(){const list=visibleMovies();$("catalog").innerHTML=list.length?list.map(renderCard).join(""):'<div class="empty">No encontramos esa película. Prueba otra búsqueda.</div>';$("count").textContent=`(${list.length})`;const favs=movies.filter(m=>favorites.includes(m.id));$("favorites").innerHTML=favs.length?favs.map(renderCard).join(""):'<div class="empty">Todavía no tienes favoritas. Pulsa ☆ Favorita en cualquier película.</div>'}
-function details(id){const m=movies.find(x=>x.id===id);$("modalTitle").textContent=m.title;$("modalBody").textContent=`${m.year} · ${m.genre}\nDirección: ${m.director}\n\n${m.description}`;$("modal").classList.add("open")}
-function toggleFav(id){favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];localStorage.setItem("carmencita-favorites",JSON.stringify(favorites));render()}
-[...new Set(movies.map(m=>m.genre))].sort().forEach(g=>{const o=document.createElement("option");o.value=g;o.textContent=g;$("genre").appendChild(o)});
-$("search").addEventListener("input",render);$("genre").addEventListener("change",render);$("sort").addEventListener("change",render);$("closeModal").addEventListener("click",()=>$("modal").classList.remove("open"));$("modal").addEventListener("click",e=>{if(e.target===$("modal"))$("modal").classList.remove("open")});
+(() => {
+  const chat = document.getElementById("chat-carmencita");
+  const abrir = document.getElementById("abrir-carmencita");
+  const cerrar = document.getElementById("cerrar-carmencita");
+  const formulario = document.getElementById("form-carmencita");
+  const entrada = document.getElementById("pregunta-carmencita");
+  const mensajes = document.getElementById("mensajes-carmencita");
+  const tarjetas = [...document.querySelectorAll(".pelicula")];
 
-const chatForm = document.getElementById("chat-form");
-const chatInput = document.getElementById("chat-input");
-const chatMessages = document.getElementById("chat-messages");
+  const normalizar = texto => String(texto || "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("es")
+    .replace(/[^a-z0-9\s]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 
-function chatSay(text, who) {
-  const bubble = document.createElement("div");
-  bubble.className = "chat-message " + (who === "user" ? "chat-user" : "chat-bot");
-  bubble.textContent = text;
-  chatMessages.appendChild(bubble);
-  chatMessages.scrollTop = chatMessages.scrollHeight;
-}
+  const tituloDe = tarjeta =>
+    tarjeta.querySelector("h3")?.textContent.trim() ||
+    tarjeta.dataset.titulo || "Película";
 
-function chatReply(message) {
-  const q = message.toLowerCase();
-  const genreWords = {
-    "terror": ["terror", "miedo", "monstruo", "vampiro", "fantasma"],
-    "comedia": ["comedia", "reír", "reir", "divertida", "humor", "graciosa"],
-    "ciencia ficción": ["ciencia ficción", "ciencia ficcion", "espacio", "alien", "futurista"],
-    "aventuras": ["aventura", "aventuras", "acción", "accion", "viaje", "pirata"],
-    "drama": ["drama", "romántica", "romantica", "romance", "sentimental"]
-  };
-  const wanted = Object.keys(genreWords).find(g => genreWords[g].some(w => q.includes(w)));
-  let results = movies.filter(m => !wanted || (m.genre + " " + m.title + " " + m.description).toLowerCase().includes(wanted));
-  if (q.includes("favorit")) {
-    results = movies.filter(m => favorites.includes(m.id));
+  const textoDe = tarjeta => normalizar([
+    tituloDe(tarjeta),
+    tarjeta.innerText,
+    tarjeta.dataset.genero,
+    tarjeta.dataset.generos,
+    tarjeta.dataset.categoria
+  ].join(" "));
+
+  function responder(texto) {
+    const elemento = document.createElement("p");
+    elemento.className = "msg-carmencita";
+    elemento.textContent = texto;
+    mensajes.appendChild(elemento);
+    mensajes.scrollTop = mensajes.scrollHeight;
   }
-  if (q.includes("favorit") && !results.length) {
-    return "Todavía no tienes películas favoritas guardadas. Pulsa ☆ Favorita en alguna película y vuelve a preguntarme.";
-  }
-  if (!results.length && wanted) {
-    results = movies.filter(m => (m.genre + " " + m.title + " " + m.description).toLowerCase().includes(wanted.split(" ")[0]));
-  }
-  if (!results.length) {
-    return "Puedo ayudarte con terror, comedia, ciencia ficción, aventuras o tus favoritas. ¿Qué género te apetece?";
-  }
-  results = results.slice(0, 3);
-  const intro = wanted ? "¡Buena elección! Mira estas opciones de nuestra estantería:" : "He encontrado estas opciones del catálogo:";
-  return intro + "\n\n" + results.map(m => "📼 " + m.title + " (" + m.year + ") — " + m.genre).join("\n") + "\n\nPulsa «Ver ficha» en el catálogo para conocer más detalles.";
-}
 
-chatForm.addEventListener("submit", function(event) {
-  event.preventDefault();
-  const message = chatInput.value.trim();
-  if (!message) return;
-  chatSay(message, "user");
-  chatSay(chatReply(message), "bot");
-  chatInput.value = "";
-  chatInput.focus();
-});
+  abrir.addEventListener("click", () => {
+    chat.hidden = !chat.hidden;
+    abrir.setAttribute("aria-expanded", String(!chat.hidden));
+    if (!chat.hidden) entrada.focus();
+  });
 
-render();
+  cerrar.addEventListener("click", () => {
+    chat.hidden = true;
+    abrir.setAttribute("aria-expanded", "false");
+    abrir.focus();
+  });
+
+  formulario.addEventListener("submit", evento => {
+    evento.preventDefault();
+
+    const preguntaOriginal = entrada.value.trim();
+    if (!preguntaOriginal) return;
+
+    const pregunta = normalizar(preguntaOriginal);
+    const usuario = document.createElement("p");
+    usuario.className = "msg-usuario";
+    usuario.textContent = preguntaOriginal;
+    mensajes.appendChild(usuario);
+
+    // Buscar primero títulos reales del catálogo.
+    const encontrada = tarjetas.find(tarjeta => {
+      const titulo = normalizar(tituloDe(tarjeta));
+      return titulo.length > 1 && pregunta.includes(titulo);
+    });
+
+    if (encontrada) {
+      responder("¡Sí, cariño! Tenemos " + tituloDe(encontrada) +
+        " en nuestras estanterías. 📼 ¡Vamos a echarle un vistazo!");
+      encontrada.scrollIntoView({ behavior: "smooth", block: "center" });
+      entrada.value = "";
+      return;
+    }
+
+    if (/\b(hola|buenas|buenos dias|buenas tardes|buenas noches)\b/.test(pregunta)) {
+      responder("¡Hola, cariño! ❤️ Pasa, pasa, que en Videoclub Carmencita siempre hay sitio para una buena película.");
+    } else if (pregunta.includes("programacion") ||
+               pregunta.includes("esta noche") ||
+               pregunta.includes("que ponen") ||
+               pregunta.includes("a que hora")) {
+      responder("¡Prepara las palomitas! 📼 Tenemos anunciado el peliculón los jueves y sábados a las 22:00. Consulta nuestra sección de programación para ver los detalles.");
+    } else if (pregunta.includes("catalogo") ||
+               pregunta.includes("que peliculas tienes") ||
+               pregunta.includes("que peliculas hay")) {
+      responder("Ahora mismo tenemos " + tarjetas.length +
+        " fichas de películas en nuestro catálogo. Puedes buscar un título o pedirme una película concreta, cariño. 🎬");
+    } else if (pregunta.includes("aburrid") ||
+               pregunta.includes("me aburro")) {
+      responder("¡Pues vamos a ponerle remedio, cariño! ❤️ ¿Qué te apetece: una aventura, unas buenas risas o pasar un poquito de miedo? ¡Tengo el videoclub preparado!");
+    } else if (pregunta.includes("triste") ||
+               pregunta.includes("dia malo") ||
+               pregunta.includes("me siento mal")) {
+      responder("Ay, cariño, ven aquí, que Carmencita te manda un abrazo. ❤️ A veces una buena película y un ratito tranquilo ayudan a levantar el ánimo. ¿Buscamos algo bonito para ver?");
+    } else if (pregunta.includes("chiste") ||
+               pregunta.includes("hazme reir") ||
+               pregunta.includes("cuenta algo gracioso")) {
+      responder("¡Ahí va uno, cariño! ¿Por qué la cinta VHS fue al médico? ¡Porque se encontraba rebobinada! 😂📼 ¿Quieres otro?");
+    } else if (pregunta.includes("tengo sueno") ||
+               pregunta.includes("estoy cansado") ||
+               pregunta.includes("tengo sueño")) {
+      responder("¡Entonces toca ponerse cómodo, cariño! 💤 Una mantita, unas palomitas y una película tranquila. Eso sí, si te duermes, ¡no me culpes si te pierdes el final!");
+    } else if (pregunta.includes("quien eres") ||
+               pregunta.includes("como te llamas")) {
+      responder("¡Soy Carmencita, la dueña de este videoclub! 📼 Llevo toda la vida recomendando películas y cuidando de mis cintas. ¡Pasa y ponte cómodo!");
+    } else if (pregunta.includes("que tal") ||
+               pregunta.includes("como estas")) {
+      responder("¡De maravilla, cariño! Las cintas están rebobinadas, las estanterías en orden y las palomitas casi listas. ❤️ ¿Qué película buscamos?");
+    } else if (["terror", "miedo", "aventura", "comedia",
+                "suspense", "drama", "accion", "ciencia ficcion"]
+                .some(genero => pregunta.includes(genero))) {
+      const generos = ["ciencia ficcion", "terror", "miedo", "aventura",
+                       "comedia", "suspense", "drama", "accion"];
+      const genero = generos.find(g => pregunta.includes(g));
+      const resultados = tarjetas.filter(tarjeta =>
+        textoDe(tarjeta).includes(genero)
+      );
+
+      if (resultados.length) {
+        responder("¡He encontrado " + resultados.length +
+          " película(s) relacionada(s) con " + genero +
+          " en nuestro catálogo! 🎬");
+        resultados[0].scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        responder("¡Buena elección, cariño! Todavía no tengo el género indicado en todas las fichas. Prueba a buscar un título concreto en nuestro catálogo y te ayudo a encontrarlo. 📼");
+      }
+    } else if (pregunta.includes("telegram")) {
+      responder("¡Claro, cariño! Busca el enlace a nuestro grupo de Telegram en la página. Si todavía no está configurado, lo añadiremos cuando tengamos la dirección del grupo. ❤️");
+    } else if (pregunta.includes("gracias")) {
+      responder("¡De nada, cariño! En este videoclub siempre rebobinamos con una sonrisa. 📼");
+    } else if (pregunta.includes("adios") || pregunta.includes("hasta luego")) {
+      responder("¡Hasta pronto, cariño! Ya sabes dónde encontrarme cuando te apetezca una buena película. ❤️");
+    } else {
+      responder("¡A ver qué encontramos, cariño! Puedes preguntarme por una película del catálogo, la programación o buscar un género. Poco a poco iremos enseñándome más trucos. 📼");
+    }
+
+    entrada.value = "";
+    entrada.focus();
+  });
+})();
 </script>
+<!-- FIN DEL CHAT DE CARMENCITA -->
+
+
+<style id="mejora-estanteria-vhs">
+/* Mejora progresiva de la estantería VHS */
+#catalogo .peliculas {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 42px,
+      #b47b4a55 43px 46px,
+      #170d09aa 47px 51px
+    ),
+    linear-gradient(90deg, #29160f, #684027 18%, #392116 50%, #71472b 82%, #24130d);
+  border-color: #58351f;
+  border-top-color: #95613a;
+  border-bottom-color: #a36b40;
+  box-shadow:
+    inset 0 5px 12px #000b,
+    inset 0 -7px 0 #3b2114,
+    0 14px 28px #0009;
+}
+
+#catalogo .pelicula {
+  border-color: #96704d;
+  box-shadow:
+    2px 4px 5px #000a,
+    inset 0 0 0 2px #d0a16a18;
+}
+
+#catalogo .cartel {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  background: #211510;
+  box-shadow: inset 0 0 0 2px #120b08;
+}
+
+#catalogo .info-pelicula {
+  min-height: 130px;
+}
+
+@media (max-width: 600px) {
+  #catalogo .cartel {
+    aspect-ratio: 2 / 3;
+    height: auto;
+  }
+
+  #catalogo .info-pelicula {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  #catalogo .cartel {
+    transition: none;
+  }
+}
+</style>
+
+
+<style id="cajas-vhs-carmencita">
+/* Cajas VHS: plástico oscuro, etiquetas antiguas y bordes gastados */
+#catalogo .pelicula {
+  position: relative;
+  overflow: hidden;
+  padding: 7px;
+  border: 2px solid #17100b;
+  border-radius: 5px 5px 2px 2px;
+  background:
+    linear-gradient(90deg, #17100c, #493124 12%, #211710 24%,
+                    #39251a 76%, #130d09);
+  box-shadow:
+    inset 0 0 0 1px #98704a66,
+    2px 5px 7px #000b,
+    0 1px 0 #c29a6a55;
+}
+
+/* Borde superior de plástico de la carcasa */
+#catalogo .pelicula::before {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 7px;
+  right: 7px;
+  height: 9px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg, #806044, #302017 55%, #120c08
+  );
+  border-bottom: 1px solid #a17b50;
+  box-shadow: 0 2px 3px #0008;
+}
+
+#catalogo .cartel {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  height: auto;
+  object-fit: cover;
+  border: 2px solid #100b08;
+  box-shadow: 0 2px 5px #0009;
+}
+
+/* Etiqueta de videoclub impresa en papel envejecido */
+#catalogo .info-pelicula {
+  padding: 10px 7px;
+  background:
+    linear-gradient(180deg, #e0c79d 0%, #c9ad7e 100%);
+  border: 1px solid #8a6945;
+  border-top: 3px solid #39251a;
+  box-shadow: inset 0 0 0 2px #f3dfb8;
+}
+
+#catalogo .info-pelicula::before {
+  content: "VÍDEO CLUB  •  CARMENCITA";
+  display: block;
+  margin-bottom: 7px;
+  padding: 4px 2px;
+  color: #f5e4c3;
+  background: #382319;
+  border: 1px solid #735036;
+  font-family: "Courier New", monospace;
+  font-size: 9px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#catalogo .info-pelicula h3 {
+  color: #321d14;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+#catalogo .info-pelicula p {
+  color: #493326;
+}
+
+#catalogo .anio {
+  display: inline-block;
+  padding: 2px 6px;
+  color: #f7e7c8;
+  background: #5a3823;
+  border: 1px dashed #a17b50;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+#catalogo .pelicula:hover {
+  border-color: #bd9664;
+  box-shadow: 0 8px 18px #000c;
+}
+
+@media (max-width: 600px) {
+  #catalogo .pelicula {
+    padding: 5px;
+  }
+
+  #catalogo .info-pelicula::before {
+    font-size: 8px;
+    letter-spacing: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  #catalogo .cartel {
+    transition: none;
+  }
+}
+</style>
+
+
+<style id="baldas-madera-clasicas">
+/* Baldas de madera gruesa de videoclub clásico */
+#catalogo .peliculas {
+  position: relative;
+  gap: 0;
+  padding: 18px 12px 0;
+  background:
+    repeating-linear-gradient(
+      3deg,
+      transparent 0 34px,
+      #d3a07116 35px,
+      transparent 37px 67px
+    ),
+    linear-gradient(
+      90deg,
+      #24140d 0%,
+      #684329 12%,
+      #392216 28%,
+      #56351f 52%,
+      #2a180f 76%,
+      #70482b 92%,
+      #28170e 100%
+    );
+  border: 8px solid #392116;
+  border-top: 12px solid #805334;
+  border-bottom: 20px solid #93603a;
+  box-shadow:
+    inset 0 0 0 2px #b3825544,
+    inset 0 10px 15px #0008,
+    0 15px 25px #000b;
+}
+
+/* Cada caja VHS queda separada y alineada */
+#catalogo .pelicula {
+  align-self: stretch;
+  margin: 0 7px 20px;
+  padding: 6px;
+  min-width: 0;
+  border: 2px solid #21150e;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg, #21150e, #493021 16%, #302015 82%, #17100b
+  );
+  box-shadow:
+    inset 0 0 0 1px #a77b5144,
+    3px 5px 7px #000b;
+}
+
+/* La carátula conserva su proporción vertical */
+#catalogo .cartel {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border: 2px solid #120c08;
+  box-shadow: 0 3px 5px #0009;
+}
+
+/* Repisa gruesa debajo de cada fila */
+#catalogo .pelicula {
+  border-bottom: 5px solid #98633c;
+  box-shadow:
+    inset 0 0 0 1px #b88a5a33,
+    3px 5px 7px #000b,
+    0 9px 0 -3px #4b2b19,
+    0 12px 0 -3px #24150e;
+}
+
+#catalogo .info-pelicula {
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  #catalogo .peliculas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 12px 5px 0;
+    border-width: 5px;
+  }
+
+  #catalogo .pelicula {
+    margin: 0 4px 18px;
+    padding: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  #catalogo .cartel {
+    transition: none;
+  }
+}
+</style>
+
 </body>
 </html>
