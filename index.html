@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#24130f">
+<title>Videoclub Carmencita</title>
+<style>
+:root{--bg:#180f0d;--panel:#2a1915;--panel2:#38211a;--cream:#f4dfb4;--muted:#c5a98b;--red:#a6322b;--gold:#e4b75c;--line:#684233}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(ellipse at top,#48251b 0,#1d100d 55%,#100908 100%);color:var(--cream);font-family:Georgia,'Times New Roman',serif;min-height:100vh}
+header{padding:24px 16px 18px;text-align:center;border-bottom:3px double var(--gold);background:linear-gradient(180deg,#391c15,#21110e)}
+.kicker{font:700 11px Arial,sans-serif;letter-spacing:4px;color:var(--gold);text-transform:uppercase}
+h1{font-size:clamp(29px,7vw,46px);line-height:1;margin:10px 0 7px;text-transform:uppercase;letter-spacing:1px;text-shadow:3px 3px #6f241e}
+.subtitle{font-style:italic;color:var(--muted);font-size:14px}
+main{max-width:1000px;margin:auto;padding:16px}
+.notice{border:1px solid var(--gold);background:#2a1915;padding:12px 14px;margin:4px 0 18px;text-align:center;font-size:14px}
+.controls{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+input,select,button{font:15px Arial,sans-serif;border-radius:4px;border:1px solid var(--line);padding:11px;background:#211310;color:var(--cream)}
+input{flex:1;min-width:150px} select{max-width:100%} button{cursor:pointer;background:var(--red);border-color:#d17a55;font-weight:bold} button:hover{filter:brightness(1.15)}
+.section-title{font-size:20px;margin:18px 0 12px;border-bottom:1px solid var(--line);padding-bottom:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:14px}
+.movie{background:linear-gradient(135deg,#39221a,#211310);border:1px solid #744936;border-radius:6px;padding:10px;box-shadow:0 5px 14px #0008;min-width:0}
+.poster{height:185px;border:4px solid #d5b77a;background:linear-gradient(145deg,#7d2925,#27120f 65%);display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:10px 6px;position:relative;overflow:hidden}
+.poster:before{content:"";position:absolute;inset:6px;border:1px solid #e5c889;pointer-events:none}
+.poster .year{font:700 10px Arial,sans-serif;letter-spacing:2px;color:#f4dca6;z-index:1}
+.poster .title{font-weight:bold;font-size:19px;line-height:1.05;text-transform:uppercase;text-shadow:2px 2px #170b08;z-index:1}
+.poster .genre{font:10px Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;z-index:1}
+.tape{height:23px;margin-top:7px;background:linear-gradient(180deg,#171717,#383838,#111);border-radius:3px;border:1px solid #555;display:flex;align-items:center;justify-content:center;position:relative}
+.tape:before,.tape:after{content:"";width:15px;height:9px;border-radius:50%;background:#b7a98b;border:2px solid #111;position:absolute;top:5px}
+.tape:before{left:9px}.tape:after{right:9px}
+.tape span{font:700 8px Arial,sans-serif;letter-spacing:2px;color:#ddd}
+.movie h3{font-size:17px;margin:10px 0 4px;line-height:1.15}
+.meta{font:12px Arial,sans-serif;color:var(--muted);margin-bottom:10px}
+.actions{display:flex;gap:6px}.actions button{font-size:12px;padding:8px 7px;flex:1}
+.fav{background:#51402b;border-color:#b28b4e}.empty{padding:25px;text-align:center;color:var(--muted);grid-column:1/-1}
+footer{text-align:center;padding:28px 14px 34px;color:#a98a6c;font:11px Arial,sans-serif;letter-spacing:1px}
+.modal{display:none;position:fixed;inset:0;background:#000b;z-index:5;align-items:center;justify-content:center;padding:18px}.modal.open{display:flex}.dialog{max-width:440px;width:100%;background:#2a1915;border:2px solid var(--gold);padding:20px;border-radius:6px}.dialog h2{margin-top:0}.dialog p{line-height:1.5}.dialog button{width:100%;margin-top:8px}
+.small{font:12px Arial,sans-serif;color:var(--muted)}
+@media(min-width:700px){main{padding:24px}.poster{height:215px}}
+
+.chat-box{border:2px solid var(--gold);background:var(--panel);padding:14px;margin:12px 0 22px;border-radius:6px}
+.chat-welcome{margin-top:0;line-height:1.5}
+.chat-messages{display:flex;flex-direction:column;gap:10px}
+.chat-message{padding:10px 12px;border-radius:5px;line-height:1.45;white-space:pre-wrap;overflow-wrap:anywhere}
+.chat-user{background:#493025;align-self:flex-end;max-width:90%}
+.chat-bot{background:#f4dfb4;color:#281712;align-self:flex-start;max-width:95%}
+.chat-form{display:flex;gap:8px;margin-top:12px}
+.chat-form input{min-width:0;width:100%}
+.chat-note{font:12px Arial,sans-serif;color:var(--muted);margin-bottom:0}
+@media(max-width:420px){.chat-form{flex-direction:column}.chat-form button{width:100%}}
+
+
+/* Mejoras visuales VHS de Videoclub Carmencita */
+header {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 18px #0009;
+  border-bottom: 4px double var(--gold);
+}
+
+header::after {
+  content: "★ ESTRENOS · ALQUILER · VHS ★";
+  display: block;
+  width: fit-content;
+  max-width: 90%;
+  margin: 14px auto 0;
+  padding: 7px 10px;
+  border: 1px dashed var(--gold);
+  color: var(--gold);
+  font: bold 10px Arial, sans-serif;
+  letter-spacing: 2px;
+}
+
+.notice {
+  border: 2px dashed var(--gold);
+  box-shadow: inset 0 0 18px #0005;
+  line-height: 1.7;
+}
+
+.movie {
+  position: relative;
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #382119, #1c100d);
+  box-shadow: 0 5px 12px #0007;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.movie::before {
+  content: "ALQUILER";
+  position: absolute;
+  z-index: 1;
+  top: 17px;
+  right: 15px;
+  padding: 4px 6px;
+  color: #fff1d4;
+  background: #922c25;
+  border: 1px solid #e4b75c;
+  font: bold 8px Arial, sans-serif;
+  letter-spacing: 1px;
+  transform: rotate(4deg);
+}
+
+.poster {
+  border: 3px solid #b28b4e;
+  box-shadow: inset 0 0 25px #0009;
+}
+
+.tape {
+  box-shadow: 0 4px 7px #0008;
+}
+
+.section-title {
+  text-shadow: 1px 2px #000;
+}
+
+button {
+  transition: filter .15s ease, transform .15s ease;
+}
+
+button:active {
+  transform: scale(.97);
+}
+
+footer {
+  border-top: 3px double var(--gold);
+  line-height: 1.8;
+}
+
+</style>
+</head>
+<body>
+<header>
+  <div class="kicker">Desde 1984 · Cine en cinta</div>
+  <h1>Videoclub Carmencita</h1>
+  <div class="subtitle">El aroma de las cintas, la magia de las películas</div>
+</header>
+<main>
+  <div class="notice">📼 <strong>Bienvenido al videoclub.</strong> Rebobina los recuerdos. Encuentra tu próxima película.</div>
+  <div class="controls">
+    <input id="search" type="search" placeholder="Buscar una película..." aria-label="Buscar una película">
+    <select id="genre" aria-label="Filtrar por género"><option value="">Todos los géneros</option></select>
+    <select id="sort" aria-label="Ordenar películas"><option value="title">Ordenar: título</option><option value="year">Ordenar: año</option></select>
+  </div>
+  <div class="section-title">La estantería de Carmencita <span class="small" id="count"></span></div>
+  <section class="grid" id="catalog" aria-live="polite"></section>
+  <div class="section-title">☎ El Encargado del Videoclub</div>
+  <section id="carmencita-chat" class="chat-box" aria-label="Chat de recomendaciones">
+    <p class="chat-welcome">¡Buenas tardes! 📼 Dime qué tipo de película te apetece y buscaré en nuestra estantería.</p>
+    <div id="chat-messages" class="chat-messages" aria-live="polite"></div>
+    <form id="chat-form" class="chat-form">
+      <input id="chat-input" type="text" maxlength="250" placeholder="Ej.: Recomiéndame terror..." aria-label="Tu mensaje" required>
+      <button type="submit">Consultar</button>
+    </form>
+    <p class="chat-note">Asistente automático local · Sin cuentas ni envío de mensajes a Internet.</p>
+  </section>
+  <div class="section-title">Mis favoritas ⭐</div>
+  <section class="grid" id="favorites"></section>
+</main>
+<footer>VIDEoclub CARMENCITA · PROTOTIPO 0.1 · LAS PELÍCULAS DE EJEMPLO SON FICTICIAS</footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+ <div class="dialog"><h2 id="modalTitle"></h2><p id="modalBody"></p><button id="closeModal">Volver a la estantería</button></div>
+</div>
+<script>
+const movies = [
+ {id:1,title:"La noche eterna",year:1984,genre:"Terror",director:"Elena Robles",description:"Una pequeña ciudad descubre que, después de medianoche, las sombras parecen recordar cosas que nadie ha vivido."},
+ {id:2,title:"Órbita perdida",year:1986,genre:"Ciencia ficción",director:"Marcos Vidal",description:"Una tripulación recibe una transmisión desde una estación espacial que oficialmente nunca existió."},
+ {id:3,title:"El último detective",year:1982,genre:"Policíaca",director:"Rafael Montes",description:"Un detective a punto de jubilarse acepta un caso que le obliga a regresar a las calles de su juventud."},
+ {id:4,title:"Verano de neón",year:1988,genre:"Drama",director:"Clara Soler",description:"En el último verano de una década, tres amigos intentan salvar el cine de barrio donde crecieron."},
+ {id:5,title:"La casa del reloj",year:1985,genre:"Misterio",director:"Inés Valdés",description:"Una llave antigua abre una habitación que no aparece en los planos de una casa familiar."},
+ {id:6,title:"Carretera al amanecer",year:1987,genre:"Aventura",director:"Tomás Leiva",description:"Dos desconocidos cruzan el país siguiendo un mapa encontrado dentro de una cinta VHS."}
+];
+const $ = id => document.getElementById(id);
+let favorites = JSON.parse(localStorage.getItem("carmencita-favorites") || "[]");
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function renderCard(m){const fav=favorites.includes(m.id);return `<article class="movie"><div class="poster"><div class="year">CARMENCITA · ${m.year}</div><div class="title">${escapeHtml(m.title)}</div><div class="genre">${escapeHtml(m.genre)}</div></div><div class="tape"><span>VHS · HI-FI</span></div><h3>${escapeHtml(m.title)}</h3><div class="meta">${m.year} · ${escapeHtml(m.genre)}</div><div class="actions"><button onclick="details(${m.id})">Ver ficha</button><button class="fav" onclick="toggleFav(${m.id})">${fav?"★ Guardada":"☆ Favorita"}</button></div></article>`}
+function visibleMovies(){const q=$("search").value.trim().toLowerCase(),g=$("genre").value,s=$("sort").value;return movies.filter(m=>(m.title+" "+m.year+" "+m.genre+" "+m.director).toLowerCase().includes(q)&&(!g||m.genre===g)).sort((a,b)=>s==="year"?a.year-b.year:a.title.localeCompare(b.title,"es"))}
+function render(){const list=visibleMovies();$("catalog").innerHTML=list.length?list.map(renderCard).join(""):'<div class="empty">No encontramos esa película. Prueba otra búsqueda.</div>';$("count").textContent=`(${list.length})`;const favs=movies.filter(m=>favorites.includes(m.id));$("favorites").innerHTML=favs.length?favs.map(renderCard).join(""):'<div class="empty">Todavía no tienes favoritas. Pulsa ☆ Favorita en cualquier película.</div>'}
+function details(id){const m=movies.find(x=>x.id===id);$("modalTitle").textContent=m.title;$("modalBody").textContent=`${m.year} · ${m.genre}\nDirección: ${m.director}\n\n${m.description}`;$("modal").classList.add("open")}
+function toggleFav(id){favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];localStorage.setItem("carmencita-favorites",JSON.stringify(favorites));render()}
+[...new Set(movies.map(m=>m.genre))].sort().forEach(g=>{const o=document.createElement("option");o.value=g;o.textContent=g;$("genre").appendChild(o)});
+$("search").addEventListener("input",render);$("genre").addEventListener("change",render);$("sort").addEventListener("change",render);$("closeModal").addEventListener("click",()=>$("modal").classList.remove("open"));$("modal").addEventListener("click",e=>{if(e.target===$("modal"))$("modal").classList.remove("open")});
+
+const chatForm = document.getElementById("chat-form");
+const chatInput = document.getElementById("chat-input");
+const chatMessages = document.getElementById("chat-messages");
+
+function chatSay(text, who) {
+  const bubble = document.createElement("div");
+  bubble.className = "chat-message " + (who === "user" ? "chat-user" : "chat-bot");
+  bubble.textContent = text;
+  chatMessages.appendChild(bubble);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function chatReply(message) {
+  const q = message.toLowerCase();
+  const genreWords = {
+    "terror": ["terror", "miedo", "monstruo", "vampiro", "fantasma"],
+    "comedia": ["comedia", "reír", "reir", "divertida", "humor", "graciosa"],
+    "ciencia ficción": ["ciencia ficción", "ciencia ficcion", "espacio", "alien", "futurista"],
+    "aventuras": ["aventura", "aventuras", "acción", "accion", "viaje", "pirata"],
+    "drama": ["drama", "romántica", "romantica", "romance", "sentimental"]
+  };
+  const wanted = Object.keys(genreWords).find(g => genreWords[g].some(w => q.includes(w)));
+  let results = movies.filter(m => !wanted || (m.genre + " " + m.title + " " + m.description).toLowerCase().includes(wanted));
+  if (q.includes("favorit")) {
+    results = movies.filter(m => favorites.includes(m.id));
+  }
+  if (q.includes("favorit") && !results.length) {
+    return "Todavía no tienes películas favoritas guardadas. Pulsa ☆ Favorita en alguna película y vuelve a preguntarme.";
+  }
+  if (!results.length && wanted) {
+    results = movies.filter(m => (m.genre + " " + m.title + " " + m.description).toLowerCase().includes(wanted.split(" ")[0]));
+  }
+  if (!results.length) {
+    return "Puedo ayudarte con terror, comedia, ciencia ficción, aventuras o tus favoritas. ¿Qué género te apetece?";
+  }
+  results = results.slice(0, 3);
+  const intro = wanted ? "¡Buena elección! Mira estas opciones de nuestra estantería:" : "He encontrado estas opciones del catálogo:";
+  return intro + "\n\n" + results.map(m => "📼 " + m.title + " (" + m.year + ") — " + m.genre).join("\n") + "\n\nPulsa «Ver ficha» en el catálogo para conocer más detalles.";
+}
+
+chatForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const message = chatInput.value.trim();
+  if (!message) return;
+  chatSay(message, "user");
+  chatSay(chatReply(message), "bot");
+  chatInput.value = "";
+  chatInput.focus();
+});
+
+render();
+</script>
+</body>
+</html>
