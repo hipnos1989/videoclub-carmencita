@@ -1121,6 +1121,44 @@
 }
 </style>
 
+<!-- AJUSTE PORTADA CARMENCITA -->
+<style>
+.hero-retro {
+  background-position: center 55% !important;
+}
+.hero-retro .hero-content {
+  max-width: 520px;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+.hero-retro .etiqueta,
+.hero-retro .hero-content > p,
+.hero-retro .hero-sello,
+.hero-retro .boton {
+  width: fit-content;
+  max-width: 100%;
+}
+@media (max-width: 700px) {
+  .hero-retro {
+    background-position: 58% center !important;
+  }
+  .hero-retro .hero-content {
+    margin: 0 auto;
+    padding: 16px;
+    text-align: center;
+    background: rgba(18, 8, 14, .72);
+    border-radius: 8px;
+  }
+  .hero-retro .etiqueta,
+  .hero-retro .hero-content > p,
+  .hero-retro .hero-sello,
+  .hero-retro .boton {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -1986,6 +2024,37 @@
   }
 }
 </style>
-
 </body>
 </html>
+
+<!-- AJUSTE LETRAS PEQUENAS -->
+<style>
+@media (max-width: 700px) {
+  .hero-retro h1 {
+    font-size: 28px !important;
+    line-height: 1.05 !important;
+    letter-spacing: 0 !important;
+  }
+  .hero-retro .hero-content > p {
+    font-size: 13px !important;
+    line-height: 1.35 !important;
+  }
+  .hero-retro .etiqueta,
+  .hero-retro .hero-sello {
+    font-size: 9px !important;
+    letter-spacing: 1px !important;
+  }
+  .hero-retro .boton {
+    font-size: 12px !important;
+    padding: 9px 12px !important;
+  }
+}
+</style>
+
+<!-- PORTADA SIN TEXTOS SOBRE LA FOTO -->
+<style>
+.hero-retro .hero-content {
+  display: none !important;
+}
+</style>
+
