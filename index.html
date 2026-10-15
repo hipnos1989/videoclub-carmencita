@@ -1262,7 +1262,7 @@
     <a class="logo" href="#">📼 CARMENCITA</a>
 
     <nav>
-      <a href="#inicio">Inicio</a>
+      <a href="#socios-carmencita">Hacerse socio</a>
       <a href="#catalogo">Películas</a>
       <a href="#programacion">Programación</a>
       <a href="#telegram">Telegram</a>
@@ -1498,32 +1498,190 @@
 
     <p id="mensaje" aria-live="polite"></p>
   
+
 <section id="socios-carmencita">
-  <p style="color:#e4b75c;letter-spacing:2px;font-size:12px">
-    ✦ DESDE 1985 · EL VIDEoclUB DE SIEMPRE ✦
-  </p>
-  <h2>Hazte socio de Carmencita</h2>
-  <p>Las mejores películas, los recuerdos de siempre y tu propio carné de socio.</p>
+  <div style="color:#e4b75c;letter-spacing:2px;font-size:12px">
+    ✦ DESDE 1985 · EL VIDEОCLUB DE SIEMPRE ✦
+  </div>
+
+  <h2>Hazte socio del Videoclub Carmencita</h2>
+  <p>Tu videoclub de siempre, tus películas favoritas y tu propio carné.</p>
 
   <form id="form-socios-carmencita">
     <input id="nombre-socio" type="text" maxlength="60"
-      placeholder="Tu nombre y apellidos" aria-label="Tu nombre y apellidos" required>
-    <button type="submit">📼 Crear mi carné</button>
+      placeholder="Escribe tu nombre" aria-label="Tu nombre" required>
+    <button type="submit">📼 Hacerme socio</button>
   </form>
 
-  <div id="carnet-print-area" hidden>
-    <h3>VIDEОCLUB CARMENCITA</h3>
-    <p style="text-align:center;letter-spacing:3px">TARJETA DE SOCIO</p>
-    <p>Este carné pertenece a:</p>
-    <p id="nombre-impreso" style="font-size:23px;font-weight:bold;overflow-wrap:anywhere"></p>
-    <p class="carnet-numero" id="numero-socio"></p>
-    <p class="carnet-pie">LAS MEJORES HISTORIAS SE VIVEN EN CASA<br>CONSERVA TU CARNÉ · EDICIÓN RETRO</p>
-    <button id="imprimir-carnet" type="button">🖨️ Imprimir / Guardar en PDF</button>
+  <div id="bienvenida-socio" hidden>
+    <p>🎉 ¡Ya eres socio del Videoclub Carmencita!</p>
+
+    <div id="carnet-carmencita">
+      <div class="carnet-cabecera">
+        <span>📼 VIDEОCLUB</span>
+        <strong>CARMENCITA</strong>
+        <small>ALQUILER DE PELÍCULAS · DESDE 1985</small>
+      </div>
+      <div class="carnet-cuerpo">
+        <div class="carnet-sello">SOCIO<br>OFICIAL</div>
+        <p>TARJETA PERSONAL DE SOCIO</p>
+        <small>ESTE CARNÉ PERTENECE A</small>
+        <h3 id="nombre-carnet"></h3>
+        <div class="carnet-numero" id="numero-carnet"></div>
+        <p class="carnet-bienvenida">¡Bienvenido a la familia Carmencita!</p>
+        <small>REBOBINA · ELIGE · DISFRUTA</small>
+      </div>
+    </div>
+    <p>❤️ ¡Carmencita te espera para elegir tu próxima película!</p>
   </div>
-  <p style="font-size:12px;color:#cdb99a">
-    Prototipo gratuito. Los datos del carné se guardan en este navegador.
-  </p>
 </section>
+
+<style id="estilo-carnet-carmencita">
+#socios-carmencita {
+  margin: 35px auto;
+  padding: 24px 16px;
+  max-width: 850px;
+  color: #f3e4c6;
+  background: linear-gradient(145deg,#321b15,#170d0a);
+  border: 2px solid #b88a4a;
+  box-shadow: inset 0 0 0 5px #b88a4a22,0 8px 22px #0006;
+  text-align: center;
+}
+#socios-carmencita h2 {
+  color: #e4b75c;
+  font-size: clamp(22px,4vw,32px);
+}
+#socios-carmencita form {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:10px;
+  margin:20px auto;
+}
+#socios-carmencita input {
+  flex:1 1 220px;
+  min-width:0;
+  max-width:360px;
+  padding:12px;
+}
+#socios-carmencita button {
+  padding:12px 16px;
+  cursor:pointer;
+}
+#carnet-carmencita {
+  box-sizing:border-box;
+  width:100%;
+  max-width:440px;
+  margin:22px auto;
+  padding:9px;
+  color:#382317;
+  background:#c5a46a;
+  border:3px double #6f4929;
+  border-radius:8px;
+  box-shadow:0 8px 18px #0008;
+  transform:rotate(-1deg);
+}
+.carnet-cabecera {
+  display:flex;
+  flex-direction:column;
+  padding:14px 8px;
+  color:#f4dfaa;
+  background:linear-gradient(120deg,#702d26,#321711);
+  border:2px solid #e0bd79;
+  letter-spacing:2px;
+}
+.carnet-cabecera span {font-size:14px}
+.carnet-cabecera strong {font-size:clamp(23px,6vw,32px)}
+.carnet-cabecera small {font-size:9px;letter-spacing:1px}
+.carnet-cuerpo {
+  position:relative;
+  margin-top:7px;
+  padding:17px 10px;
+  border:1px dashed #79542e;
+  background:repeating-linear-gradient(0deg,#ead9ad,#ead9ad 3px,#e5d0a0 4px);
+}
+.carnet-cuerpo p {font-size:12px;letter-spacing:1px}
+.carnet-cuerpo h3 {
+  margin:10px 0;
+  overflow-wrap:anywhere;
+  color:#702d26;
+  font-size:clamp(22px,6vw,30px);
+}
+.carnet-sello {
+  display:inline-block;
+  padding:8px 10px;
+  border:2px solid #8c342b;
+  border-radius:50%;
+  color:#8c342b;
+  font-size:11px;
+  font-weight:bold;
+  transform:rotate(8deg);
+}
+.carnet-numero {
+  padding:9px;
+  background:#d6bd88;
+  font-weight:bold;
+  letter-spacing:2px;
+}
+.carnet-bienvenida {
+  color:#702d26;
+  font-weight:bold;
+}
+@media(max-width:480px) {
+  #carnet-carmencita {transform:none}
+}
+</style>
+
+<script id="funciones-socios-carmencita">
+(() => {
+  const formulario = document.getElementById("form-socios-carmencita");
+  const entrada = document.getElementById("nombre-socio");
+  const bienvenida = document.getElementById("bienvenida-socio");
+  const nombreCarnet = document.getElementById("nombre-carnet");
+  const numeroCarnet = document.getElementById("numero-carnet");
+
+  if (!formulario || !entrada || !bienvenida ||
+      !nombreCarnet || !numeroCarnet) return;
+
+  function mostrarSocio(nombre, numero) {
+    nombreCarnet.textContent = nombre;
+    numeroCarnet.textContent = "N.º DE SOCIO: " + numero;
+    bienvenida.hidden = false;
+    formulario.hidden = true;
+  }
+
+  formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();
+    const nombre = entrada.value.trim();
+    if (!nombre) return;
+
+    let datos = null;
+    try {
+      datos = JSON.parse(localStorage.getItem("carmencita-socio"));
+    } catch (_) {}
+
+    if (!datos || datos.nombre !== nombre || !datos.numero) {
+      datos = {
+        nombre,
+        numero: "SOC-" + Math.floor(100000 + Math.random() * 900000)
+      };
+      try {
+        localStorage.setItem("carmencita-socio", JSON.stringify(datos));
+      } catch (_) {}
+    }
+    mostrarSocio(datos.nombre, datos.numero);
+  });
+
+  try {
+    const datos = JSON.parse(localStorage.getItem("carmencita-socio"));
+    if (datos && datos.nombre && datos.numero) {
+      entrada.value = datos.nombre;
+      mostrarSocio(datos.nombre, datos.numero);
+    }
+  } catch (_) {}
+})();
+</script>
+
 
 </main>
 
@@ -2146,60 +2304,7 @@
 }
 </style>
 
-<script id="funciones-socios-carmencita">
-(() => {
-  const formulario = document.getElementById("form-socios-carmencita");
-  const entrada = document.getElementById("nombre-socio");
-  const carnet = document.getElementById("carnet-print-area");
-  const nombre = document.getElementById("nombre-impreso");
-  const numero = document.getElementById("numero-socio");
-  const imprimir = document.getElementById("imprimir-carnet");
 
-  if (!formulario || !entrada || !carnet || !nombre || !numero || !imprimir) return;
-
-  formulario.addEventListener("submit", (evento) => {
-    evento.preventDefault();
-    const valor = entrada.value.trim();
-    if (!valor) {
-      entrada.focus();
-      return;
-    }
-
-    let datos;
-    try {
-      datos = JSON.parse(localStorage.getItem("carmencita-carnet") || "null");
-    } catch (_) {
-      datos = null;
-    }
-
-    if (!datos || datos.nombre !== valor || !datos.numero) {
-      datos = {
-        nombre: valor,
-        numero: "SOC-" + Math.floor(100000 + Math.random() * 900000)
-      };
-      try {
-        localStorage.setItem("carmencita-carnet", JSON.stringify(datos));
-      } catch (_) {}
-    }
-
-    nombre.textContent = datos.nombre;
-    numero.textContent = "N.º DE SOCIO: " + datos.numero;
-    carnet.hidden = false;
-  });
-
-  imprimir.addEventListener("click", () => window.print());
-
-  try {
-    const datos = JSON.parse(localStorage.getItem("carmencita-carnet") || "null");
-    if (datos && datos.nombre && datos.numero) {
-      entrada.value = datos.nombre;
-      nombre.textContent = datos.nombre;
-      numero.textContent = "N.º DE SOCIO: " + datos.numero;
-      carnet.hidden = false;
-    }
-  } catch (_) {}
-})();
-</script>
 
 </body>
 </html>
@@ -2334,5 +2439,296 @@
 <style id="portada-sin-textos-grandes">
 .hero-retro .hero-content {
   display: none !important;
+}
+</style>
+
+
+<style id="diseno-retro-carnet-1985">
+#socios-carmencita {
+  position: relative;
+  margin: 38px auto;
+  padding: 28px 18px;
+  max-width: 850px;
+  color: #f3e5c8;
+  background:
+    radial-gradient(ellipse at top, #573724 0%, transparent 70%),
+    linear-gradient(145deg, #281a12, #100c09);
+  border: 3px double #c49a58;
+  box-shadow: 0 10px 30px #0008, inset 0 0 0 5px #c49a581c;
+  text-align: center;
+}
+#socios-carmencita h2 {
+  color: #e9c780;
+  font-family: Georgia, serif;
+  font-size: clamp(24px, 4vw, 34px);
+  line-height: 1.2;
+}
+#socios-carmencita > p {
+  line-height: 1.6;
+}
+#socios-carmencita input {
+  box-sizing: border-box;
+  border: 2px solid #b58b51;
+  border-radius: 2px;
+  background: #f5ead1;
+  color: #352316;
+}
+#socios-carmencita button {
+  border: 2px solid #e2c184;
+  border-radius: 2px;
+  background: linear-gradient(#8d6338, #56351e);
+  color: #fff0d0;
+  font-weight: bold;
+  padding: 12px 16px;
+}
+#socios-carmencita button:hover {
+  filter: brightness(1.15);
+}
+#carnet-print-area {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 490px;
+  margin: 26px auto 0;
+  padding: 25px 20px;
+  overflow-wrap: anywhere;
+  color: #392719;
+  background:
+    repeating-linear-gradient(0deg, #6d482009 0px, #6d482009 1px, transparent 1px, transparent 5px),
+    linear-gradient(135deg, #f9efd5, #e2c99a);
+  border: 7px double #76502d;
+  outline: 1px solid #d1ad6e;
+  outline-offset: -13px;
+  box-shadow: 0 8px 18px #0008;
+  text-align: center;
+}
+#carnet-print-area h3 {
+  margin: 10px 0;
+  color: #702d22;
+  font-family: Georgia, serif;
+  font-size: clamp(21px, 5vw, 29px);
+  letter-spacing: 1px;
+}
+#carnet-print-area p {
+  line-height: 1.5;
+}
+#carnet-print-area #nombre-impreso {
+  padding: 10px 5px;
+  border-top: 1px solid #98764a;
+  border-bottom: 1px solid #98764a;
+  font-family: Georgia, serif;
+  font-size: clamp(20px, 5vw, 26px) !important;
+}
+#carnet-print-area .carnet-numero {
+  color: #702d22;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+#carnet-print-area .carnet-pie {
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px dashed #98764a;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+@media (max-width: 600px) {
+  #socios-carmencita { padding: 22px 12px; }
+  #socios-carmencita form { flex-direction: column; }
+  #socios-carmencita input,
+  #socios-carmencita form button { width: 100%; max-width: none; }
+  #carnet-print-area { padding: 23px 16px; }
+}
+@media print {
+  body * { visibility: hidden !important; }
+  #carnet-print-area,
+  #carnet-print-area * { visibility: visible !important; }
+  #carnet-print-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  #carnet-print-area button { display: none !important; }
+}
+</style>
+
+
+<style id="impresion-carnet-corregida">
+@media print {
+  @page {
+    size: A5 landscape;
+    margin: 8mm;
+  }
+
+  html, body {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: white !important;
+  }
+
+  body * {
+    visibility: hidden !important;
+  }
+
+  #socios-carmencita,
+  #socios-carmencita * {
+    visibility: hidden !important;
+  }
+
+  #carnet-print-area,
+  #carnet-print-area * {
+    visibility: visible !important;
+  }
+
+  #carnet-print-area[hidden] {
+    display: block !important;
+  }
+
+  #carnet-print-area {
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 20px !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+    color: #392719 !important;
+    background: #f0dfb8 !important;
+    border: 5px double #76502d !important;
+    box-shadow: none !important;
+    outline: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  #carnet-print-area button {
+    display: none !important;
+  }
+}
+</style>
+
+
+<!-- PORTADA CARMENCITA: MAS LUZ Y MEJOR ENCUADRE -->
+<style id="portada-carmencita-luminosa">
+.hero-retro {
+  position: relative;
+  background-position: center 42% !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  filter: none !important;
+}
+
+/* Iluminar la fotografía sin ocultar a Carmencita */
+.hero-retro::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    rgba(24, 13, 9, .12),
+    rgba(24, 13, 9, .02) 55%,
+    rgba(24, 13, 9, .08)
+  );
+}
+
+/* Mantener la zona visual por encima del velo */
+.hero-retro .vhs-escenario {
+  position: relative;
+  z-index: 1;
+}
+
+/* En móvil, subir un poco el encuadre */
+@media (max-width: 700px) {
+  .hero-retro {
+    background-position: center 38% !important;
+    background-attachment: scroll !important;
+  }
+}
+</style>
+
+
+<!-- FOTO REAL DE CARMENCITA VISIBLE EN PORTADA -->
+<style id="foto-real-carmencita">
+/* La portada muestra la fotografía original completa */
+#inicio.hero-retro {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  background-image: none !important;
+  background-color: #24170f !important;
+}
+
+/* No mostrar los títulos grandes sobre la fotografía */
+#inicio.hero-retro > .hero-content {
+  display: none !important;
+}
+
+/* Fotografía auténtica del videoclub */
+#inicio.hero-retro::after {
+  content: "";
+  display: block;
+  order: -1;
+  width: 100%;
+  height: clamp(280px, 58vw, 600px);
+  background-image:
+    linear-gradient(rgba(255, 220, 170, .10),
+                    rgba(255, 220, 170, .10)),
+    url("fondo-videoclub.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #24170f;
+}
+
+#inicio.hero-retro .vhs-escenario {
+  width: min(100%, 650px);
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  #inicio.hero-retro::after {
+    height: 320px;
+    background-size: cover;
+  }
+}
+</style>
+
+
+    
+<!-- PORTADA: FOTO CUBRE TODO EL RECUADRO -->
+<style id="portada-carmencita-cubre-todo">
+#inicio.hero-retro::after {
+  width: 100% !important;
+  height: clamp(320px, 55vw, 620px) !important;
+  background-size: cover !important;
+  background-position: center 38% !important;
+  background-repeat: no-repeat !important;
+  filter: brightness(1.12) !important;
+}
+@media (max-width: 600px) {
+  #inicio.hero-retro::after {
+    height: 360px !important;
+    background-position: center 35% !important;
+  }
 }
 </style>
