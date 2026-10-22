@@ -334,7 +334,7 @@
         gap: 12px;
       }
     }
-  
+
 
     /* ===== MEJORAS VISUALES VHS: CARMENCITA ===== */
 
@@ -1252,6 +1252,170 @@
 }
 </style>
 
+
+<!-- CARMENCITA-CYBERPUNK-GLOBAL-V1 -->
+<style id="carmencita-cyberpunk-global">
+:root {
+  --fondo: #080b16;
+  --panel: #101729;
+  --rojo: #ff3fcf;
+  --rosa: #ff65df;
+  --crema: #d9ffff;
+  --texto: #e2edff;
+  --cian-neon: #35f5f0;
+}
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 24px;
+}
+body {
+  background:
+    radial-gradient(ellipse at 50% 0%, #19234a 0%, transparent 48%),
+    #080b16 !important;
+  color: #e2edff !important;
+}
+header {
+  position: relative;
+  background: #090d19f5 !important;
+  border-bottom: 1px solid #35f5f088 !important;
+  box-shadow: 0 5px 25px #00eaff12;
+}
+.logo {
+  color: #ff54d8 !important;
+  text-shadow: 0 0 8px #ff35d8, 0 0 22px #ff35d855 !important;
+}
+nav a {
+  transition: color .2s, text-shadow .2s;
+}
+nav a:hover {
+  color: #35f5f0 !important;
+  text-shadow: 0 0 10px #35f5f0;
+}
+.hero-retro {
+  border-color: #35f5f055 !important;
+}
+.hero-retro .etiqueta,
+.hero-retro .hero-sello {
+  color: #35f5f0 !important;
+  text-shadow: 0 0 10px #35f5f055;
+}
+.hero-retro h1,
+.hero-retro .hero-content h1 {
+  text-shadow: 0 0 18px #ff35d855 !important;
+}
+.boton {
+  border: 1px solid #35f5f0 !important;
+  background: linear-gradient(110deg, #152b42, #351537) !important;
+  color: #eaffff !important;
+  box-shadow: 0 0 12px #00eaff22;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.boton:hover {
+  border-color: #ff54d8 !important;
+  box-shadow: 0 0 20px #ff35d855 !important;
+  transform: translateY(-2px);
+}
+.programacion {
+  background: #10172a !important;
+  border-block: 1px solid #35f5f055 !important;
+  color: #d9ffff !important;
+}
+.titulo-seccion {
+  color: #35f5f0 !important;
+  text-shadow: 0 0 12px #00eaff33;
+}
+.descripcion {
+  color: #b9c8e3 !important;
+}
+.buscador {
+  color: #eaffff !important;
+  background: #0d1425 !important;
+  border: 1px solid #35f5f099 !important;
+  border-radius: 8px;
+  box-shadow: inset 0 0 12px #00eaff0a;
+}
+.buscador:focus {
+  outline: 2px solid #ff54d8 !important;
+  outline-offset: 3px;
+}
+.pelicula {
+  background: linear-gradient(145deg, #151b30, #0b1020) !important;
+  border: 1px solid #35f5f055 !important;
+  box-shadow: 0 8px 25px #0006, inset 0 0 18px #00eaff08 !important;
+  transition: transform .22s, border-color .22s, box-shadow .22s;
+}
+.pelicula:hover {
+  transform: translateY(-5px);
+  border-color: #ff54d8 !important;
+  box-shadow: 0 0 18px #ff35d822, 0 12px 30px #0008 !important;
+}
+.pelicula h3 {
+  color: #f5eaff !important;
+}
+.pelicula .anio {
+  color: #35f5f0 !important;
+}
+#socios-carmencita {
+  color: #e2edff !important;
+  background: linear-gradient(145deg, #15172e, #0b1020) !important;
+  border: 1px solid #ff54d8 !important;
+  box-shadow: 0 0 24px #ff35d815, inset 0 0 22px #00eaff08 !important;
+}
+#socios-carmencita h2 {
+  color: #ff79e2 !important;
+  text-shadow: 0 0 12px #ff35d833;
+}
+#socios-carmencita input {
+  color: #eaffff;
+  background: #0b1222;
+  border: 1px solid #35f5f088;
+  border-radius: 6px;
+}
+#socios-carmencita button {
+  color: #eaffff;
+  background: #211831;
+  border: 1px solid #ff54d8;
+  border-radius: 6px;
+}
+#carnet-carmencita {
+  box-shadow: 0 0 22px #ff35d822, 0 8px 18px #0008 !important;
+}
+.telegram {
+  background: #0c1222 !important;
+  border-top: 1px solid #35f5f066 !important;
+}
+.telegram p {
+  color: #c3d1eb;
+}
+footer {
+  background: #070a13 !important;
+  border-top: 1px solid #ff54d855 !important;
+  color: #9baecb !important;
+}
+#abrir-carmencita {
+  border-color: #35f5f0 !important;
+}
+#chat-carmencita {
+  border-color: #35f5f0 !important;
+}
+#pregunta-carmencita {
+  outline-color: #ff54d8;
+}
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+  outline: 2px solid #35f5f0;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -1375,129 +1539,21 @@
     <div class="peliculas" id="peliculas">
 
       <!-- Película 1 -->
-      <article class="pelicula" data-titulo="regreso al futuro">
-        <img
-          class="cartel"
-          src="https://image.tmdb.org/t/p/w500/7lyBcpYB0Qt8gYhXYaEZUNlNQAv.jpg"
-          alt="Cartel de Regreso al futuro"
-          loading="lazy"
-        >
-
-        <div class="info-pelicula">
-          <h3>Regreso al futuro</h3>
-          <span class="anio">1985</span>
-          <p>
-            Marty McFly viaja accidentalmente al pasado
-            y debe conseguir que sus padres se enamoren
-            para poder regresar a su época.
-          </p>
-        </div>
-      </article>
 
       <!-- Película 2 -->
-      <article class="pelicula" data-titulo="cazafantasmas">
-        <img
-          class="cartel"
-          src="https://image.tmdb.org/t/p/w500/7E8nLijS9AwwUEPu2oFYOVKhdFA.jpg"
-          alt="Cartel de Cazafantasmas"
-          loading="lazy"
-        >
-
-        <div class="info-pelicula">
-          <h3>Cazafantasmas</h3>
-          <span class="anio">1984</span>
-          <p>
-            Un grupo de científicos monta un negocio
-            para capturar fantasmas en Nueva York.
-            Una aventura sobrenatural llena de humor.
-          </p>
-        </div>
-      </article>
 
       <!-- Película 3 -->
-      <article class="pelicula" data-titulo="tiburon">
-        <img
-          class="cartel"
-          src="https://image.tmdb.org/t/p/w500/s2xcqSFfT6F7ZXHxowjxfG0yisT.jpg"
-          alt="Cartel de Tiburón"
-          loading="lazy"
-        >
-
-        <div class="info-pelicula">
-          <h3>Tiburón</h3>
-          <span class="anio">1975</span>
-          <p>
-            Un enorme tiburón amenaza una localidad
-            costera. Tres hombres se embarcan en una
-            peligrosa misión para detenerlo.
-          </p>
-        </div>
-      </article>
 
       <!-- Película 4 -->
-      <article class="pelicula" data-titulo="pesadilla en elm street">
-        <img
-          class="cartel"
-          src="cartel-pesadilla-elm-street.jpg"
-          alt="Cartel de Pesadilla en Elm Street"
-          loading="lazy"
-        >
-
-        <div class="info-pelicula">
-          <h3>Pesadilla en Elm Street</h3>
-          <span class="anio">1984</span>
-          <p>
-            Un grupo de jóvenes descubre que un
-            aterrador asesino puede perseguirlos
-            incluso mientras duermen.
-          </p>
-        </div>
-      </article>
 
       <!-- Película 5 -->
-      <article class="pelicula" data-titulo="los goonies">
-        <img
-          class="cartel"
-          src="https://image.tmdb.org/t/p/w500/eBU7gCjTCj9n2LTxvCSIXXOvHkD.jpg"
-          alt="Cartel de Los Goonies"
-          loading="lazy"
-        >
-
-        <div class="info-pelicula">
-          <h3>Los Goonies</h3>
-          <span class="anio">1985</span>
-          <p>
-            Un grupo de amigos encuentra un mapa del
-            tesoro y emprende una aventura llena
-            de trampas, secretos y sorpresas.
-          </p>
-        </div>
-      </article>
 
       <!-- Película 6 -->
-      <article class="pelicula" data-titulo="gremlins">
-        <img
-          class="cartel"
-          src="cartel-gremlins.jpg"
-          alt="Cartel de Gremlins"
-          loading="lazy"
-        >
-
-        <div class="info-pelicula">
-          <h3>Gremlins</h3>
-          <span class="anio">1984</span>
-          <p>
-            Un pequeño y adorable ser viene acompañado
-            de unas reglas muy importantes.
-            Romperlas desata el caos en el pueblo.
-          </p>
-        </div>
-      </article>
 
     </div>
 
     <p id="mensaje" aria-live="polite"></p>
-  
+
 
 <section id="socios-carmencita">
   <div style="color:#e4b75c;letter-spacing:2px;font-size:12px">
@@ -1720,35 +1776,163 @@
     const peliculas = document.querySelectorAll(".pelicula");
     const mensaje = document.getElementById("mensaje");
 
-    buscador.addEventListener("input", function () {
-      const texto = buscador.value
-        .trim()
-        .toLocaleLowerCase("es");
+    let paginaCatalogo = 1;
+    let numeroBusqueda = 0;
+    let temporizadorBusqueda;
 
-      let visibles = 0;
+    const resultadosLocales = document.getElementById("resultados-locales") ||
+      (() => {
+        const zona = document.createElement("div");
+        zona.id = "resultados-locales";
+        zona.style.cssText =
+          "display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:18px 0;";
+        mensaje.before(zona);
+        return zona;
+      })();
 
-      peliculas.forEach(function (pelicula) {
-        const titulo = pelicula.dataset.titulo;
-        const coincide = titulo.includes(texto);
+    const paginacion = document.getElementById("paginacion-catalogo") ||
+      (() => {
+        const zona = document.createElement("div");
+        zona.id = "paginacion-catalogo";
+        zona.style.cssText =
+          "display:flex;justify-content:center;align-items:center;gap:14px;flex-wrap:wrap;margin:20px 0;color:#f5f4ff;";
+        resultadosLocales.after(zona);
+        return zona;
+      })();
 
-        pelicula.hidden = !coincide;
+    function botonPagina(texto, deshabilitado, accion) {
+      const boton = document.createElement("button");
+      boton.type = "button";
+      boton.textContent = texto;
+      boton.disabled = deshabilitado;
+      boton.style.cssText =
+        "padding:10px 16px;border:1px solid #55eaff;border-radius:8px;background:#101b2b;color:#55eaff;cursor:pointer;";
+      if (deshabilitado) {
+        boton.style.opacity = "0.45";
+        boton.style.cursor = "not-allowed";
+      }
+      boton.addEventListener("click", accion);
+      return boton;
+    }
 
-        if (coincide) {
-          visibles++;
-        }
+    async function buscarCatalogo(texto, pagina) {
+      const turno = ++numeroBusqueda;
+      paginaCatalogo = pagina;
+      resultadosLocales.replaceChildren();
+      paginacion.replaceChildren();
+
+      if (!texto) {
+        peliculas.forEach(p => p.hidden = false);
+        mensaje.textContent = "";
+        return;
+      }
+
+      peliculas.forEach(p => {
+        const titulo = (p.dataset.titulo || "").toLocaleLowerCase("es");
+        p.hidden = !titulo.includes(texto.toLocaleLowerCase("es"));
       });
 
-      if (visibles === 0) {
-        mensaje.textContent =
-          "No encontramos esa película en nuestras estanterías.";
-      } else {
-        mensaje.textContent =
-          texto === ""
-            ? ""
-            : "Películas encontradas: " + visibles;
-      }
-    });
+      mensaje.textContent = "Buscando en nuestro catálogo de cine…";
 
+      try {
+        const respuesta = await fetch(
+          "/buscar-peliculas?q=" + encodeURIComponent(texto) +
+          "&pagina=" + pagina + "&limite=30"
+        );
+        if (!respuesta.ok) throw new Error("HTTP " + respuesta.status);
+
+        const datos = await respuesta.json();
+        if (turno !== numeroBusqueda) return;
+
+        const resultados = datos.resultados || [];
+
+        resultados.forEach(function (pelicula) {
+          const tarjeta = document.createElement("article");
+          tarjeta.style.cssText =
+            "padding:16px;border:1px solid #55eaff88;border-radius:10px;background:#101b2b;color:#f5f4ff;";
+
+          const titulo = document.createElement("h3");
+          titulo.textContent = pelicula.titulo || "Título desconocido";
+          titulo.style.cssText = "margin:0 0 8px;color:#e4b75c;";
+
+          const detalles = document.createElement("p");
+          detalles.textContent =
+            (pelicula.anio || "Año desconocido") +
+            (pelicula.duracion_min ? " · " + pelicula.duracion_min + " min" : "") +
+            (pelicula.generos ? " · " + pelicula.generos.replaceAll(",", ", ") : "");
+          detalles.style.cssText = "margin:0;font-size:0.9em;";
+
+          const imagen = document.createElement("img");
+          imagen.alt = "Carátula de " + (pelicula.titulo || "película");
+          imagen.loading = "lazy";
+          imagen.style.cssText =
+            "display:block;width:100%;max-width:220px;height:290px;object-fit:cover;border-radius:7px;margin:0 auto 14px;background:#202b3b;";
+
+          if (pelicula.cartel) {
+            imagen.src = pelicula.cartel;
+            imagen.onerror = function () {
+              imagen.remove();
+            };
+            tarjeta.appendChild(imagen);
+          } else {
+            const placeholder = document.createElement("div");
+            placeholder.textContent = "📼";
+            placeholder.style.cssText =
+              "display:flex;align-items:center;justify-content:center;width:100%;max-width:220px;height:290px;margin:0 auto 14px;border-radius:7px;background:linear-gradient(145deg,#28364a,#101321);font-size:64px;color:#e4b75c;";
+            tarjeta.appendChild(placeholder);
+          }
+
+          const sinopsis = document.createElement("p");
+          sinopsis.textContent =
+            pelicula.sinopsis || "Sinopsis próximamente.";
+          sinopsis.style.cssText =
+            "margin:12px 0 0;line-height:1.5;font-size:0.92em;color:#e0e4ed;";
+
+          tarjeta.append(titulo, detalles, sinopsis);
+          resultadosLocales.appendChild(tarjeta);
+        });
+
+        const total = datos.total ?? resultados.length;
+        const porPagina = datos.por_pagina || 30;
+        const paginas = Math.max(1, Math.ceil(total / porPagina));
+
+        if (total > 0) {
+          mensaje.textContent =
+            "Coincidencias en el catálogo local: " + total +
+            " · Página " + pagina + " de " + paginas + ".";
+
+          paginacion.append(
+            botonPagina("← Anterior", pagina <= 1, () =>
+              buscarCatalogo(buscador.value.trim(), pagina - 1)
+            )
+          );
+
+          const indicador = document.createElement("span");
+          indicador.textContent = "Página " + pagina + " / " + paginas;
+          paginacion.appendChild(indicador);
+
+          paginacion.append(
+            botonPagina("Siguiente →", pagina >= paginas, () =>
+              buscarCatalogo(buscador.value.trim(), pagina + 1)
+            )
+          );
+        } else {
+          mensaje.textContent =
+            "No encontramos esa película en nuestro catálogo local.";
+        }
+      } catch (error) {
+        if (turno !== numeroBusqueda) return;
+        console.error("Error buscando en SQLite:", error);
+        mensaje.textContent =
+          "No se pudo consultar el catálogo local. Comprueba que el servidor esté actualizado.";
+      }
+    }
+
+    buscador.addEventListener("input", function () {
+      clearTimeout(temporizadorBusqueda);
+      const texto = buscador.value.trim();
+      temporizadorBusqueda = setTimeout(() => buscarCatalogo(texto, 1), 200);
+    });
     // Si un cartel no se carga, mostramos un cartel alternativo.
     document.querySelectorAll(".cartel").forEach(function (imagen) {
       imagen.addEventListener("error", function () {
@@ -1863,9 +2047,34 @@
 <div id="carmencita">
   <section id="chat-carmencita" hidden>
     <div id="cabecera-carmencita">
-      <strong>❤️ Carmencita, tu amiga del videoclub</strong>
+      <strong>Carmencita, tu amiga del videoclub</strong>
       <button id="cerrar-carmencita" type="button">✕</button>
     </div>
+
+
+
+    <div class="preguntas-carmencita" aria-label="Temas para conversar">
+      <button type="button" data-pregunta-carmencita="Recomiéndame una joya oculta del cine">Una joya oculta</button>
+      <button type="button" data-pregunta-carmencita="Háblame de Alfred Hitchcock">Hitchcock</button>
+      <button type="button" data-pregunta-carmencita="Sorpréndeme con una película según mi estado de ánimo">Sorpréndeme</button>
+    </div>
+
+    <script>
+    (() => {
+      const botones = document.querySelectorAll("[data-pregunta-carmencita]");
+      botones.forEach(boton => {
+        boton.addEventListener("click", () => {
+          const entrada = document.getElementById("pregunta-carmencita");
+          const formulario = document.getElementById("form-carmencita");
+          if (!entrada || !formulario) return;
+          entrada.value = boton.dataset.preguntaCarmencita;
+          if (formulario.requestSubmit) formulario.requestSubmit();
+          else formulario.dispatchEvent(new Event("submit", {cancelable:true}));
+        });
+      });
+    })();
+    </script>
+
     <div id="mensajes-carmencita" aria-live="polite">
       <p class="msg-carmencita">
         ¡Buenas noches, cariño! Soy Carmencita.
@@ -1881,7 +2090,10 @@
   </section>
   <button id="abrir-carmencita" type="button"
     aria-expanded="false" aria-controls="chat-carmencita">
-    <span class="avatar">👩🏻‍🦰</span>
+    <span class="avatar">
+      <img src="recursos-carmencita/carmencita-androide.jpg"
+           alt="Carmencita, androide retrofuturista">
+    </span>
     <span><strong>Carmencita</strong>
       <small>Tu amiga del videoclub · Abrir chat</small>
     </span>
@@ -1898,6 +2110,9 @@
   const entrada = document.getElementById("pregunta-carmencita");
   const mensajes = document.getElementById("mensajes-carmencita");
   const tarjetas = [...document.querySelectorAll(".pelicula")];
+    // Contexto de la última película mencionada.
+    let ultimaPeliculaCarmencita = null;
+
 
   const normalizar = texto => String(texto || "")
     .normalize("NFD")
@@ -1925,6 +2140,11 @@
     elemento.textContent = texto;
     mensajes.appendChild(elemento);
     mensajes.scrollTop = mensajes.scrollHeight;
+
+    // Hablar exactamente la respuesta recién generada.
+    if (typeof window.carmencitaHablar === "function") {
+      window.carmencitaHablar(texto);
+    }
   }
 
   abrir.addEventListener("click", () => {
@@ -1958,6 +2178,7 @@
     });
 
     if (encontrada) {
+      ultimaPeliculaCarmencita = encontrada;
       responder("¡Sí, cariño! Tenemos " + tituloDe(encontrada) +
         " en nuestras estanterías. 📼 ¡Vamos a echarle un vistazo!");
       encontrada.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -1965,72 +2186,443 @@
       return;
     }
 
-    if (/\b(hola|buenas|buenos dias|buenas tardes|buenas noches)\b/.test(pregunta)) {
-      responder("¡Hola, cariño! ❤️ Pasa, pasa, que en Videoclub Carmencita siempre hay sitio para una buena película.");
+
+    // Elegir respuestas variadas y evitar repeticiones recientes.
+    const elegir = frases => {
+      if (!Array.isArray(frases) || frases.length === 0) {
+        return "¡Cuéntame más, cariño! Me encanta hablar de cine contigo.";
+      }
+
+      const recientes = window._carmencitaRespuestasRecientes ||
+        (window._carmencitaRespuestasRecientes = []);
+
+      const disponibles = frases.filter(
+        frase => !recientes.includes(frase)
+      );
+
+      const opciones = disponibles.length ? disponibles : frases;
+      const elegida = opciones[
+        Math.floor(Math.random() * opciones.length)
+      ];
+
+      recientes.push(elegida);
+
+      // Recordar las últimas 12 respuestas para dar variedad.
+      if (recientes.length > 12) {
+        recientes.splice(0, recientes.length - 12);
+      }
+
+      return elegida;
+    };
+
+    // Comprender preguntas de seguimiento sobre la última recomendación.
+    if (ultimaPeliculaCarmencita &&
+        /\b(por que|porque|de que va|de que trata|cuentame mas|mas informacion)\b/.test(pregunta)) {
+      responder("Te hablaba de " + tituloDe(ultimaPeliculaCarmencita) +
+        ". La tengo presente en nuestra conversación. Si me dices qué te interesa —su historia, su género o qué puede hacerla especial—, seguimos explorándola juntos, cariño.");
+      entrada.value = "";
+      entrada.focus();
+      return;
+    }
+
+    if (ultimaPeliculaCarmencita &&
+        /\b(parecida|parecido|similares|similar|otra como esa|otra como esta)\b/.test(pregunta)) {
+      const anterior = ultimaPeliculaCarmencita;
+      const claveGenero = normalizar(
+        anterior.dataset.genero ||
+        anterior.dataset.generos ||
+        anterior.dataset.categoria || ""
+      );
+
+      const similares = tarjetas.filter(t =>
+        t !== anterior &&
+        claveGenero &&
+        textoDe(t).includes(claveGenero)
+      );
+
+      if (similares.length) {
+        const elegida = similares[Math.floor(Math.random() * similares.length)];
+        ultimaPeliculaCarmencita = elegida;
+        responder("Si te ha llamado la atención " + tituloDe(anterior) +
+          ", podemos probar con " + tituloDe(elegida) +
+          ". La he encontrado buscando coincidencias en las categorías de nuestro catálogo. ¿Qué te parece, cariño?");
+        elegida.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        responder("¡Claro que sí, cariño! Busquemos otra que tenga un aire parecido. Dime qué te gustó de " +
+          tituloDe(anterior) + " —el suspense, el humor, la historia o sus personajes— y afinamos la búsqueda.");
+      }
+
+      entrada.value = "";
+      entrada.focus();
+      return;
+    }
+
+
+    if (/\b(hola|buenas|buenos dias|buenas tardes|buenas noches|hey|holi)\b/.test(pregunta)) {
+      responder(elegir([
+        "¡Hombre, cuánto bueno por aquí, cariño! Pasa, que tenemos historias para dar y tomar.",
+        "¡Muy buenas! Ponte cómodo, que en este videoclub siempre hay sitio para una buena película.",
+        "¡Anda, mira quién ha venido! Ya me estaba preguntando qué película te apetecería hoy.",
+        "¡Hola, corazón! Las estanterías están llenas de historias y yo tengo ganas de recomendarte alguna.",
+        "¡Buenas, buenas! Dime, ¿hoy vienes buscando risas, emociones fuertes o una de esas películas que te dejan pensando?"
+      ]));
+    } else if (pregunta.includes("quien eres") ||
+               pregunta.includes("como te llamas") ||
+               pregunta.includes("hablame de ti")) {
+      responder(elegir([
+        "Soy Carmencita, tu amiga del videoclub. Me pierden las buenas historias, los diálogos memorables y esas películas que uno vuelve a ver una y otra vez.",
+        "¡Carmencita para servirte! Aquí soy la encargada de recomendar películas, charlar de cine y rescatar alguna joyita olvidada.",
+        "Soy la guardiana de estas estanterías cinematográficas. Me gustan los clásicos, el suspense bien construido y las historias que se quedan contigo después de los créditos."
+      ]));
+    } else if (pregunta.includes("que tal") ||
+               pregunta.includes("como estas") ||
+               pregunta.includes("que cuentas")) {
+      responder(elegir([
+        "¡De maravilla, hija mía! Todo en orden por aquí y unas cuantas películas pidiendo que alguien les dé una oportunidad.",
+        "Tirando de maravilla, cariño. Si las películas hablaran, hoy no cerraríamos hasta la madrugada.",
+        "¡Como una cinta recién rebobinada! Preparada para charlar de cine. ¿Y tú, cómo llevas el día?",
+        "Aquí andamos, entre historias, recuerdos y finales inesperados. ¿Qué aventura cinematográfica nos traemos entre manos?"
+      ]));
+    } else if (pregunta.includes("aburrid") ||
+               pregunta.includes("me aburro") ||
+               pregunta.includes("no se que hacer")) {
+      responder(elegir([
+        "¡Se acabó el aburrimiento! Podemos buscar una comedia disparatada, una aventura trepidante o un misterio que te tenga haciendo cábalas hasta el final.",
+        "Eso lo arreglamos en un santiamén. ¿Te apetece desconectar, reírte a carcajadas o meterte en una historia de las que ponen los pelos de punta?",
+        "¡Ni hablar de quedarse mirando al techo! Vamos a buscar una película que te atrape desde el primer minuto."
+      ]));
+    } else if (pregunta.includes("triste") ||
+               pregunta.includes("dia malo") ||
+               pregunta.includes("me siento mal") ||
+               pregunta.includes("estoy desanimado")) {
+      responder(elegir([
+        "Ay, cariño, siento que estés pasando un día así. A veces viene bien bajar el ritmo, ponerse cómodo y dejarse acompañar por una buena historia. ¿Buscamos algo reconfortante?",
+        "Te mando un abrazo de los grandes. No hay película que arregle todos los problemas, pero una historia bonita puede hacernos compañía un ratito.",
+        "Pues hoy nada de exigencias, corazón. Podemos buscar una comedia amable, una aventura luminosa o una película que te haga sentir acompañado."
+      ]));
+    } else if (pregunta.includes("chiste") ||
+               pregunta.includes("hazme reir") ||
+               pregunta.includes("cuenta algo gracioso")) {
+      responder(elegir([
+        "¿Por qué fue la cinta VHS al médico? Porque llevaba días encontrándose rebobinada. ¡Ay, qué tiempos aquellos!",
+        "¿Qué le dice una película a otra en la estantería? Nos vemos en el próximo pase. ¡Humor de videoclub, cariño!",
+        "¿Por qué el detective de cine nunca se pierde? Porque siempre sigue la pista de la trama.",
+        "¿Cuál es el colmo de una película de suspense? Que nadie aguante hasta el final. ¡Aunque para eso estamos, para disfrutarlo!"
+      ]));
+    } else if (pregunta.includes("sueno") ||
+               pregunta.includes("estoy cansado") ||
+               pregunta.includes("quiero relajarme")) {
+      responder(elegir([
+        "Entonces toca una película tranquila, una mantita y cero prisas. Eso sí, procura no quedarte dormido justo antes del desenlace.",
+        "Hoy te receto una sesión de sofá y cine, sin efectos secundarios salvo que te entren ganas de palomitas.",
+        "Vamos a buscar algo acogedor, de esas películas que te permiten desconectar del mundo durante un buen rato."
+      ]));
+    } else if (pregunta.includes("recomiend") ||
+               pregunta.includes("que pelicula veo") ||
+               pregunta.includes("que puedo ver") ||
+               pregunta.includes("sorprendeme") ||
+               pregunta.includes("una joya oculta")) {
+      const candidatas = tarjetas.filter(t => t.querySelector("h3"));
+      if (candidatas.length) {
+        const elegida = candidatas[Math.floor(Math.random() * candidatas.length)];
+        ultimaPeliculaCarmencita = elegida;
+        responder(elegir([
+          "Tengo una candidata para ti: " + tituloDe(elegida) + ". Échale un vistazo a su ficha y veamos si hoy surge el flechazo cinematográfico.",
+          "A ver qué te parece esta propuesta: " + tituloDe(elegida) + ". A veces las mejores sesiones empiezan dando una oportunidad a algo inesperado.",
+          "¡Hoy te propongo " + tituloDe(elegida) + "! Mira su ficha en el catálogo y dime si te convence. Si no, seguimos rebuscando."
+        ]));
+        elegida.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        responder("¡Vamos a encontrar esa película ideal! Cuéntame si te apetece reír, pasar miedo, emocionarte o resolver un misterio.");
+      }
+    } else if (pregunta.includes("hitchcock") ||
+               pregunta.includes("maestro del suspense")) {
+      responder(elegir([
+        "¡Alfred Hitchcock, cariño! Un maestro en hacer que el público tema lo que todavía no ha visto. Sabía que la espera y la información podían dar más miedo que cualquier monstruo.",
+        "Hitchcock era un mago de la tensión. Jugaba con nuestros nervios, las miradas y los detalles que parecían insignificantes. ¿Hay algo más delicioso que un buen suspense?",
+        "¡Eso son palabras mayores! Hitchcock convirtió el suspense en un arte. En sus películas, hasta una conversación aparentemente normal podía esconder una amenaza."
+      ]));
+    } else if (pregunta.includes("vhs") ||
+               pregunta.includes("videoclub") ||
+               pregunta.includes("nostalgia") ||
+               pregunta.includes("rebobinar")) {
+      responder(elegir([
+        "¡Ay, las cintas VHS! Elegir una película mirando las carátulas, llevarla a casa y acordarse de rebobinar antes de devolverla. Cada visita al videoclub tenía su encanto.",
+        "Aquellos videoclubs eran lugares llenos de posibilidades. Uno entraba buscando una película y salía con tres recomendaciones y una conversación sobre cine.",
+        "La magia del VHS estaba en el ritual: escoger la cinta, preparar el salón y esperar a que aparecieran los primeros títulos. ¡Qué recuerdos, cariño!"
+      ]));
+    } else if (pregunta.includes("terror") ||
+               pregunta.includes("miedo") ||
+               pregunta.includes("comedia") ||
+               pregunta.includes("reir") ||
+               pregunta.includes("aventura") ||
+               pregunta.includes("suspense") ||
+               pregunta.includes("thriller") ||
+               pregunta.includes("drama") ||
+               pregunta.includes("accion") ||
+               pregunta.includes("ciencia ficcion") ||
+               pregunta.includes("romant") ||
+               pregunta.includes("animacion") ||
+               pregunta.includes("western") ||
+               pregunta.includes("cine negro")) {
+      const generos = [
+        ["ciencia ficcion", ["ciencia ficcion", "ciencia ficción"]],
+        ["terror", ["terror", "miedo"]],
+        ["comedia", ["comedia"]],
+        ["aventura", ["aventura"]],
+        ["suspense", ["suspense", "thriller"]],
+        ["drama", ["drama"]],
+        ["accion", ["accion", "acción"]],
+        ["romantica", ["romant", "romance"]],
+        ["animacion", ["animacion", "animación"]],
+        ["western", ["western", "vaqueros"]],
+        ["cine negro", ["cine negro"]]
+      ];
+      const encontrado = generos.find(([nombre, palabras]) =>
+        palabras.some(p => pregunta.includes(p))
+      );
+      const genero = encontrado ? encontrado[0] : "cine";
+      const resultados = tarjetas.filter(t =>
+        textoDe(t).includes(genero) ||
+        (encontrado && encontrado[1].some(p => textoDe(t).includes(p)))
+      );
+
+      if (resultados.length) {
+        responder(elegir([
+          "¡Buena elección! He encontrado " + resultados.length + " película(s) relacionadas con " + genero + " en el catálogo. Vamos a echarles un vistazo.",
+          "¡De ese género tenemos material para una buena sesión! Hay " + resultados.length + " ficha(s) relacionadas con " + genero + ".",
+          "¡Marchando una sesión de " + genero + "! He localizado " + resultados.length + " resultado(s) que merece la pena revisar."
+        ]));
+        resultados[0].scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        responder("¡Ese género tiene mucho que ofrecer! De momento no encuentro coincidencias claras en las fichas del catálogo. Prueba con otro género o dime un título concreto.");
+      }
     } else if (pregunta.includes("programacion") ||
                pregunta.includes("esta noche") ||
                pregunta.includes("que ponen") ||
                pregunta.includes("a que hora")) {
-      responder("¡Prepara las palomitas! 📼 Tenemos anunciado el peliculón los jueves y sábados a las 22:00. Consulta nuestra sección de programación para ver los detalles.");
+      responder("¡Prepara las palomitas, cariño! La programación anunciada indica sesiones los jueves y sábados a las 22:00. Consulta la sección de programación de la web para comprobar los detalles.");
     } else if (pregunta.includes("catalogo") ||
                pregunta.includes("que peliculas tienes") ||
                pregunta.includes("que peliculas hay")) {
-      responder("Ahora mismo tenemos " + tarjetas.length +
-        " fichas de películas en nuestro catálogo. Puedes buscar un título o pedirme una película concreta, cariño. 🎬");
-    } else if (pregunta.includes("aburrid") ||
-               pregunta.includes("me aburro")) {
-      responder("¡Pues vamos a ponerle remedio, cariño! ❤️ ¿Qué te apetece: una aventura, unas buenas risas o pasar un poquito de miedo? ¡Tengo el videoclub preparado!");
-    } else if (pregunta.includes("triste") ||
-               pregunta.includes("dia malo") ||
-               pregunta.includes("me siento mal")) {
-      responder("Ay, cariño, ven aquí, que Carmencita te manda un abrazo. ❤️ A veces una buena película y un ratito tranquilo ayudan a levantar el ánimo. ¿Buscamos algo bonito para ver?");
-    } else if (pregunta.includes("chiste") ||
-               pregunta.includes("hazme reir") ||
-               pregunta.includes("cuenta algo gracioso")) {
-      responder("¡Ahí va uno, cariño! ¿Por qué la cinta VHS fue al médico? ¡Porque se encontraba rebobinada! 😂📼 ¿Quieres otro?");
-    } else if (pregunta.includes("tengo sueno") ||
-               pregunta.includes("estoy cansado") ||
-               pregunta.includes("tengo sueño")) {
-      responder("¡Entonces toca ponerse cómodo, cariño! 💤 Una mantita, unas palomitas y una película tranquila. Eso sí, si te duermes, ¡no me culpes si te pierdes el final!");
-    } else if (pregunta.includes("quien eres") ||
-               pregunta.includes("como te llamas")) {
-      responder("¡Soy Carmencita, la dueña de este videoclub! 📼 Llevo toda la vida recomendando películas y cuidando de mis cintas. ¡Pasa y ponte cómodo!");
-    } else if (pregunta.includes("que tal") ||
-               pregunta.includes("como estas")) {
-      responder("¡De maravilla, cariño! Las cintas están rebobinadas, las estanterías en orden y las palomitas casi listas. ❤️ ¿Qué película buscamos?");
-    } else if (["terror", "miedo", "aventura", "comedia",
-                "suspense", "drama", "accion", "ciencia ficcion"]
-                .some(genero => pregunta.includes(genero))) {
-      const generos = ["ciencia ficcion", "terror", "miedo", "aventura",
-                       "comedia", "suspense", "drama", "accion"];
-      const genero = generos.find(g => pregunta.includes(g));
-      const resultados = tarjetas.filter(tarjeta =>
-        textoDe(tarjeta).includes(genero)
-      );
-
-      if (resultados.length) {
-        responder("¡He encontrado " + resultados.length +
-          " película(s) relacionada(s) con " + genero +
-          " en nuestro catálogo! 🎬");
-        resultados[0].scrollIntoView({ behavior: "smooth", block: "center" });
-      } else {
-        responder("¡Buena elección, cariño! Todavía no tengo el género indicado en todas las fichas. Prueba a buscar un título concreto en nuestro catálogo y te ayudo a encontrarlo. 📼");
-      }
+      responder("Ahora mismo hay " + tarjetas.length + " fichas de películas en el catálogo. Puedes preguntarme por un título, explorar los géneros o pedirme una recomendación para tu estado de ánimo.");
     } else if (pregunta.includes("telegram")) {
-      responder("¡Claro, cariño! Busca el enlace a nuestro grupo de Telegram en la página. Si todavía no está configurado, lo añadiremos cuando tengamos la dirección del grupo. ❤️");
-    } else if (pregunta.includes("gracias")) {
-      responder("¡De nada, cariño! En este videoclub siempre rebobinamos con una sonrisa. 📼");
-    } else if (pregunta.includes("adios") || pregunta.includes("hasta luego")) {
-      responder("¡Hasta pronto, cariño! Ya sabes dónde encontrarme cuando te apetezca una buena película. ❤️");
+      responder("¡Claro! Busca el enlace al grupo de Telegram en la página. Si todavía no está configurado, hará falta añadir la dirección correcta para poder compartirla.");
+    } else if (pregunta.includes("gracias") ||
+               pregunta.includes("te lo agradezco")) {
+      responder(elegir([
+        "¡De nada, cariño! Para eso estamos: para compartir buenas historias y rebobinar con una sonrisa.",
+        "¡A mandar! Aquí las gracias se aceptan con mucho gusto y, si vienen acompañadas de una charla de cine, mejor todavía.",
+        "No hay de qué, corazón. Vuelve cuando quieras; siempre habrá otra película de la que hablar."
+      ]));
+    } else if (pregunta.includes("adios") ||
+               pregunta.includes("hasta luego") ||
+               pregunta.includes("me voy") ||
+               pregunta.includes("hasta pronto")) {
+      responder(elegir([
+        "¡Hasta pronto, cariño! Que tengas un día estupendo y que nunca te falte una buena historia.",
+        "¡Vuelve cuando quieras! Te guardaré un huequito entre nuestras películas favoritas.",
+        "¡Que te vaya bonito! Y recuerda: a veces la mejor aventura empieza al darle al play."
+      ]));
     } else {
-      responder("¡A ver qué encontramos, cariño! Puedes preguntarme por una película del catálogo, la programación o buscar un género. Poco a poco iremos enseñándome más trucos. 📼");
+      responder(elegir([
+        "Vaya, cariño, esa pregunta me ha dejado pensando. Podemos charlar de cine clásico, directores, géneros, nostalgia del VHS o buscar una película del catálogo.",
+        "¡Cuéntame un poquito más! Puedo ayudarte a explorar las películas de la web, hablar de suspense, terror, comedia y muchas otras historias.",
+        "Aquí seguimos rebuscando entre historias. Prueba a preguntarme por Hitchcock, por los viejos videoclubs, por un género o por una película concreta.",
+        "¡No me dejes con la intriga! Dame alguna pista más y buscaremos juntos una buena conversación cinematográfica."
+      ]));
     }
+
 
     entrada.value = "";
     entrada.focus();
   });
 })();
 </script>
+
+<div id="controles-voz-carmencita" aria-label="Voz de Carmencita">
+  <button id="voz-carmencita" type="button">🔊 Escuchar respuesta</button>
+  <button id="pausar-voz-carmencita" type="button">⏸ Pausar</button>
+  <button id="detener-voz-carmencita" type="button">⏹ Detener</button>
+</div>
+
+<style id="estilos-voz-carmencita">
+#controles-voz-carmencita {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid #55eaff55;
+}
+#controles-voz-carmencita button {
+  flex: 1 1 auto;
+  min-height: 42px;
+  padding: 10px 12px;
+  color: #f5f4ff;
+  background: linear-gradient(135deg, #17283a, #35182f);
+  border: 1px solid #55eaff88;
+  border-radius: 9px;
+  cursor: pointer;
+}
+#controles-voz-carmencita button:focus-visible {
+  outline: 2px solid #ff65cf;
+  outline-offset: 3px;
+}
+</style>
+
+<script id="motor-voz-carmencita">
+(() => {
+  const escuchar = document.getElementById("voz-carmencita");
+  const pausar = document.getElementById("pausar-voz-carmencita");
+  const detener = document.getElementById("detener-voz-carmencita");
+  const mensajes = document.getElementById("mensajes-carmencita");
+  const cerrar = document.getElementById("cerrar-carmencita");
+
+  if (!escuchar || !pausar || !detener || !mensajes) return;
+
+  let audio = null;
+  let peticion = 0;
+
+  function detenerAudio() {
+    peticion++;
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+      audio.removeAttribute("src");
+      audio.load();
+      audio = null;
+    }
+    escuchar.disabled = false;
+    escuchar.textContent = "🔊 Escuchar respuesta";
+  }
+
+  window.carmencitaHablar = async function(texto) {
+    if (!texto || !texto.trim()) return;
+
+    // Quitar emojis, símbolos decorativos y espacios repetidos
+    // solo del texto hablado; el chat conserva sus iconos.
+    texto = texto
+      .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, " ")
+      .replace(/[\uFE0F\u200D]/g, "")
+      .replace(/\s+/g, " ")
+      .trim();
+
+    if (!texto) return;
+
+    if (audio) {
+      audio.pause();
+      URL.revokeObjectURL(audio.src);
+      audio = null;
+    }
+
+    peticion++;
+    const turno = peticion;
+    escuchar.disabled = true;
+    escuchar.textContent = "⏳ Preparando voz…";
+
+    try {
+      const respuesta = await fetch("/voz", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+        body: texto
+      });
+
+      if (!respuesta.ok) throw new Error("HTTP " + respuesta.status);
+
+      const blob = await respuesta.blob();
+      if (!blob.size || turno !== peticion) return;
+
+      audio = new Audio(URL.createObjectURL(blob));
+      audio.onended = () => {
+        if (audio) URL.revokeObjectURL(audio.src);
+        audio = null;
+        escuchar.disabled = false;
+        escuchar.textContent = "🔊 Escuchar respuesta";
+      };
+      audio.onerror = () => {
+        escuchar.disabled = false;
+        escuchar.textContent = "🔊 Reintentar voz";
+      };
+
+      await audio.play();
+      escuchar.textContent = "🔊 Reproduciendo Carmencita";
+    } catch (error) {
+      console.error("Error de voz Piper:", error);
+      escuchar.disabled = false;
+      escuchar.textContent = "🔊 Reintentar voz";
+    }
+  };
+
+  escuchar.addEventListener("click", async () => {
+    const ultimo = [...mensajes.querySelectorAll(".msg-carmencita")].pop();
+    const texto = ultimo?.innerText.trim();
+    if (!texto) return;
+
+    detenerAudio();
+    const turno = peticion;
+    escuchar.disabled = true;
+    escuchar.textContent = "⏳ Preparando voz…";
+
+    try {
+      const respuesta = await fetch("/voz", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+        body: texto
+      });
+
+      if (!respuesta.ok) {
+        throw new Error("El servidor de voz respondió HTTP " + respuesta.status);
+      }
+
+      const blob = await respuesta.blob();
+      if (!blob.size) {
+        throw new Error("El servidor ha devuelto un audio vacío");
+      }
+      if (turno !== peticion) return;
+
+      audio = new Audio(URL.createObjectURL(blob));
+      audio.onended = () => {
+        if (audio) URL.revokeObjectURL(audio.src);
+        audio = null;
+        escuchar.disabled = false;
+        escuchar.textContent = "🔊 Escuchar respuesta";
+      };
+      audio.onerror = () => {
+        escuchar.disabled = false;
+        escuchar.textContent = "🔊 Reintentar voz";
+      };
+
+      await audio.play();
+      escuchar.textContent = "🔊 Reproduciendo Carmencita";
+    } catch (error) {
+      if (turno !== peticion) return;
+      console.error("Error de voz Piper:", error);
+      escuchar.disabled = false;
+      escuchar.textContent = "🔊 Reintentar voz";
+      alert("No se ha podido reproducir la voz de Carmencita. Comprueba que Piper y el servidor web estén funcionando.");
+    }
+  });
+
+  pausar.addEventListener("click", () => {
+    if (!audio) return;
+    if (audio.paused) {
+      audio.play().catch(error => console.error(error));
+      pausar.textContent = "⏸ Pausar";
+    } else {
+      audio.pause();
+      pausar.textContent = "▶ Continuar";
+    }
+  });
+
+  detener.addEventListener("click", () => {
+    detenerAudio();
+    pausar.textContent = "⏸ Pausar";
+  });
+
+  cerrar?.addEventListener("click", detenerAudio);
+})();
+</script>
+
 <!-- FIN DEL CHAT DE CARMENCITA -->
 
 
@@ -2306,7 +2898,570 @@
 
 
 
+
+<!-- MEJORA VISUAL DEL CHAT CARMENCITA -->
+<style id="mejora-visual-chat-carmencita">
+#carmencita {
+  font-family: Georgia, "Times New Roman", serif;
+}
+#abrir-carmencita {
+  background: linear-gradient(135deg, #4c1d2c, #211019);
+  border: 1px solid #c9a66b;
+  border-radius: 16px;
+  color: #f7e8c9;
+  padding: 13px 16px;
+  box-shadow: 0 8px 28px #0008, 0 0 18px #c9a66b22;
+  transition: transform .2s ease, border-color .2s ease;
+}
+#abrir-carmencita:hover {
+  transform: translateY(-2px);
+  border-color: #f3d49a;
+}
+#abrir-carmencita .avatar {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid #c9a66b;
+  border-radius: 50%;
+  background: #25131b;
+}
+#abrir-carmencita small {
+  color: #e3c58f;
+  letter-spacing: .2px;
+}
+#chat-carmencita {
+  border: 1px solid #c9a66b;
+  border-radius: 16px;
+  background: #171015;
+  box-shadow: 0 18px 55px #000b;
+}
+#cabecera-carmencita {
+  align-items: center;
+  gap: 12px;
+  padding: 17px;
+  color: #f9e8c6;
+  background: linear-gradient(120deg, #592336, #29141e);
+  border-bottom: 1px solid #c9a66b66;
+}
+#cabecera-carmencita strong {
+  font-size: 14px;
+  line-height: 1.5;
+}
+#cabecera-carmencita button {
+  min-width: 32px;
+  min-height: 32px;
+  border-radius: 50%;
+}
+#cabecera-carmencita button:hover {
+  background: #ffffff18;
+}
+#mensajes-carmencita {
+  max-height: min(360px, 45vh);
+  padding: 16px;
+  font-size: 14px;
+  line-height: 1.7;
+  scrollbar-color: #805044 #171015;
+}
+#mensajes-carmencita .msg-carmencita,
+#mensajes-carmencita .msg-usuario {
+  max-width: 92%;
+  margin: 10px 0;
+  padding: 12px 14px;
+  border-radius: 12px;
+}
+#mensajes-carmencita .msg-carmencita {
+  color: #f4e5d1;
+  background: #30202a;
+  border: 1px solid #76504466;
+  border-bottom-left-radius: 3px;
+}
+#mensajes-carmencita .msg-usuario {
+  margin-left: auto;
+  color: #fff3df;
+  background: #633044;
+  border: 1px solid #bd8b7044;
+  border-bottom-right-radius: 3px;
+}
+#form-carmencita {
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: #21151c;
+  border-top: 1px solid #c9a66b55;
+}
+#pregunta-carmencita {
+  min-height: 42px;
+  border-radius: 9px;
+  border-color: #795568;
+  background: #170f15;
+  color: #fff4e6;
+  font: 14px Georgia, "Times New Roman", serif;
+}
+#pregunta-carmencita:focus {
+  outline: 2px solid #c9a66b;
+  outline-offset: 1px;
+}
+#form-carmencita button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border-radius: 9px;
+  color: #211019;
+  background: linear-gradient(135deg, #f0d29a, #c49a5b);
+  font-weight: bold;
+}
+#form-carmencita button:hover {
+  filter: brightness(1.08);
+}
+#abrir-carmencita:focus-visible,
+#cabecera-carmencita button:focus-visible,
+#form-carmencita button:focus-visible {
+  outline: 2px solid #f3d49a;
+  outline-offset: 3px;
+}
+@media (max-width: 480px) {
+  #carmencita {
+    right: 10px;
+    bottom: 10px;
+  }
+  #chat-carmencita {
+    width: calc(100vw - 20px);
+    margin-bottom: 8px;
+  }
+  #abrir-carmencita {
+    max-width: calc(100vw - 20px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #abrir-carmencita {
+    transition: none;
+  }
+}
+</style>
+
+
+<!-- DESPACHO CINEMATOGRÁFICO DE CARMENCITA -->
+<style id="despacho-cinematografico-carmencita">
+#chat-carmencita {
+  width: min(430px, calc(100vw - 28px));
+  border: 1px solid #c5a267;
+  border-radius: 18px;
+  background: #170f13;
+  box-shadow: 0 20px 65px #000c, 0 0 24px #b88a4822;
+}
+#cabecera-carmencita {
+  position: relative;
+  padding: 12px 14px;
+  color: #f7e5c2;
+  background: linear-gradient(120deg, #57263a, #21131b 85%);
+  border-bottom: 1px solid #c5a26788;
+}
+#chat-carmencita #escena-carmencita {
+  position: relative;
+  display: grid;
+  grid-template-columns: 44% 1fr;
+  min-height: 190px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 40%, #9d633833, transparent 65%),
+    linear-gradient(135deg, #3a2029, #171015 78%);
+  border-bottom: 1px solid #b88a4855;
+}
+#escena-carmencita .retrato {
+  position: relative;
+  min-height: 190px;
+  overflow: hidden;
+}
+#escena-carmencita .retrato img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  -webkit-mask-image: linear-gradient(to right, black 72%, transparent 100%);
+  mask-image: linear-gradient(to right, black 72%, transparent 100%);
+}
+#escena-carmencita .presentacion {
+  align-self: center;
+  padding: 16px 12px 16px 0;
+  color: #f5e6d0;
+}
+#escena-carmencita .sello {
+  color: #d8b77b;
+  font: 10px/1.5 Georgia, serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+#escena-carmencita h3 {
+  margin: 8px 0;
+  color: #ffe8bd;
+  font: bold 23px/1.05 Georgia, "Times New Roman", serif;
+}
+#escena-carmencita .descripcion {
+  margin: 0;
+  color: #ddc9bd;
+  font: 12px/1.6 Georgia, serif;
+}
+#escena-carmencita .ornamento {
+  display: block;
+  margin-top: 12px;
+  color: #c5a267;
+  letter-spacing: 4px;
+}
+#chat-carmencita .preguntas-carmencita {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px 0;
+  background: #170f13;
+}
+#chat-carmencita .preguntas-carmencita button {
+  padding: 7px 9px;
+  color: #e9d3b0;
+  background: #30202a;
+  border: 1px solid #8b674e;
+  border-radius: 20px;
+  font: 11px Georgia, serif;
+  cursor: pointer;
+}
+#chat-carmencita .preguntas-carmencita button:hover {
+  color: #fff0d1;
+  background: #543044;
+  border-color: #d5b478;
+}
+#mensajes-carmencita {
+  max-height: min(260px, 34vh);
+}
+@media (max-width: 480px) {
+  #chat-carmencita {
+    width: calc(100vw - 20px);
+  }
+  #chat-carmencita #escena-carmencita {
+    min-height: 165px;
+    grid-template-columns: 42% 1fr;
+  }
+  #escena-carmencita .retrato {
+    min-height: 165px;
+  }
+  #escena-carmencita h3 {
+    font-size: 21px;
+  }
+}
+</style>
+
 </body>
+
+<!-- MEJORA-CABECERA-CARMENCITA-V2 -->
+<style id="mejora-cabecera-carmencita-v2">
+#chat-carmencita {
+  border: 1px solid #c9a66b;
+  border-radius: 16px;
+  background: #171016;
+  box-shadow: 0 18px 55px #000b, 0 0 22px #b88a4822;
+}
+#cabecera-carmencita {
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  color: #f5dfb4;
+  background:
+    radial-gradient(ellipse at 15% 0%, #82503a55, transparent 65%),
+    linear-gradient(125deg, #512438, #20141c 85%);
+  border-bottom: 1px solid #b9955a88;
+}
+#cabecera-carmencita strong {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  letter-spacing: .2px;
+}
+#cabecera-carmencita strong::before {
+  content: "✦ ";
+  color: #e3c184;
+}
+#cabecera-carmencita strong::after {
+  content: "EL RINCÓN DE LOS AMANTES DEL CINE";
+  display: block;
+  margin-top: 7px;
+  color: #d9b77d;
+  font: 9px/1.5 Georgia, serif;
+  letter-spacing: 1.4px;
+}
+#cabecera-carmencita button {
+  min-width: 30px;
+  min-height: 30px;
+  border: 1px solid #a47d57;
+  border-radius: 50%;
+}
+#mensajes-carmencita {
+  background:
+    radial-gradient(ellipse at top left, #56304233, transparent 70%),
+    #171016;
+  color: #f2e5d5;
+  padding: 14px;
+}
+#mensajes-carmencita .msg-carmencita {
+  border: 1px solid #74503f66;
+  border-radius: 3px 12px 12px 12px;
+  background: linear-gradient(135deg, #38222e, #261923);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 14px;
+}
+#mensajes-carmencita .msg-usuario {
+  margin-left: 22px;
+  border: 1px solid #a17a50;
+  border-radius: 12px 3px 12px 12px;
+  background: #563047;
+  color: #fff0d9;
+}
+#chat-carmencita .preguntas-carmencita {
+  border-top: 1px solid #7b5b403d;
+  padding: 12px;
+}
+#chat-carmencita .preguntas-carmencita button {
+  transition: background .18s ease, border-color .18s ease;
+}
+#chat-carmencita .preguntas-carmencita button:hover {
+  transform: translateY(-1px);
+}
+#form-carmencita {
+  background: #21151d;
+  border-top-color: #84613f77;
+}
+#pregunta-carmencita {
+  border-radius: 8px;
+  outline-color: #d9b77d;
+}
+#form-carmencita button {
+  border-radius: 8px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #chat-carmencita .preguntas-carmencita button {
+    transition: none;
+  }
+}
+</style>
+
+
+<!-- CARMENCITA-CYBERPUNK-V1 -->
+<style id="carmencita-cyberpunk-v1">
+#carmencita {
+  font-family: "Courier New", monospace;
+}
+#abrir-carmencita {
+  color: #d8ffff;
+  background: linear-gradient(135deg, #101b31, #28152f);
+  border: 1px solid #24f4ed;
+  border-radius: 10px;
+  box-shadow: 0 0 8px #00f0ff55, inset 0 0 12px #00eaff0d;
+  transition: border-color .2s, box-shadow .2s;
+}
+#abrir-carmencita:hover {
+  border-color: #ff54d8;
+  box-shadow: 0 0 17px #ff35d866, 0 0 28px #00eaff22;
+}
+#abrir-carmencita .avatar {
+  filter: drop-shadow(0 0 5px #ff54d8);
+}
+#abrir-carmencita small {
+  color: #54f9f0;
+  letter-spacing: .4px;
+}
+#chat-carmencita {
+  color: #e4f6ff;
+  background: #080c18;
+  border: 1px solid #24f4ed;
+  border-radius: 12px;
+  box-shadow: 0 0 12px #00f0ff44, 0 0 32px #ff35d822,
+              0 20px 60px #000d;
+}
+#cabecera-carmencita {
+  color: #f4eaff;
+  background:
+    linear-gradient(100deg, #111c36 0%, #291331 65%, #101526 100%);
+  border-bottom: 1px solid #24f4ed99;
+}
+#cabecera-carmencita strong {
+  color: #f5f4ff;
+  font-family: "Courier New", monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px #ff54d866;
+}
+#cabecera-carmencita strong::before {
+  content: "◈ ";
+  color: #24f4ed;
+}
+#cabecera-carmencita strong::after {
+  content: "ARCHIVO CINEMATOGRÁFICO // EN LÍNEA";
+  display: block;
+  margin-top: 7px;
+  color: #24f4ed;
+  font: 9px/1.5 "Courier New", monospace;
+  letter-spacing: 1px;
+  text-shadow: 0 0 7px #24f4ed66;
+}
+#cabecera-carmencita button {
+  color: #ff7cde;
+  border: 1px solid #ff54d8;
+  border-radius: 5px;
+}
+#mensajes-carmencita {
+  color: #d9e9ff;
+  background:
+    radial-gradient(ellipse at 10% 0%, #16314b66, transparent 65%),
+    #080c18;
+}
+#mensajes-carmencita .msg-carmencita {
+  color: #dffeff;
+  background: linear-gradient(120deg, #102435, #151327);
+  border: 1px solid #24f4ed55;
+  border-left: 2px solid #24f4ed;
+  border-radius: 2px 9px 9px 9px;
+}
+#mensajes-carmencita .msg-usuario {
+  color: #ffe6fb;
+  background: linear-gradient(120deg, #321638, #25152f);
+  border: 1px solid #ff54d877;
+  border-right: 2px solid #ff54d8;
+  border-radius: 9px 2px 9px 9px;
+}
+#chat-carmencita .preguntas-carmencita {
+  background: #0b1020;
+  border-top: 1px solid #24f4ed33;
+}
+#chat-carmencita .preguntas-carmencita button {
+  color: #8cfff8;
+  background: #101b30;
+  border: 1px solid #167f91;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+}
+#chat-carmencita .preguntas-carmencita button:hover {
+  color: #fff0fc;
+  background: #351536;
+  border-color: #ff54d8;
+  box-shadow: 0 0 9px #ff54d844;
+}
+#form-carmencita {
+  background: #0c1020;
+  border-top: 1px solid #24f4ed55;
+}
+#pregunta-carmencita {
+  color: #e4ffff;
+  background: #10182a;
+  border: 1px solid #237c8b;
+  border-radius: 4px;
+}
+#pregunta-carmencita::placeholder {
+  color: #8a9cb7;
+}
+#form-carmencita button {
+  color: #07131c;
+  background: linear-gradient(135deg, #6afff5, #25cbdc);
+  border: 1px solid #9afffa;
+  border-radius: 4px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  box-shadow: 0 0 9px #24f4ed33;
+}
+#form-carmencita button:hover {
+  color: #fff;
+  background: linear-gradient(135deg, #e74bc7, #963ce1);
+  border-color: #ff8de4;
+}
+#abrir-carmencita:focus-visible,
+#cabecera-carmencita button:focus-visible,
+#chat-carmencita button:focus-visible,
+#pregunta-carmencita:focus-visible {
+  outline: 2px solid #ff54d8;
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  #abrir-carmencita {
+    transition: none;
+  }
+}
+</style>
+
+
+<!-- CARMENCITA-FONDO-CIUDAD-NEON-V1 -->
+<style id="carmencita-fondo-ciudad-neon">
+html {
+  min-height: 100%;
+  background: #070b18;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #070b18 !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(5, 8, 20, .40),
+      rgba(5, 8, 20, .68) 55%,
+      rgba(5, 8, 20, .82)
+    ),
+    url("fondo-ciudad-carmencita.jpg") !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Desactivar los fondos decorativos anteriores */
+body::before,
+body::after {
+  display: none !important;
+  content: none !important;
+}
+
+#inicio.hero-retro::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Paneles de cristal oscuro */
+header,
+.programacion,
+#socios-carmencita,
+.telegram,
+footer {
+  background: rgba(7, 12, 27, .76) !important;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+}
+
+#catalogo {
+  background: rgba(7, 12, 27, .35) !important;
+}
+
+#catalogo .peliculas {
+  background: rgba(8, 13, 29, .62) !important;
+  border-color: rgba(36, 244, 237, .45) !important;
+}
+
+#catalogo .pelicula {
+  background: rgba(10, 16, 32, .86) !important;
+  border-color: rgba(255, 84, 216, .38) !important;
+}
+
+#inicio.hero-retro {
+  background: transparent !important;
+}
+
+#chat-carmencita {
+  background-color: rgba(8, 12, 24, .97) !important;
+}
+
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll !important;
+  }
+}
+</style>
+
 </html>
 
 <!-- AJUSTE LETRAS PEQUENAS -->
@@ -2714,7 +3869,7 @@
 </style>
 
 
-    
+
 <!-- PORTADA: FOTO CUBRE TODO EL RECUADRO -->
 <style id="portada-carmencita-cubre-todo">
 #inicio.hero-retro::after {
@@ -2732,3 +3887,1201 @@
   }
 }
 </style>
+
+
+
+<!-- CARMENCITA-PORTADA-NEON-V1 -->
+<style id="carmencita-portada-neon-v1">
+:root {
+  --fondo: #080b16;
+  --panel: #101528;
+  --rojo: #ff3eae;
+  --rosa: #ff79d2;
+  --crema: #d8fbff;
+  --texto: #e7efff;
+}
+
+/* Cabecera: terminal nocturna */
+body > header {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(100deg, #080b16, #171127 65%, #091a28) !important;
+  border-bottom: 1px solid #25f4ed !important;
+  box-shadow: 0 4px 24px #00e5ff18;
+}
+body > header .logo {
+  color: #ff55c8 !important;
+  text-shadow: 0 0 8px #ff35b877, 0 0 22px #ff35b833 !important;
+}
+body > header nav a {
+  transition: color .2s, text-shadow .2s;
+}
+body > header nav a:hover,
+body > header nav a:focus-visible {
+  color: #40fff3 !important;
+  text-shadow: 0 0 10px #24f4ed88;
+}
+
+/* Portada: ciudad nocturna y fotografía teñida de neón */
+#inicio.hero-retro {
+  position: relative !important;
+  isolation: isolate;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(20px, 4vw, 56px);
+  min-height: 570px;
+  padding: clamp(36px, 6vw, 84px) clamp(20px, 7vw, 100px) !important;
+  overflow: hidden;
+  background: #080b16 !important;
+  border-bottom: 1px solid #ff3eae66;
+}
+
+/* Neutraliza la antigua regla que escondía el texto */
+#inicio.hero-retro > .hero-content {
+  display: block !important;
+  position: relative !important;
+  z-index: 2 !important;
+  order: initial !important;
+  width: 100%;
+  max-width: 620px;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+/* La foto queda como fondo ambiental, no como una franja separada */
+#inicio.hero-retro::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  display: block !important;
+  order: initial !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-image:
+    linear-gradient(90deg, #080b16f5 0%, #080b16d9 42%,
+                    #10102588 72%, #080b1644 100%),
+    linear-gradient(0deg, #080b16bb, transparent 48%, #080b1655),
+    linear-gradient(135deg, #00e5ff22, #ff2fa522),
+    url("fondo-videoclub.jpg") !important;
+  background-size: cover !important;
+  background-position: center 45% !important;
+  background-repeat: no-repeat !important;
+  filter: saturate(1.2) contrast(1.08) !important;
+  pointer-events: none;
+}
+
+#inicio.hero-retro .etiqueta,
+#inicio.hero-retro .hero-sello {
+  color: #43fff2 !important;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px #00f0ff66;
+}
+#inicio.hero-retro .hero-content h1 {
+  color: #f4f7ff !important;
+  text-shadow: 0 0 10px #ff38b855, 3px 3px 0 #122b48 !important;
+  line-height: 1.02;
+}
+#inicio.hero-retro .hero-content h1 span {
+  color: #ff55c8 !important;
+  text-shadow: 0 0 12px #ff35b877, 0 0 32px #ff35b833 !important;
+}
+#inicio.hero-retro .hero-content > p {
+  color: #e0e9ff !important;
+  max-width: 480px;
+  line-height: 1.8;
+}
+#inicio.hero-retro .boton {
+  color: #071019 !important;
+  background: linear-gradient(100deg, #42fff3, #d0ffff) !important;
+  border: 1px solid #a8fffa !important;
+  box-shadow: 0 0 18px #00e5ff44 !important;
+}
+#inicio.hero-retro .boton:hover {
+  background: linear-gradient(100deg, #ff55c8, #ffb2e7) !important;
+  box-shadow: 0 0 24px #ff35b855 !important;
+}
+
+/* Mantener visibles las cintas VHS */
+#inicio.hero-retro .vhs-escenario {
+  position: relative !important;
+  z-index: 1 !important;
+  width: 100% !important;
+  max-width: 650px;
+  margin: 0 auto !important;
+}
+
+/* Franja de programación */
+.programacion {
+  background: linear-gradient(90deg, #101528, #21132b, #101528) !important;
+  border-top: 1px solid #25f4ed44;
+  border-bottom: 1px solid #ff3eae55;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 760px) {
+  #inicio.hero-retro {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+    min-height: 0;
+    padding: 42px 22px 32px !important;
+  }
+  #inicio.hero-retro::after {
+    background-image:
+      linear-gradient(180deg, #080b16d9 0%, #080b1688 55%, #080b16ed 100%),
+      linear-gradient(135deg, #00e5ff22, #ff2fa522),
+      url("fondo-videoclub.jpg") !important;
+    background-position: center !important;
+  }
+  #inicio.hero-retro > .hero-content {
+    text-align: center !important;
+  }
+  #inicio.hero-retro .hero-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #inicio.hero-retro .vhs-escenario {
+    max-width: 500px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > header nav a {
+    transition: none;
+  }
+}
+</style>
+
+
+
+<!-- CARMENCITA-CRISTAL-CYBERPUNK-V1 -->
+<style id="carmencita-cristal-cyberpunk">
+:root {
+  --fondo: #080b16;
+  --panel: #101629;
+  --rojo: #ff4fd8;
+  --rosa: #ff78df;
+  --crema: #c8ffff;
+  --texto: #e6faff;
+}
+
+/* Fondo futurista con Carmencita visible detrás */
+body {
+  background-color: #080b16 !important;
+  background-image:
+    linear-gradient(rgba(5, 9, 23, .48), rgba(5, 9, 23, .76)),
+    url("recursos-carmencita/carmencita-3d.jpg") !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  color: #e6faff !important;
+}
+
+/* Cabecera de cristal */
+body > header {
+  position: relative;
+  z-index: 5;
+  background: rgba(7, 12, 28, .58) !important;
+  border-bottom: 1px solid #36f5f088 !important;
+  box-shadow: 0 5px 28px #00e5ff12;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.logo {
+  color: #ff65dc !important;
+  text-shadow: 0 0 8px #ff42d8, 0 0 24px #ff42d855 !important;
+}
+
+body > header nav a {
+  transition: color .2s, text-shadow .2s;
+}
+
+body > header nav a:hover {
+  color: #59fff4 !important;
+  text-shadow: 0 0 12px #20f5ff;
+}
+
+/* Portada: imagen de Carmencita, sin la foto antigua */
+#inicio.hero-retro {
+  background: rgba(5, 9, 23, .24) !important;
+}
+
+#inicio.hero-retro::after {
+  background-image:
+    linear-gradient(rgba(4, 8, 20, .18), rgba(4, 8, 20, .48)),
+    url("recursos-carmencita/carmencita-3d.jpg") !important;
+  background-size: cover !important;
+  background-position: center 28% !important;
+  filter: none !important;
+}
+
+#inicio .hero-content {
+  text-shadow: 0 2px 12px #000;
+}
+
+#inicio .hero-content h1 {
+  color: #e9ffff !important;
+  text-shadow: 0 0 8px #30f5ff, 0 0 28px #00cfff88 !important;
+}
+
+#inicio .hero-content h1 span {
+  color: #ff70df !important;
+  text-shadow: 0 0 12px #ff38d8, 0 0 30px #ff38d866 !important;
+}
+
+/* Programación y catálogo: fuera fondos opacos y estanterías */
+#programacion,
+#catalogo,
+#socios-carmencita,
+#telegram,
+body > footer {
+  background: rgba(7, 12, 27, .48) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+#programacion {
+  border-block: 1px solid #2df5e955 !important;
+}
+
+#catalogo {
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#catalogo .peliculas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 16px !important;
+  padding: 16px 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Tarjetas holográficas: sin madera */
+#catalogo .pelicula {
+  min-width: 0;
+  margin: 0 !important;
+  padding: 10px !important;
+  align-self: stretch;
+  overflow: hidden;
+  color: #e6faff !important;
+  background: rgba(12, 22, 42, .46) !important;
+  border: 1px solid #42eaf077 !important;
+  border-radius: 9px !important;
+  box-shadow: inset 0 0 18px #24dfff09,
+              0 0 14px #00eaff0b !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+}
+
+#catalogo .pelicula:hover {
+  border-color: #ff5cdb !important;
+  box-shadow: 0 0 18px #ff35d833,
+              inset 0 0 16px #00eaff12 !important;
+  transform: translateY(-3px);
+}
+
+#catalogo .cartel {
+  border-radius: 4px;
+  box-shadow: 0 0 12px #00eaff16 !important;
+}
+
+#catalogo .info-pelicula,
+#catalogo .info-pelicula h3,
+#catalogo .info-pelicula p {
+  color: #e6faff !important;
+  background: transparent !important;
+}
+
+#catalogo .info-pelicula h3 {
+  text-shadow: 0 0 8px #00eaff33;
+}
+
+#catalogo .anio {
+  color: #ff80df !important;
+}
+
+/* Buscador de cristal */
+#catalogo .buscador {
+  color: #e6faff !important;
+  background: rgba(8, 17, 34, .65) !important;
+  border: 1px solid #35eee988 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 12px #00eaff12;
+}
+
+#catalogo .buscador::placeholder {
+  color: #a6c9d8;
+}
+
+/* Carné de socio y Telegram con el mismo lenguaje visual */
+#socios-carmencita {
+  border: 1px solid #34eee977 !important;
+  border-radius: 12px;
+  box-shadow: 0 0 22px #00eaff12 !important;
+}
+
+#socios-carmencita h2,
+#telegram h2,
+.titulo-seccion {
+  color: #8bfff7 !important;
+  text-shadow: 0 0 12px #00dfff44;
+}
+
+#socios-carmencita form input {
+  color: #e6faff;
+  background: rgba(7, 14, 29, .75);
+  border: 1px solid #35eee988;
+  border-radius: 7px;
+}
+
+#socios-carmencita button,
+.boton {
+  color: #eaffff !important;
+  background: linear-gradient(110deg, #10344b, #342044) !important;
+  border: 1px solid #35eee9 !important;
+  box-shadow: 0 0 12px #00eaff24 !important;
+}
+
+#socios-carmencita button:hover,
+.boton:hover {
+  border-color: #ff5cdb !important;
+  box-shadow: 0 0 18px #ff35d844 !important;
+}
+
+/* Carmencita conserva su propia paleta en el chat */
+#chat-carmencita {
+  background: rgba(8, 12, 24, .94) !important;
+}
+
+/* En móvil, evitar fondos fijos y conservar la legibilidad */
+@media (max-width: 600px) {
+  body {
+    background-attachment: scroll !important;
+  }
+
+  #catalogo .peliculas {
+    gap: 10px !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #catalogo .pelicula {
+    padding: 7px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  body > header nav a {
+    transition: none !important;
+  }
+}
+</style>
+
+
+<!-- CARMENCITA-SIN-FOTO-FONDO-V1 -->
+<style id="carmencita-sin-foto-fondo">
+body {
+  background-image: none !important;
+  background-color: #080b16 !important;
+  background-attachment: scroll !important;
+}
+#inicio.hero-retro::after {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+</style>
+
+
+
+<!-- CARMENCITA-CIUDAD-DISTOPICA-V1 -->
+<style id="carmencita-ciudad-distopica">
+body {
+  position: relative;
+  isolation: isolate;
+  background: #070b18 !important;
+}
+
+/* Ciudad nocturna generada con CSS, sin fotografías */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg,
+      rgba(5, 8, 23, .12) 0%,
+      rgba(8, 10, 27, .2) 38%,
+      rgba(5, 7, 18, .88) 100%),
+    radial-gradient(ellipse at 18% 37%,
+      #ff2d9b44 0%, transparent 32%),
+    radial-gradient(ellipse at 82% 29%,
+      #00d9ff3d 0%, transparent 35%),
+    linear-gradient(180deg, #101a36 0%, #17132e 48%, #050813 100%);
+}
+
+/* Siluetas de rascacielos y ventanas luminosas */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: .76;
+  background-image:
+    repeating-linear-gradient(90deg,
+      transparent 0 28px,
+      #39edff55 29px 31px,
+      transparent 32px 43px),
+    repeating-linear-gradient(0deg,
+      transparent 0 20px,
+      #ff50c633 21px 23px,
+      transparent 24px 34px);
+  background-size: 170px 230px, 170px 230px;
+  background-position: 12px 70px, 12px 70px;
+  clip-path: polygon(
+    0 24%, 5% 24%, 5% 12%, 10% 12%, 10% 30%,
+    15% 30%, 15% 18%, 21% 18%, 21% 35%,
+    27% 35%, 27% 8%, 34% 8%, 34% 28%,
+    39% 28%, 39% 20%, 45% 20%, 45% 39%,
+    51% 39%, 51% 15%, 57% 15%, 57% 30%,
+    64% 30%, 64% 5%, 71% 5%, 71% 25%,
+    77% 25%, 77% 16%, 83% 16%, 83% 34%,
+    89% 34%, 89% 11%, 95% 11%, 95% 27%,
+    100% 27%, 100% 100%, 0 100%
+  );
+  mask-image: linear-gradient(to bottom, black 0%, black 55%, transparent 100%);
+}
+
+/* Superficies de cristal: dejan ver la ciudad */
+#programacion,
+#catalogo,
+#socios-carmencita,
+#telegram,
+body > footer {
+  background-color: rgba(8, 13, 31, .68) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+#catalogo .peliculas {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+#catalogo .pelicula {
+  background: rgba(12, 20, 43, .74) !important;
+  border: 1px solid #36eaff77 !important;
+  box-shadow: 0 0 14px #00d9ff14 !important;
+}
+
+#catalogo .pelicula:hover {
+  border-color: #ff4fd8 !important;
+  box-shadow: 0 0 20px #ff4fd833 !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before,
+  body::after {
+    scroll-behavior: auto;
+  }
+}
+</style>
+
+<!-- CARMENCITA-FONDO-CIUDAD-FORZADO-V2 -->
+<style id="carmencita-fondo-ciudad-forzado-v2">
+html {
+  min-height: 100% !important;
+  background-color: #070b18 !important;
+  background-image: url("fondo-ciudad-carmencita.jpg") !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body {
+  min-height: 100vh !important;
+  background-color: transparent !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(5, 8, 20, .20),
+      rgba(5, 8, 20, .42) 55%,
+      rgba(5, 8, 20, .58)
+    ),
+    url("fondo-ciudad-carmencita.jpg") !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+body::before,
+body::after,
+#inicio.hero-retro::after {
+  display: none !important;
+  content: none !important;
+  background-image: none !important;
+}
+
+header,
+.programacion,
+#socios-carmencita,
+.telegram,
+footer {
+  background-color: rgba(7, 12, 27, .58) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+#catalogo {
+  background: rgba(7, 12, 27, .24) !important;
+}
+
+#catalogo .peliculas {
+  background: rgba(8, 13, 29, .48) !important;
+}
+
+#catalogo .pelicula {
+  background: rgba(10, 16, 32, .72) !important;
+}
+
+@media (max-width: 700px) {
+  html, body {
+    background-attachment: scroll !important;
+  }
+}
+</style>
+
+<!-- CARMENCITA-FONDO-DISTOPICO-DEFINITIVO -->
+<style id="carmencita-fondo-distopico-final">
+html, body {
+  min-height: 100%;
+}
+body {
+  background-color: #070b18 !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(3, 7, 20, .28),
+      rgba(3, 7, 20, .48) 55%,
+      rgba(3, 7, 20, .62)
+    ),
+    url("fondo-ciudad-nueva.jpg") !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+body::before, body::after {
+  content: none !important;
+  display: none !important;
+}
+#inicio.hero-retro::after {
+  display: none !important;
+  background-image: none !important;
+}
+#inicio.hero-retro {
+  background: transparent !important;
+}
+#inicio.hero-retro > .hero-content {
+  display: block !important;
+  position: relative;
+  z-index: 2;
+}
+header, .programacion, #catalogo,
+#socios-carmencita, .telegram, footer {
+  background-color: rgba(5, 10, 24, .68) !important;
+  background-image: none !important;
+  backdrop-filter: blur(4px);
+}
+#catalogo .peliculas {
+  background: rgba(8, 13, 29, .42) !important;
+  border: 1px solid rgba(100, 180, 255, .28) !important;
+  box-shadow: 0 0 24px rgba(0, 150, 255, .12) !important;
+}
+#catalogo .pelicula {
+  background: rgba(8, 13, 29, .76) !important;
+  border: 1px solid rgba(100, 180, 255, .30) !important;
+  box-shadow: 0 0 14px rgba(0, 150, 255, .10) !important;
+}
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll !important;
+  }
+}
+</style>
+
+<!-- CARMENCITA: FONDO BLADE RUNNER DEFINITIVO -->
+<style id="fondo-blade-runner-definitivo">
+html {
+  min-height: 100%;
+  background: #070913 !important;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #070913 !important;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(4, 7, 18, .35),
+      rgba(4, 7, 18, .48) 45%,
+      rgba(4, 7, 18, .62)
+    ),
+    url("fondo-blade-runner-carmencita.jpg") !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Desactivar los fondos decorativos anteriores que ocultaban la imagen */
+body::before,
+body::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Dejar visible la ciudad detrás de toda la página */
+header,
+#inicio.hero-retro,
+.programacion,
+main,
+#catalogo,
+#socios-carmencita,
+.telegram,
+footer {
+  background-color: rgba(5, 8, 20, .48) !important;
+  background-image: none !important;
+}
+
+/* Cabecera con cristal oscuro y reflejos de neón */
+header {
+  background-color: rgba(5, 8, 20, .78) !important;
+  border-bottom: 1px solid #37eaff66 !important;
+  backdrop-filter: blur(8px);
+}
+
+#inicio.hero-retro::after {
+  display: none !important;
+  content: none !important;
+}
+
+/* Catálogo y tarjetas translúcidas */
+#catalogo .peliculas {
+  background: rgba(5, 9, 23, .38) !important;
+  border: 1px solid #37eaff44 !important;
+  box-shadow: 0 0 24px #05081666 !important;
+}
+
+#catalogo .pelicula {
+  background: rgba(9, 13, 30, .72) !important;
+  border: 1px solid #ff4fd844 !important;
+  box-shadow: 0 0 12px #070b1d88 !important;
+}
+
+/* Carné de socio: conservar su aspecto retro */
+#socios-carmencita {
+  background: rgba(16, 12, 27, .82) !important;
+  backdrop-filter: blur(5px);
+  border-color: #e4b75c !important;
+}
+
+/* Mejor contraste sin tapar el fondo */
+.telegram,
+footer,
+.programacion {
+  backdrop-filter: blur(5px);
+  border-color: #37eaff44;
+}
+
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll !important;
+    background-position: center top !important;
+  }
+}
+</style>
+
+<!-- CARMENCITA: CIUDAD MÁS VISIBLE Y CRISTAL CYBERPUNK -->
+<style id="carmencita-cristal-transparente-v2">
+
+/* La imagen original gana protagonismo */
+body {
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(4, 7, 18, .08),
+      rgba(4, 7, 18, .18) 48%,
+      rgba(4, 7, 18, .30)
+    ),
+    url("fondo-blade-runner-carmencita.jpg") !important;
+  background-color: #070913 !important;
+  background-position: center top !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+/* Superficies principales: cristal ahumado */
+header,
+#inicio.hero-retro,
+.programacion,
+main,
+#catalogo,
+#socios-carmencita,
+.telegram,
+footer {
+  background-color: rgba(5, 8, 22, .20) !important;
+  background-image: none !important;
+  backdrop-filter: blur(2px);
+}
+
+/* Cabecera ligera para dejar respirar el fondo */
+header {
+  background-color: rgba(4, 7, 18, .38) !important;
+  border-bottom: 1px solid rgba(55, 234, 255, .48) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Franja de programación */
+.programacion {
+  background-color: rgba(5, 10, 26, .30) !important;
+  border-color: rgba(55, 234, 255, .35) !important;
+}
+
+/* Zona del catálogo: sin bloque opaco */
+#catalogo {
+  background-color: rgba(5, 8, 22, .12) !important;
+}
+
+/* Marco y fondo de las películas */
+#catalogo .peliculas {
+  background: rgba(5, 9, 23, .16) !important;
+  border: 1px solid rgba(55, 234, 255, .30) !important;
+  box-shadow: 0 0 24px rgba(5, 8, 22, .16) !important;
+}
+
+/* Cristal en cada tarjeta */
+#catalogo .pelicula {
+  background: rgba(7, 12, 29, .48) !important;
+  border: 1px solid rgba(255, 79, 216, .42) !important;
+  box-shadow:
+    inset 0 0 18px rgba(55, 234, 255, .035),
+    0 4px 18px rgba(0, 0, 0, .18) !important;
+  backdrop-filter: blur(3px);
+}
+
+/* Textos legibles sobre los neones */
+#catalogo .info-pelicula {
+  background: transparent !important;
+  color: #fff4fb !important;
+}
+
+#catalogo .info-pelicula h3 {
+  color: #ffffff !important;
+  text-shadow: 0 0 10px rgba(55, 234, 255, .25);
+}
+
+/* Sección de socios: transparente, conservando el carné */
+#socios-carmencita {
+  background: rgba(10, 9, 24, .40) !important;
+  border-color: rgba(228, 183, 92, .85) !important;
+  backdrop-filter: blur(3px);
+}
+
+/* Telegram y pie de página */
+.telegram,
+footer {
+  background-color: rgba(4, 7, 18, .26) !important;
+  backdrop-filter: blur(3px);
+}
+
+/* Elimina posibles fondos sólidos de contenedores interiores */
+#catalogo .descripcion,
+#catalogo .titulo-seccion {
+  background-color: transparent !important;
+}
+
+/* En móviles, evita problemas con el fondo fijo */
+@media (max-width: 700px) {
+  body {
+    background-attachment: scroll !important;
+  }
+}
+
+</style>
+
+
+<style id="avatar-androide-carmencita">
+#abrir-carmencita .avatar {
+  display: block;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  overflow: hidden;
+  border: 2px solid #55eaff;
+  border-radius: 50%;
+  background: #111827;
+  box-shadow: 0 0 12px #00d9ff77, 0 0 18px #ff36b577;
+}
+#abrir-carmencita .avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+#cabecera-carmencita .retrato-carmencita {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 2px solid #55eaff;
+  border-radius: 12px;
+  box-shadow: 0 0 14px #00d9ff66, 0 0 18px #ff36b566;
+}
+#cabecera-carmencita strong {
+  flex: 1;
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  #abrir-carmencita .avatar {
+    flex-basis: 42px;
+    width: 42px;
+    height: 42px;
+  }
+  #cabecera-carmencita .retrato-carmencita {
+    flex-basis: 46px;
+    width: 46px;
+    height: 46px;
+  }
+}
+</style>
+
+
+<style id="detalles-vhs-retrofuturistas">
+/* Videoclub Carmencita: VHS + ciencia ficción ochentera */
+
+/* Transiciones suaves en las carátulas */
+#catalogo .pelicula {
+  position: relative;
+  transition:
+    transform .24s ease,
+    border-color .24s ease,
+    box-shadow .24s ease;
+}
+
+/* Neón discreto al explorar el catálogo */
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  #catalogo .pelicula:hover {
+    transform: translateY(-3px);
+    border-color: rgba(65, 235, 255, .78) !important;
+    box-shadow:
+      0 0 10px rgba(42, 222, 255, .12),
+      0 0 18px rgba(255, 57, 193, .10),
+      inset 0 0 12px rgba(65, 235, 255, .035) !important;
+  }
+
+  #catalogo .pelicula:hover .cartel {
+    filter: saturate(1.10) contrast(1.035);
+  }
+}
+
+/* Textura analógica muy sutil en las zonas informativas */
+#catalogo .info-pelicula {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 5px,
+    rgba(115, 220, 255, .025) 6px
+  ) !important;
+  transition: text-shadow .2s ease;
+}
+
+/* Contornos visibles también al navegar con teclado */
+#catalogo .pelicula:focus-within {
+  outline: 2px solid rgba(70, 231, 255, .85);
+  outline-offset: 3px;
+}
+
+/* Carmencita: reflejo luminoso al pasar por su botón */
+#abrir-carmencita {
+  transition:
+    box-shadow .25s ease,
+    border-color .25s ease;
+}
+
+@media (hover: hover) {
+  #abrir-carmencita:hover {
+    border-color: #55eaff;
+    box-shadow:
+      0 8px 28px rgba(0, 0, 0, .5),
+      0 0 15px rgba(0, 217, 255, .17),
+      0 0 20px rgba(255, 54, 181, .10);
+  }
+}
+
+/* Respeta las preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  #catalogo .cartel,
+  #abrir-carmencita {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+</style>
+
+
+<style id="vhs-ambiental-cinematografico">
+/* Capa ambiental VHS: no intercepta clics ni bloquea contenido */
+body {
+  isolation: isolate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  pointer-events: none;
+  opacity: .12;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 3px,
+    rgba(110, 220, 255, .10) 4px,
+    transparent 5px
+  );
+}
+
+/* Barrido horizontal lento y tenue */
+body::before {
+  content: "";
+  position: fixed;
+  z-index: 9001;
+  pointer-events: none;
+  top: -20%;
+  left: 0;
+  width: 100%;
+  height: 12%;
+  opacity: .12;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(75, 220, 255, .16),
+    rgba(255, 55, 190, .07),
+    transparent
+  );
+  animation: carmencita-vhs-barrido 14s linear infinite;
+}
+
+@keyframes carmencita-vhs-barrido {
+  from { transform: translateY(-20vh); }
+  to   { transform: translateY(125vh); }
+}
+
+/* En móviles, reducir la intensidad visual */
+@media (max-width: 700px) {
+  body::after {
+    opacity: .07;
+  }
+
+  body::before {
+    opacity: .07;
+  }
+}
+
+/* No animar si el usuario prefiere menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  body::before {
+    display: none !important;
+    animation: none !important;
+  }
+
+  body::after {
+    opacity: .035;
+  }
+}
+</style>
+
+
+<style id="optimizacion-movil-carmencita">
+/* Ajustes exclusivos para móviles */
+@media (max-width: 700px) {
+  html {
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  body {
+    min-width: 0 !important;
+    max-width: 100%;
+    overflow-x: clip;
+    background-attachment: scroll !important;
+  }
+
+  header,
+  main,
+  section,
+  footer,
+  .programacion,
+  #catalogo,
+  #socios-carmencita,
+  .telegram {
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Catálogo: dos columnas proporcionadas */
+  #catalogo .peliculas {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+    width: 100%;
+    min-width: 0;
+  }
+
+  #catalogo .pelicula {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    transform: none;
+  }
+
+  #catalogo .cartel {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  #catalogo .info-pelicula {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #catalogo .info-pelicula h3 {
+    font-size: clamp(13px, 3.5vw, 17px);
+    line-height: 1.3;
+  }
+
+  #catalogo .info-pelicula p {
+    overflow-wrap: anywhere;
+  }
+
+  /* Controles táctiles más cómodos */
+  button,
+  .boton,
+  #catalogo input,
+  #catalogo select {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  button,
+  .boton {
+    min-height: 42px;
+  }
+
+  /* Chat flotante dentro de la pantalla */
+  #carmencita {
+    position: fixed;
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    left: auto;
+    z-index: 10000;
+    width: min(380px, calc(100vw - 24px));
+    max-width: calc(100vw - 24px);
+    box-sizing: border-box;
+  }
+
+  #abrir-carmencita {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #chat-carmencita {
+    width: 100%;
+    max-width: 100%;
+    max-height: calc(100vh - 105px);
+    max-height: calc(100dvh - 105px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    box-sizing: border-box;
+  }
+
+  #cabecera-carmencita {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  #cabecera-carmencita strong {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  #mensajes-carmencita {
+    max-height: 30vh;
+    overflow-y: auto;
+    overflow-wrap: anywhere;
+  }
+
+  #form-carmencita {
+    display: flex;
+    gap: 6px;
+    min-width: 0;
+  }
+
+  #pregunta-carmencita {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  #form-carmencita button {
+    flex: 0 0 auto;
+  }
+}
+
+/* Teléfonos estrechos */
+@media (max-width: 380px) {
+  #catalogo .peliculas {
+    gap: 8px !important;
+  }
+
+  #catalogo .info-pelicula {
+    padding: 8px !important;
+  }
+
+  #abrir-carmencita {
+    padding: 9px 10px;
+  }
+}
+
+/* Evitar movimientos al navegar con movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula,
+  #abrir-carmencita {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+</style>
+
