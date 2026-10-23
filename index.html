@@ -1753,6 +1753,39 @@ body::before {
 </style>
 <!-- /CARMENCITA-LEGIBILIDAD-V1 -->
 
+
+<!-- CARMENCITA-FOTO-PORTADA-V1 -->
+<style>
+#inicio.hero-retro {
+  background:
+    linear-gradient(90deg, rgba(10,5,5,.40), rgba(10,5,5,.12)),
+    url("recursos-carmencita/fondo-videoclub-carmencita.jpg")
+    center / cover no-repeat !important;
+}
+#inicio.hero-retro .hero-content {
+  position: relative;
+  z-index: 2;
+}
+#inicio.hero-retro .hero-content::after {
+  content: "";
+  display: block;
+  width: clamp(180px, 30vw, 320px);
+  aspect-ratio: 3 / 4;
+  margin: 24px auto 0;
+  background: url("recursos-carmencita/carmencita-androide.jpg")
+    center 25% / cover no-repeat;
+  border: 3px solid #52eaff;
+  border-radius: 8px;
+  box-shadow: 0 0 22px #52eaff66, 7px 7px 0 #ff334b;
+}
+@media (max-width: 600px) {
+  #inicio.hero-retro .hero-content::after {
+    width: min(64vw, 240px);
+  }
+}
+</style>
+<!-- /CARMENCITA-FOTO-PORTADA-V1 -->
+
 </head>
 
 <body>
