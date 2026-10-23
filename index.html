@@ -5703,3 +5703,29 @@ body::before {
   }
 }
 </style>
+
+<!-- CARMENCITA-LIMPIAR-PORTADA-V3 -->
+<style id="limpiar-portada-v3">
+/* Quitar las ilustraciones decorativas de la portada */
+#inicio .vhs-escenario,
+#inicio .vhs-item,
+#inicio .vhs-cinta {
+  display: none !important;
+}
+
+/* Ocultar el botón flotante del avatar en esta página */
+#abrir-carmencita {
+  display: none !important;
+}
+
+/* Mantener la foto grande como fondo */
+#inicio.hero-retro > .foto-portada-carmencita {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: -2 !important;
+}
+</style>
