@@ -1416,6 +1416,290 @@ input:focus-visible {
 }
 </style>
 
+
+<!-- CARMENCITA-RETROPUNK-V1 -->
+<style id="carmencita-retropunk-v1">
+:root {
+  color-scheme: dark;
+  --punk-red: #ff2638;
+  --punk-pink: #ff36bd;
+  --punk-cyan: #53f6ff;
+}
+html { background: #090709; scroll-behavior: smooth; }
+body {
+  color: #f5e9d5;
+  background-color: #090709;
+  background-image:
+    radial-gradient(ellipse at 15% 5%, #ff263825, transparent 38%),
+    radial-gradient(ellipse at 85% 30%, #ff36bd18, transparent 35%),
+    repeating-linear-gradient(0deg, #ffffff04 0 1px, transparent 1px 4px);
+  font-family: "Courier New", monospace;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    transparent 0 3px, #00000020 4px 5px
+  );
+}
+h1, h2, h3 {
+  color: #f5e9d5;
+  font-family: Impact, "Arial Black", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 2px 0 var(--punk-red), -1px 0 var(--punk-cyan);
+}
+a { color: var(--punk-cyan); }
+a:hover { color: var(--punk-pink); }
+button, .boton, input[type="submit"] {
+  color: white;
+  background: var(--punk-red);
+  border: 2px solid var(--punk-red);
+  border-radius: 2px;
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--punk-pink);
+}
+input, select, textarea {
+  color: #f5e9d5;
+  background: #100b10;
+  border: 1px solid var(--punk-pink);
+  border-radius: 2px;
+}
+#catalogo .pelicula {
+  background: #151015;
+  border: 1px solid #ff263899;
+  border-radius: 2px;
+  box-shadow: 4px 4px 0 #ff263822;
+}
+#catalogo .pelicula:hover {
+  border-color: var(--punk-cyan);
+  transform: translateY(-3px);
+}
+#catalogo .info-pelicula { background: #151015; }
+#catalogo .anio { color: var(--punk-cyan); }
+#socios-carmencita, #chat-carmencita {
+  border-color: var(--punk-pink);
+}
+#abrir-carmencita { border: 2px solid var(--punk-cyan); }
+::selection { color: #090709; background: var(--punk-cyan); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+</style>
+<!-- /CARMENCITA-RETROPUNK-V1 -->
+
+
+<!-- CARMENCITA-PORTADA-VIDECLUB-V1 -->
+<style id="portada-videoclub-carmencita">
+:root {
+  --carmencita-rojo: #ff334b;
+  --carmencita-azul: #52eaff;
+  --carmencita-crema: #fff0d4;
+}
+body {
+  background-color: #100b0a;
+  color: var(--carmencita-crema);
+}
+body > header:first-of-type,
+header:has(.logo) {
+  background: rgba(15, 8, 8, .94);
+  border-bottom: 2px solid var(--carmencita-rojo);
+}
+.logo {
+  color: var(--carmencita-crema);
+  text-shadow: 0 0 8px var(--carmencita-rojo);
+}
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: clamp(460px, 72vh, 780px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(90deg, rgba(10,5,5,.76), rgba(10,5,5,.25), rgba(10,5,5,.76)),
+    linear-gradient(0deg, #100b0a 0%, transparent 35%, rgba(0,0,0,.12)),
+    url("recursos-carmencita/fondo-videoclub-carmencita.jpg")
+      center 55% / cover no-repeat,
+    #160b10;
+}
+.hero h1 {
+  color: #fff0d4;
+  text-shadow:
+    3px 3px 0 #a20e25,
+    0 0 12px #ff334b,
+    0 0 30px #ff334b88;
+  letter-spacing: .045em;
+}
+.hero h1 span {
+  color: var(--carmencita-azul);
+  text-shadow: 0 0 14px #52eaffaa, 2px 2px #09232b;
+}
+.hero p {
+  display: inline-block;
+  max-width: 680px;
+  padding: 12px 18px;
+  background: rgba(12, 7, 8, .78);
+  border-left: 3px solid var(--carmencita-rojo);
+  line-height: 1.65;
+}
+.hero .boton {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 15px 24px;
+  color: #fff;
+  background: var(--carmencita-rojo);
+  border: 2px solid #ff9ba6;
+  box-shadow: 0 0 18px #ff334b66, 4px 4px 0 #171014;
+  text-decoration: none;
+  font-weight: 900;
+  letter-spacing: .07em;
+}
+.hero .boton:hover {
+  color: #100b0a;
+  background: var(--carmencita-azul);
+  border-color: var(--carmencita-azul);
+}
+#catalogo {
+  background: linear-gradient(#171011, #0c090a);
+}
+#catalogo .pelicula {
+  border-radius: 3px;
+  border-color: #7f2835;
+  box-shadow: 3px 4px 0 #000, 0 0 12px #ff334b12;
+}
+#catalogo .pelicula:hover {
+  border-color: var(--carmencita-azul);
+}
+@media (max-width: 600px) {
+  .hero {
+    min-height: 540px;
+    background-position: center, center, center, center;
+  }
+  .hero p { margin-inline: 12px; }
+}
+</style>
+<!-- /CARMENCITA-PORTADA-VIDECLUB-V1 -->
+
+
+<!-- CARMENCITA-ESCAPARATE-TIENDA-V1 -->
+<style id="carmencita-escaparate-tienda">
+/* Sensación de tienda física de alquiler de películas */
+body > header,
+header:has(.logo) {
+  position: relative;
+  z-index: 20;
+  background: linear-gradient(180deg, #281413, #100b0a) !important;
+  border-bottom: 3px solid #d72d39 !important;
+  box-shadow: 0 5px 0 #080607, 0 8px 24px #0009;
+}
+.logo {
+  font-family: Impact, "Arial Black", sans-serif !important;
+  letter-spacing: 2px;
+}
+.hero-retro {
+  border-bottom: 5px solid #a92531;
+  box-shadow: inset 0 -16px 25px #0007;
+}
+.hero-retro .hero-content {
+  padding: clamp(20px, 4vw, 46px);
+}
+.hero-retro .etiqueta {
+  display: inline-block;
+  padding: 9px 15px;
+  background: #f0d7a6;
+  color: #3a1715;
+  border: 2px solid #7c2527;
+  box-shadow: 4px 4px 0 #090607;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.hero-retro .hero-content h1 {
+  line-height: .98;
+  letter-spacing: .035em;
+}
+.hero-retro .hero-content > p {
+  border-left: 5px solid #e33a42;
+  box-shadow: 5px 5px 0 #0007;
+}
+.hero-retro .hero-sello {
+  color: #ffe3a9;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+.hero-retro .boton {
+  box-shadow: 5px 5px 0 #070506, 0 0 16px #ff334b44;
+}
+.programacion {
+  position: relative;
+  border-top: 1px solid #f1c16c55;
+  border-bottom: 4px solid #a92531;
+  background:
+    repeating-linear-gradient(90deg, #ffffff05 0 1px, transparent 1px 8px),
+    linear-gradient(180deg, #351b17, #170e0d) !important;
+  color: #ffe5b2;
+  box-shadow: inset 0 1px #ffffff12, 0 6px 18px #0006;
+}
+#catalogo {
+  position: relative;
+  background:
+    radial-gradient(ellipse at top, #4b202018, transparent 65%),
+    linear-gradient(180deg, #1b1210, #0c0909) !important;
+  padding-top: clamp(35px, 5vw, 65px);
+}
+#catalogo .titulo-seccion {
+  padding-bottom: 13px;
+  border-bottom: 2px solid #9c3436;
+  text-shadow: 2px 2px #000;
+}
+#catalogo .pelicula {
+  overflow: hidden;
+  border: 2px solid #57302a !important;
+  border-radius: 3px !important;
+  background: linear-gradient(145deg, #291a17, #100c0b) !important;
+  box-shadow: 4px 5px 0 #050404, 0 0 0 1px #d9a76b15 !important;
+  transition: transform .2s ease, border-color .2s ease;
+}
+#catalogo .pelicula:hover {
+  transform: translateY(-5px);
+  border-color: #e8b765 !important;
+  box-shadow: 5px 7px 0 #050404, 0 0 16px #e8b76522 !important;
+}
+#catalogo .info-pelicula {
+  background: linear-gradient(180deg, #211512, #100c0b) !important;
+}
+#socios-carmencita {
+  border-top: 4px solid #a92531;
+  background: linear-gradient(180deg, #211411, #0d0909);
+}
+@media (max-width: 600px) {
+  .hero-retro .hero-content {
+    padding: 22px 12px;
+  }
+  .hero-retro .etiqueta {
+    letter-spacing: 1px;
+    font-size: 11px;
+  }
+  .hero-retro .hero-sello {
+    letter-spacing: 1px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #catalogo .pelicula { transition: none !important; }
+}
+</style>
+<!-- /CARMENCITA-ESCAPARATE-TIENDA-V1 -->
+
 </head>
 
 <body>
