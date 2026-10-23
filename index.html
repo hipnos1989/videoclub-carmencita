@@ -1818,6 +1818,12 @@ body::before {
       <a class="boton" href="#catalogo">🎬 EXPLORAR EL CATÁLOGO ▶</a>
     </div>
 
+    <!-- CARMENCITA-FOTO-GRANDE-PORTADA-V1 -->
+    <div class="foto-grande-carmencita">
+      <img src="recursos-carmencita/portada-carmencita.jpg"
+           alt="Carmencita, imagen original del videoclub">
+    </div>
+
     <div class="vhs-escenario vhs-coleccion" aria-label="Colección decorativa de cintas VHS">
       <div class="vhs-item vhs-principal" aria-hidden="true">
         <div class="vhs-cinta">
@@ -3529,6 +3535,44 @@ body::before {
     linear-gradient(90deg, rgba(10,5,5,.18), rgba(10,5,5,.08)),
     url("recursos-carmencita/portada-carmencita.jpg")
     center center / cover no-repeat !important;
+}
+</style>
+
+
+<style id="foto-grande-carmencita">
+#inicio.hero-retro {
+  grid-template-columns: 1fr 1fr !important;
+  background:
+    linear-gradient(90deg, rgba(15,7,12,.82), rgba(15,7,12,.12))
+    !important;
+}
+#inicio .foto-grande-carmencita {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  padding: 20px;
+}
+#inicio .foto-grande-carmencita img {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  max-height: 580px;
+  height: auto;
+  object-fit: contain;
+  border: 3px solid #e8b765;
+  box-shadow: 0 0 28px #e33a4266, 8px 8px 0 #080607;
+  border-radius: 4px;
+}
+@media (max-width: 700px) {
+  #inicio.hero-retro {
+    grid-template-columns: 1fr !important;
+  }
+  #inicio .foto-grande-carmencita img {
+    max-height: 360px;
+  }
 }
 </style>
 
