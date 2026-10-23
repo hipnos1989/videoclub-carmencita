@@ -1806,6 +1806,10 @@ body::before {
   <!-- ===== PORTADA ===== -->
 
   <section class="hero hero-retro" id="inicio">
+    <img class="foto-portada-carmencita"
+  src="recursos-carmencita/portada-carmencita.jpg"
+  alt=""
+  aria-hidden="true">
     <div class="hero-content">
       <div class="etiqueta">✦ ABIERTO DESDE LOS AÑOS 80 ✦</div>
       <h1>VIDEОCLUB<br><span>CARMENCITA</span></h1>
@@ -3620,6 +3624,63 @@ body::before {
   #inicio.hero-retro .hero-content {
     padding: 16px !important;
     background: rgba(15, 10, 15, .48) !important;
+  }
+}
+</style>
+
+
+<!-- CARMENCITA-PORTADA-IMAGEN-REAL-V3 -->
+<style id="portada-imagen-real-v3">
+#inicio.hero-retro {
+  position: relative !important;
+  isolation: isolate !important;
+  display: block !important;
+  width: 100% !important;
+  min-height: clamp(540px, 78vh, 850px) !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+  padding: clamp(28px, 6vw, 80px) !important;
+  overflow: hidden !important;
+  background: #24151b !important;
+}
+#inicio.hero-retro > .foto-portada-carmencita {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -2 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 35% !important;
+}
+#inicio.hero-retro::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: -1 !important;
+  background: linear-gradient(
+    90deg, rgba(12, 7, 12, .65), rgba(12, 7, 12, .12)
+  ) !important;
+  pointer-events: none !important;
+}
+#inicio.hero-retro > .hero-content {
+  position: relative !important;
+  z-index: 2 !important;
+  width: min(620px, 100%) !important;
+  box-sizing: border-box !important;
+  padding: clamp(16px, 3vw, 30px) !important;
+  background: rgba(15, 10, 15, .42) !important;
+}
+#inicio.hero-retro > .vhs-escenario {
+  display: none !important;
+}
+@media (max-width: 600px) {
+  #inicio.hero-retro {
+    min-height: 620px !important;
+    padding: 18px !important;
+  }
+  #inicio.hero-retro > .foto-portada-carmencita {
+    object-position: center center !important;
   }
 }
 </style>
