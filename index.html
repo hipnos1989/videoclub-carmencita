@@ -3700,6 +3700,30 @@ body::before {
 }
 </style>
 
+
+<!-- CARMENCITA-OCULTAR-DOS-FOTOS-PORTADA-V2 -->
+<style id="ocultar-dos-fotos-portada-v2">
+/* Ocultar las cintas y cualquier imagen decorativa de la portada. */
+#inicio.hero-retro .vhs-escenario,
+#inicio.hero-retro .vhs-item,
+#inicio.hero-retro .vhs-cinta,
+#inicio.hero-retro .vhs-secundaria,
+#inicio.hero-retro .vhs-principal {
+  display: none !important;
+}
+
+/* Conservar únicamente la foto grande de fondo. */
+#inicio.hero-retro > .foto-portada-carmencita {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  z-index: -2 !important;
+}
+</style>
+
 </body>
 
 <!-- MEJORA-CABECERA-CARMENCITA-V2 -->
