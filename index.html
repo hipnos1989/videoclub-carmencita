@@ -1700,6 +1700,59 @@ header:has(.logo) {
 </style>
 <!-- /CARMENCITA-ESCAPARATE-TIENDA-V1 -->
 
+
+<!-- CARMENCITA-LEGIBILIDAD-V1 -->
+<style id="carmencita-legibilidad-v1">
+/* Más luz y contraste sin perder el ambiente retro */
+body {
+  background-color: #211719;
+  color: #fff3df;
+}
+body::before {
+  opacity: .35;
+}
+.hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(18, 10, 12, .38),
+      rgba(18, 10, 12, .12),
+      rgba(18, 10, 12, .38)
+    ),
+    linear-gradient(
+      0deg,
+      rgba(25, 14, 16, .35),
+      transparent 45%,
+      rgba(25, 14, 16, .05)
+    ),
+    url("recursos-carmencita/fondo-videoclub-carmencita.jpg");
+  background-position: center, center, center 55%;
+  background-size: cover, cover, cover;
+  background-repeat: no-repeat;
+}
+.hero p {
+  background: rgba(24, 15, 17, .68);
+  color: #fff5e5;
+}
+#catalogo {
+  background: linear-gradient(#261b1d, #171012);
+}
+#catalogo .pelicula,
+#catalogo .info-pelicula {
+  background-color: #24191d;
+}
+#socios-carmencita,
+#chat-carmencita {
+  color: #fff3df;
+}
+#chat-carmencita img,
+#abrir-carmencita img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+<!-- /CARMENCITA-LEGIBILIDAD-V1 -->
+
 </head>
 
 <body>
