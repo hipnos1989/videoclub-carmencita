@@ -5558,3 +5558,48 @@ body::before {
 }
 </style>
 
+
+<!-- CARMENCITA-PORTADA-FOTO-GRANDE-V2 -->
+<style id="portada-foto-grande-v2">
+#inicio.hero-retro {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  position: relative !important;
+  width: 100% !important;
+  min-height:  min(78vh, 820px) !important;
+  box-sizing: border-box !important;
+  padding: clamp(24px, 5vw, 70px) !important;
+  background-image:
+    linear-gradient(90deg,
+      rgba(10, 7, 12, .58),
+      rgba(10, 7, 12, .12)),
+    url("recursos-carmencita/portada-carmencita.jpg") !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+}
+
+#inicio.hero-retro .hero-content {
+  position: relative !important;
+  z-index: 5 !important;
+  width: min(620px, 100%) !important;
+  box-sizing: border-box !important;
+  background: rgba(15, 10, 15, .38) !important;
+  padding: 24px !important;
+}
+
+#inicio.hero-retro .vhs-escenario {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  #inicio.hero-retro {
+    min-height: 70vh !important;
+    padding: 18px !important;
+    background-position: center center !important;
+  }
+  #inicio.hero-retro .hero-content {
+    padding: 16px !important;
+  }
+}
+</style>
