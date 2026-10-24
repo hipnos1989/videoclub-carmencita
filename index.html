@@ -1919,6 +1919,10 @@
     tarjeta.dataset.categoria
   ].join(" "));
 
+  function elegirRespuesta(respuestas) {
+    return respuestas[Math.floor(Math.random() * respuestas.length)];
+  }
+
   function responder(texto) {
     const elemento = document.createElement("p");
     elemento.className = "msg-carmencita";
@@ -1962,11 +1966,17 @@
         " en nuestras estanterías. 📼 ¡Vamos a echarle un vistazo!");
       encontrada.scrollIntoView({ behavior: "smooth", block: "center" });
       entrada.value = "";
+      entrada.focus();
       return;
     }
 
     if (/\b(hola|buenas|buenos dias|buenas tardes|buenas noches)\b/.test(pregunta)) {
-      responder("¡Hola, cariño! ❤️ Pasa, pasa, que en Videoclub Carmencita siempre hay sitio para una buena película.");
+      responder(elegirRespuesta([
+        "¡Hola! 📼 Pasa, pasa, que ya tenemos las cintas rebobinadas.",
+        "¡Buenas! Carmencita abre sus puertas para otra aventura de cine. 🎬",
+        "¡Hombre, qué alegría verte por aquí! ¿Qué película buscamos hoy?",
+        "¡Bienvenido al Videoclub Carmencita! Mira las estanterías con calma."
+      ]));
     } else if (pregunta.includes("programacion") ||
                pregunta.includes("esta noche") ||
                pregunta.includes("que ponen") ||
@@ -1998,6 +2008,19 @@
     } else if (pregunta.includes("que tal") ||
                pregunta.includes("como estas")) {
       responder("¡De maravilla, cariño! Las cintas están rebobinadas, las estanterías en orden y las palomitas casi listas. ❤️ ¿Qué película buscamos?");
+    } else if (pregunta.includes("quiero una peli") ||
+               pregunta.includes("recomiend") ||
+               pregunta.includes("que puedo ver") ||
+               pregunta.includes("que veo")) {
+      if (tarjetas.length) {
+        const recomendada = tarjetas[Math.floor(Math.random() * tarjetas.length)];
+        responder("¡Vamos allá, cariño! 🎬 Hoy te recomiendo «" +
+          tituloDe(recomendada) +
+          "». ¡Busca su ficha en nuestras estanterías!");
+        recomendada.scrollIntoView({ behavior: "smooth", block: "center" });
+      } else {
+        responder("¡Claro, cariño! 🎬 ¿Qué te apetece: terror, comedia, aventura o suspense?");
+      }
     } else if (["terror", "miedo", "aventura", "comedia",
                 "suspense", "drama", "accion", "ciencia ficcion"]
                 .some(genero => pregunta.includes(genero))) {
