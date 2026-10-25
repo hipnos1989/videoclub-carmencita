@@ -1687,24 +1687,50 @@
 
   <!-- ===== TELEGRAM ===== -->
 
-  <section class="telegram" id="telegram">
-    <h2 class="titulo-seccion">📡 NUESTRO RINCÓN EN TELEGRAM</h2>
 
-    <p>
-      El videoclub también vive en nuestra comunidad.
-      Acompáñanos para compartir nuestra pasión por el cine.
-    </p>
 
-    <!-- Sustituye la URL por la invitación real del grupo -->
-    <a
-      class="boton"
-      href="https://t.me/kfdlkjf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      ENTRAR EN TELEGRAM ↗
+
+  <!-- ===== ENTRADA AL VIDEOCLUB CARMENCITA ===== -->
+  <section id="entrada-videoclub-carmencita" aria-label="Entrar al Videoclub Carmencita">
+    <a href="https://t.me/kfdlkjf" target="_blank" rel="noopener noreferrer"
+       aria-label="Entrar al grupo de Telegram del Videoclub Carmencita">
+      <img src="entrada-videoclub-carmencita.png"
+           alt="Entrada ochentera del Videoclub Carmencita"
+           loading="lazy">
     </a>
+    <p>La puerta está abierta… si te atreves a entrar.</p>
   </section>
+
+  <style>
+    #entrada-videoclub-carmencita {
+      width: calc(100% - 16px); max-width: none;
+      margin: 28px auto 18px;
+      text-align: center;
+    }
+    #entrada-videoclub-carmencita a {
+      display: block;
+      line-height: 0;
+      border: 1px solid rgba(255, 190, 110, .65); border-radius: 3px;
+      box-shadow: 0 0 24px rgba(255, 100, 35, .22);
+      overflow: hidden;
+    }
+    #entrada-videoclub-carmencita img {
+      display: block;
+      width: 100%;
+      height: auto;
+      transition: filter .25s ease, transform .25s ease;
+    }
+    #entrada-videoclub-carmencita a:hover img {
+      filter: brightness(1.12);
+      transform: scale(1.01);
+    }
+    #entrada-videoclub-carmencita p {
+      margin: 12px 0 0;
+      color: #d9b78d;
+      font-size: .9rem;
+      letter-spacing: .04em;
+    }
+  </style>
 
   <!-- ===== PIE DE PÁGINA ===== -->
 
@@ -1897,7 +1923,10 @@
   const formulario = document.getElementById("form-carmencita");
   const entrada = document.getElementById("pregunta-carmencita");
   const mensajes = document.getElementById("mensajes-carmencita");
-  const tarjetas = [...document.querySelectorAll(".pelicula")];
+  let tarjetas = [...document.querySelectorAll(".pelicula")];
+  window.actualizarTarjetasCarmencita = () => {
+    tarjetas = [...document.querySelectorAll(".pelicula")];
+  };
 
   const normalizar = texto => String(texto || "")
     .normalize("NFD")
@@ -2329,6 +2358,53 @@
 
 
 
+
+<style id="neon-entrada-carmencita">
+#entrada-videoclub-carmencita {
+  position: relative;
+  isolation: isolate;
+  border-radius: 9px;
+  animation: halo-rojo-verde 3s ease-in-out infinite alternate;
+}
+#entrada-videoclub-carmencita a {
+  border: 2px solid #ff493d !important;
+  border-radius: 9px;
+  box-shadow:
+    0 0 7px #ff3028,
+    0 0 18px rgba(255,45,35,.8),
+    0 0 28px rgba(55,255,95,.65),
+    inset 0 0 12px rgba(55,255,95,.18);
+  transition: box-shadow .3s ease, border-color .3s ease;
+}
+#entrada-videoclub-carmencita a:hover {
+  border-color: #aaff9c !important;
+  box-shadow:
+    0 0 12px #ff3028,
+    0 0 28px #ff3028,
+    0 0 38px #39ff66,
+    0 0 55px rgba(57,255,102,.8);
+}
+#entrada-videoclub-carmencita img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+@keyframes halo-rojo-verde {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px rgba(255,35,35,.95))
+            drop-shadow(0 0 8px rgba(50,255,90,.75));
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255,35,35,.7))
+            drop-shadow(0 0 16px rgba(50,255,90,1));
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #entrada-videoclub-carmencita { animation: none; }
+}
+</style>
+
 </body>
 </html>
 
@@ -2752,6 +2828,55 @@
   #inicio.hero-retro::after {
     height: 360px !important;
     background-position: center 35% !important;
+  }
+}
+</style>
+
+<script src="catalogo-ampliado.js"></script>
+
+<!-- AJUSTE COMPACTO: ENTRADA Y SOCIOS -->
+<style id="ajuste-compacto-carmencita">
+#entrada-videoclub-carmencita {
+  width: min(82%, 850px) !important;
+  max-width: 850px !important;
+  margin: 22px auto 14px !important;
+}
+#entrada-videoclub-carmencita p {
+  margin-top: 7px !important;
+  font-size: .8rem !important;
+}
+#socios-carmencita {
+  width: min(92%, 680px) !important;
+  box-sizing: border-box !important;
+  margin: 18px auto !important;
+  padding: 12px 14px !important;
+}
+#socios-carmencita h2 {
+  margin: 5px 0 8px !important;
+  font-size: clamp(19px, 3vw, 25px) !important;
+}
+#socios-carmencita p {
+  margin: 6px 0 !important;
+  line-height: 1.35 !important;
+}
+#socios-carmencita form {
+  gap: 7px !important;
+  margin: 10px auto !important;
+}
+#socios-carmencita input,
+#socios-carmencita button {
+  padding: 8px 10px !important;
+}
+#carnet-carmencita {
+  margin: 12px auto !important;
+}
+@media (max-width: 600px) {
+  #entrada-videoclub-carmencita {
+    width: 94% !important;
+  }
+  #socios-carmencita {
+    width: 94% !important;
+    padding: 10px !important;
   }
 }
 </style>
