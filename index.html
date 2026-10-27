@@ -471,11 +471,11 @@
       }
 
       #chat-carmencita {
-        width: min(360px, calc(100vw - 24px));
+        width: min(300px, calc(100vw - 24px));
       }
 
       #mensajes-carmencita {
-        max-height: min(260px, 35dvh);
+        max-height: min(190px, 30dvh);
       }
 
       .pelicula:hover {
@@ -1700,15 +1700,17 @@
 
   <style>
     #entrada-videoclub-carmencita {
-      width: calc(100% - 16px); max-width: none;
-      margin: 28px auto 18px;
+      width: calc(100% - 8px);
+      max-width: none;
+      margin: 32px auto 24px;
       text-align: center;
     }
     #entrada-videoclub-carmencita a {
       display: block;
       line-height: 0;
-      border: 1px solid rgba(255, 190, 110, .65); border-radius: 3px;
-      box-shadow: 0 0 24px rgba(255, 100, 35, .22);
+      border: 3px solid #ffd27a;
+      border-radius: 6px;
+      box-shadow: 0 0 12px #ffb347, 0 0 32px rgba(255, 100, 35, .7);
       overflow: hidden;
     }
     #entrada-videoclub-carmencita img {
@@ -1718,14 +1720,16 @@
       transition: filter .25s ease, transform .25s ease;
     }
     #entrada-videoclub-carmencita a:hover img {
-      filter: brightness(1.12);
+      filter: brightness(1.18);
       transform: scale(1.01);
     }
     #entrada-videoclub-carmencita p {
-      margin: 12px 0 0;
-      color: #d9b78d;
-      font-size: .9rem;
-      letter-spacing: .04em;
+      margin: 18px 0 0;
+      color: #ffe0a6;
+      font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+      font-weight: bold;
+      letter-spacing: .07em;
+      text-shadow: 0 0 8px #ff8c32, 0 0 18px rgba(255, 100, 35, .7);
     }
   </style>
 
@@ -1805,8 +1809,8 @@
 #abrir-carmencita {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 12px;
+  gap: 5px;
+  padding: 5px 7px;
   color: #ffe7c2;
   background: #321321;
   border: 1px solid #ff76a8;
@@ -1816,16 +1820,25 @@
   box-shadow: 0 0 18px #ff304f55;
 }
 #abrir-carmencita .avatar {
-  font-size: 32px;
+  font-size: 18px;
+}
+
+#abrir-carmencita > span:nth-child(2) {
+  line-height: 1.1;
+}
+
+#abrir-carmencita > span:last-child {
+  font-size: 12px;
 }
 #abrir-carmencita small {
   display: block;
-  margin-top: 4px;
+  margin-top: 2px;
+  font-size: 11px;
   color: #ff91b5;
 }
 #chat-carmencita {
-  width: min(340px, calc(100vw - 36px));
-  margin-bottom: 10px;
+  width: min(300px, calc(100vw - 24px));
+  margin-bottom: 7px;
   background: #170d14;
   color: #ffe7c2;
   border: 1px solid #ff76a8;
@@ -1834,7 +1847,7 @@
   box-shadow: 0 0 25px #000a;
 }
 #cabecera-carmencita {
-  padding: 14px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   background: #4b172b;
@@ -1846,14 +1859,14 @@
   cursor: pointer;
 }
 #mensajes-carmencita {
-  padding: 12px;
-  max-height: 240px;
+  padding: 9px;
+  max-height: 190px;
   overflow-y: auto;
-  font-size: 13px;
-  line-height: 1.6;
+  font-size: 12px;
+  line-height: 1.45;
 }
 .msg-carmencita, .msg-usuario {
-  padding: 10px;
+  padding: 7px;
   border-radius: 8px;
 }
 .msg-carmencita { background: #321927; }
@@ -1861,20 +1874,20 @@
 #form-carmencita {
   display: flex;
   gap: 6px;
-  padding: 10px;
+  padding: 7px;
   border-top: 1px solid #522432;
 }
 #pregunta-carmencita {
   width: 0;
   min-width: 0;
   flex: 1;
-  padding: 10px;
+  padding: 8px;
   color: white;
   background: #291823;
   border: 1px solid #704052;
 }
 #form-carmencita button {
-  padding: 10px;
+  padding: 8px;
   color: white;
   background: #ff304f;
   border: 0;
